@@ -1,4 +1,4 @@
-import { Tag, MetaTag, StylesheetTag } from "./Tag";
+import { Tag, MetaTag, StylesheetTag, SelfClosingTag, EmptyTag, LinkTag } from "./Tag";
 import html from "./html";
 
 
@@ -12,7 +12,7 @@ interface HeaderProps {
 }
 
 function Header(props:HeaderProps) {
-    const titleTag = props.title? new Tag("title", {}, props.title) : "";
+    const titleTag = props.title? new Tag("title", {}, [props.title]) : "";
     const ogTitle = props.title? new MetaTag({ property: "og:title", content: props.title }): "";
     const ogDescription = props.description? new MetaTag({ property: "og:description", content: props.description }):"";
     const description = props.description?  new MetaTag({ name: "description", content: props.description }):"";
@@ -23,26 +23,27 @@ function Header(props:HeaderProps) {
     });
     stylesheets = [...(stylesheets??[]), ...(props.stylesheetTags??[])]
 
-    var body = html`
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base target="_blank" rel="noreferrer noopener">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    var out = new Tag("head", {}, [
+        new MetaTag({ charset: "UTF-8" }),
+        new MetaTag({ "http-equiv": "X-UA-Compatible", content: "IE=edge" }),
+        new MetaTag({ name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+        new EmptyTag("base", { target: "_blank", rel: "noreferrer noopener" }),
+        new LinkTag({ rel: "icon", href: "/favicon.ico", type: "image/x-icon" }),
+        description,
+        ogTitle,
+        ogDescription,
+        ogImage,
+        ogUrl,
+        new LinkTag({ rel: "canonical", href: "https://www.satvikgupta.com" }),
+        new LinkTag({ rel: "preconnect", href: "https://fonts.googleapis.com" }),
+        new LinkTag({ rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }),
+        ...(stylesheets ?? []),
+        titleTag
 
-    ${description}
-    ${ogTitle}
-    ${ogDescription}
-    ${ogImage}
-    ${ogUrl}
 
-    <link rel="canonical" href="https://www.satvikgupta.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    ${stylesheets.reduce((prev, curr) => prev + (curr || "").toString() + "\n", "")}
-    ${titleTag}`;
-
-    return new Tag("head", {}, body)
+    ])
+    return out;
+    // return new Tag("head", {}, body)
 }
 
 function DefaultHeader() {

@@ -9,20 +9,14 @@ class ChooserItem extends Div{
         
         var chooserClass = "workexp_chooser_item";
         if (idx == 0) chooserClass += " workexp_chooser_item_selected";
-        var chooserBody = (new Tag("button", {}, companyShortName)).toString();
-        super({ divClass: chooserClass, id : `workexp_chooser_item_${idx + 1}`,body: chooserBody })
+        super({ divClass: chooserClass, id : `workexp_chooser_item_${idx + 1}`,children: new Tag("button", {}, companyShortName) });
     }
 }
 
 
 class Chooser extends Div{
     constructor(props: Workexp[]) {
-        var chooserClass = "workexp_chooser";
-        var chooserBody = "";
-        for (var i = 0; i < props.length; i++) {
-            chooserBody += (new ChooserItem(props[i].shortName, i)).toString();
-        }
-        super({ divClass: chooserClass, body: chooserBody });
+        super({ divClass: "workexp_chooser", children: props.map((workexp, idx) => new ChooserItem(workexp.shortName, idx)) });
     }
 }
 

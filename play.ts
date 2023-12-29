@@ -5,6 +5,7 @@ import Chooser from "./component/Chooser";
 import Div  from "./Div";
 import TechStack from "./component/TechStack";
 import WorkexpPoints from "./component/WorkExpPoints";
+import WorkexpCard from "./component/WorkexpCard";
 const fs = require("fs");
 
 
@@ -14,7 +15,9 @@ var raw = require("./raw.json");
 
 
 function Play() {
-    var ele = new WorkexpPoints(raw.workexp[0]);
+    // var ele = DefaultHeader();
+    
+    var ele = new WorkexpCard(raw.workexp[0],0);
     var file = fs.createWriteStream("./out.html");
     file.write(ele.toString());
 }

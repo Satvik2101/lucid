@@ -1,14 +1,16 @@
+type childrenType = (string|Tag )[] | string | Tag; 
+
 class Tag {
     name: string;
     attributes: {
         [key:string]:any
     };
-    body: string;
+    children: childrenType
 
-    constructor(otherName:string, otherAttri:{[key:string]:any}, otherBody:string|undefined) {
+    constructor(otherName:string, otherAttri:{[key:string]:any}, otherChildren:childrenType) {
         this.name = otherName;
         this.attributes = otherAttri;
-        this.body = otherBody || "";
+        this.children = otherChildren || "";
     }
 
     attributeString() {
@@ -18,30 +20,50 @@ class Tag {
         }
         return attributeString;
     }
-    start() {
+    start():string {
         return `<${this.name} ${this.attributeString()}>`
 
     }
 
-    end() {
+    body(): string {
+        if (typeof this.children == "string") return this.children;
+        if ( this.children instanceof Tag) return this.children.toString();
+        return this.children.map((child) => child.toString()).join("\n");
+    }
+
+    end():string {
         return `</${this.name}>`
     }
 
-    toString() {
-        return this.start() + this.body + this.end();
+    toString():string {
+        return this.start() + this.body() + this.end();
 
     }
 }
 
-class SelfClosingTag extends Tag {
-    constructor(name:string, attributes:{[key:string]:any}, body:string) {
-        super(name, attributes, body);
+class EmptyTag extends Tag { 
+    constructor(name:string, attributes:{[key:string]:any}) {
+        super(name, attributes,[]);
     }
-    start() {
+    start():string {
+        return `<${this.name} ${this.attributeString()}>`
+    }
+
+    end():string {
+        return "";
+    }
+
+}
+
+class SelfClosingTag extends Tag {
+    constructor(name:string, attributes:{[key:string]:any}) {
+        super(name, attributes,[]);
+    }
+    start():string {
         return `<${this.name} ${this.attributeString()} />`
     }
 
-    end() {
+    end():string {
         return "";
     }
 
@@ -51,7 +73,7 @@ class SelfClosingTag extends Tag {
 
 class MetaTag extends SelfClosingTag {
     constructor(attributes:{[key:string]:any}) {
-        super("meta", attributes, "");
+        super("meta", attributes);
     }
 }
 
@@ -60,9 +82,9 @@ interface LinkTagAttributes {
     href: string;
     [propName: string]: any;
 }
-class LinkTag extends SelfClosingTag {
+class LinkTag extends EmptyTag {
     constructor(attributes:LinkTagAttributes) {
-        super("link", attributes,"");
+        super("link", attributes);
     }
 }
 
@@ -82,6 +104,6 @@ class StylesheetTag extends LinkTag {
     }
 }
 
-export  {Tag, SelfClosingTag, MetaTag, LinkTag, StylesheetTag};
+export  {childrenType, Tag, EmptyTag,SelfClosingTag, MetaTag, LinkTag, StylesheetTag};
 
 // export {Tag} ;

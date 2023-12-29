@@ -1,13 +1,13 @@
-import { Tag } from "./Tag";
+import { Tag ,childrenType} from "./Tag";
 
 class Div extends Tag{
     divClass: string | undefined;
     id: string | undefined;
-    constructor(props: { divClass?: string, id?: string, body: string }) {
+    constructor(props: { divClass?: string, id?: string, children: childrenType}) {
         var attri: { class?: string, id?:string} = {}
         if (props.divClass) attri["class"] = props.divClass;
         if (props.id) attri["id"] = props.id;
-        super("div", attri, props.body);
+        super("div", attri, props.children);
         this.divClass = props.divClass;
         this.id = props.id;
     }
