@@ -1,18 +1,27 @@
-const { Tag, MetaTag, StylesheetTag } = require("./Tag.js");
-const html = require("./html.js");
+import { Tag, MetaTag, StylesheetTag } from "./Tag";
+import {html} from "./html";
 
 
-function Header(props) {
-    const titleTag = new Tag("title", {}, props.title);
-    const ogTitle = new MetaTag({ property: "og:title", content: props.title });
-    const ogDescription = new MetaTag({ property: "og:description", content: props.description });
-    const description = new MetaTag({ name: "description", content: props.description });
-    const ogImage = new MetaTag({ property: "og:image", content: props.image });
-    const ogUrl = new MetaTag({ property: "og:url", content: props.url });
-    var stylesheets = props.stylesheets.map((stylesheet) => {
+interface HeaderProps { 
+    title?: string;
+    description?: string;
+    image?: string;
+    url?: string;
+    stylesheets?: string[];
+    stylesheetTags?: StylesheetTag[];
+}
+
+function Header(props:HeaderProps) {
+    const titleTag = props.title? new Tag("title", {}, props.title) : "";
+    const ogTitle = props.title? new MetaTag({ property: "og:title", content: props.title }): "";
+    const ogDescription = props.description? new MetaTag({ property: "og:description", content: props.description }):"";
+    const description = props.description?  new MetaTag({ name: "description", content: props.description }):"";
+    const ogImage = props.image? new MetaTag({ property: "og:image", content: props.image }):"";
+    const ogUrl = props.url? new MetaTag({ property: "og:url", content: props.url }):"";
+    var stylesheets = props.stylesheets?.map((stylesheet) => {
         return new StylesheetTag({ href: stylesheet });
     });
-    stylesheets = [...stylesheets, props.stylesheetTags]
+    stylesheets = [...(stylesheets??[]), ...(props.stylesheetTags??[])]
 
     var body = html`
     <meta charset="UTF-8" />
@@ -37,7 +46,7 @@ function Header(props) {
 }
 
 function DefaultHeader() {
-    return header({
+    return Header({
         title: "Satvik Gupta",
         description: "I'm Satvik Gupta, a Software Developer. This is my Portfolio Website.",
         image: "https://www.satvikgupta.com/images/preview.png",
@@ -51,4 +60,4 @@ function DefaultHeader() {
     })
 }
 
-module.exports = { Header, DefaultHeader };
+export { Header, DefaultHeader };
