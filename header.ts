@@ -1,5 +1,5 @@
 import { Tag, MetaTag, StylesheetTag } from "./Tag";
-import {html} from "./html";
+import html from "./html";
 
 
 interface HeaderProps { 

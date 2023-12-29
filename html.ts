@@ -7,4 +7,4 @@ const html = (templateStrings: TemplateStringsArray, ...values: any[]) => {
     return result;
 };
 
-export { html };
+export default html;
