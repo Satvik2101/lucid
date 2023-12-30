@@ -1,25 +1,18 @@
-import { Tag } from "./Tag";
-import { DefaultHeader } from "./header";
-import Chooser from "./component/Chooser";
+/// <reference path="C:/Users/Administrator/AppData/Roaming/npm/node_modules/@types/node/fs.d.ts" />
 
-import Div  from "./Div";
-import TechStack from "./component/TechStack";
-import WorkexpPoints from "./component/WorkExpPoints";
-import WorkexpCard from "./component/WorkexpCard";
-const fs = require("fs");
+
+import fs from 'fs';
+import WorkexpSection from './Workexp/WorkexpSection';
 
 
 //read raw.json
-var raw = require("./raw.json");
-
-
+var raw = JSON.parse(fs.readFileSync("./raw.json").toString());
 
 function Play() {
     // var ele = DefaultHeader();
     
-    var ele = new WorkexpCard(raw.workexp[0],0);
-    var file = fs.createWriteStream("./out.html");
-    file.write(ele.toString());
+    var ele = new WorkexpSection(raw.workexp);
+    fs.writeFileSync("./out.html",ele.toString())
 }
 
 Play();

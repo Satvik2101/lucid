@@ -16,7 +16,7 @@ class ChooserItem extends Div{
 
 class Chooser extends Div{
     constructor(props: Workexp[]) {
-        super({ divClass: "workexp_chooser", children: props.map((workexp, idx) => new ChooserItem(workexp.shortName, idx)) });
+        super({ id: "workexp_chooser", children: props.map((workexp, idx) => new ChooserItem(workexp.shortName, idx)) });
     }
 }
 
