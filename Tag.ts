@@ -1,4 +1,4 @@
-type childrenType = (string | Tag)[] | string | Tag;
+type childrenType = (string | Tag)[] | string | Tag | undefined;
 
 class Tag {
     name: string;
@@ -7,8 +7,8 @@ class Tag {
     };
     children: childrenType
 
-    constructor(otherName: string, attributes: { [key: string]: any }, children: childrenType) {
-        this.name = otherName;
+    constructor(name: string, attributes: { [key: string]: any }, children: childrenType) {
+        this.name = name;
         this.attributes = attributes;
         this.children = children || "";
     }
@@ -28,6 +28,7 @@ class Tag {
     }
 
     body(): string {
+        if (this.children == undefined) return "";
         if (typeof this.children == "string") return this.children;
         if (this.children instanceof Tag) return this.children.toString();
         return this.children.map((child) => child.toString()).join("\n");
