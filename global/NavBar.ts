@@ -33,7 +33,7 @@ class NavbarLink extends Div {
     constructor(props: NavbarLinkInterface) {
         super({
             divClass: "navbar_link", id: `${props.short}_link`, children: [
-                new SimpleAnchorTag(`/#${props.short}`, props.name, "_self")
+                new SimpleAnchorTag({ href: `/#${props.short}`, linkText: props.name, target: "_self" })
             ]
         })
     }

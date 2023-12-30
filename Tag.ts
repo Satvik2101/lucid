@@ -1,69 +1,71 @@
-type childrenType = (string|Tag )[] | string | Tag; 
+type childrenType = (string | Tag)[] | string | Tag;
 
 class Tag {
     name: string;
     attributes: {
-        [key:string]:any
+        [key: string]: any
     };
     children: childrenType
 
-    constructor(otherName:string, otherAttri:{[key:string]:any}, otherChildren:childrenType) {
+    constructor(otherName: string, attributes: { [key: string]: any }, children: childrenType) {
         this.name = otherName;
-        this.attributes = otherAttri;
-        this.children = otherChildren || "";
+        this.attributes = attributes;
+        this.children = children || "";
     }
 
     attributeString() {
         var attributeString = "";
         for (var attribute in this.attributes) {
-            attributeString += `${attribute}="${(this.attributes)[attribute]}" `;
+            const value = this.attributes[attribute];
+            if (value == undefined || null) continue;
+            attributeString += `${attribute}="${value}" `;
         }
         return attributeString;
     }
-    start():string {
+    start(): string {
         return `<${this.name} ${this.attributeString()}>`
 
     }
 
     body(): string {
         if (typeof this.children == "string") return this.children;
-        if ( this.children instanceof Tag) return this.children.toString();
+        if (this.children instanceof Tag) return this.children.toString();
         return this.children.map((child) => child.toString()).join("\n");
     }
 
-    end():string {
+    end(): string {
         return `</${this.name}>`
     }
 
-    toString():string {
+    toString(): string {
         return this.start() + this.body() + this.end();
 
     }
 }
 
-class EmptyTag extends Tag { 
-    constructor(name:string, attributes:{[key:string]:any}) {
-        super(name, attributes,[]);
+class EmptyTag extends Tag {
+    constructor(name: string, attributes: { [key: string]: any }) {
+        super(name, attributes, []);
     }
-    start():string {
+    start(): string {
         return `<${this.name} ${this.attributeString()}>`
     }
 
-    end():string {
+    end(): string {
         return "";
     }
 
 }
 
 class SelfClosingTag extends Tag {
-    constructor(name:string, attributes:{[key:string]:any}) {
-        super(name, attributes,[]);
+    constructor(name: string, attributes: { [key: string]: any }) {
+        super(name, attributes, []);
     }
-    start():string {
+    start(): string {
         return `<${this.name} ${this.attributeString()} />`
     }
 
-    end():string {
+    end(): string {
         return "";
     }
 
@@ -72,18 +74,18 @@ class SelfClosingTag extends Tag {
 
 
 class MetaTag extends SelfClosingTag {
-    constructor(attributes:{[key:string]:any}) {
+    constructor(attributes: { [key: string]: any }) {
         super("meta", attributes);
     }
 }
 
 interface LinkTagAttributes {
-    rel:string;
+    rel: string;
     href: string;
     [propName: string]: any;
 }
 class LinkTag extends EmptyTag {
-    constructor(attributes:LinkTagAttributes) {
+    constructor(attributes: LinkTagAttributes) {
         super("link", attributes);
     }
 }
@@ -94,7 +96,7 @@ interface StylesheetTagAttributes {
 
 }
 class StylesheetTag extends LinkTag {
-    constructor(attributes:StylesheetTagAttributes) {
+    constructor(attributes: StylesheetTagAttributes) {
 
         var newAttributes = {
             rel: "stylesheet",
@@ -104,6 +106,19 @@ class StylesheetTag extends LinkTag {
     }
 }
 
-export  {childrenType, Tag, EmptyTag,SelfClosingTag, MetaTag, LinkTag, StylesheetTag};
+class ClassIDTag extends Tag {
+    constructor(name: string, children: childrenType, tagClass?: string, id?: string, otherAttributes?: { [key: string]: any }) {
+        var attributes = {
+            class: tagClass,
+            id: id,
+            ...(otherAttributes ?? {})
+        }
+        super(name, attributes, children);
+    }
+
+
+}
+
+export { childrenType, Tag, EmptyTag, SelfClosingTag, MetaTag, LinkTag, StylesheetTag, ClassIDTag };
 
 // export {Tag} ;

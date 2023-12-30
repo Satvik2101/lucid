@@ -1,9 +1,9 @@
-import { Tag } from "../../Tag";
+import { ClassIDTag, Tag } from "../../Tag";
 
-class UnorderedList extends Tag {
-    constructor(items: string[]) {
+class UnorderedList extends ClassIDTag {
+    constructor(items: string[], listClass?: string, id?: string) {
 
-        super("ul", {}, items.map((item) => new Tag("li", {}, [item])));
+        super("ul", items.map((item) => new Tag("li", {}, [item])), listClass, id);
     }
 }
 
