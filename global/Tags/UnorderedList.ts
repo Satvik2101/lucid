@@ -1,8 +1,8 @@
-import { Tag } from "../Tag";
+import { Tag } from "../../Tag";
 
-class UnorderedList extends Tag{
-    constructor( items: string[] ) {
-        
+class UnorderedList extends Tag {
+    constructor(items: string[]) {
+
         super("ul", {}, items.map((item) => new Tag("li", {}, [item])));
     }
 }
