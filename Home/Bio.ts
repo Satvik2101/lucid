@@ -1,7 +1,6 @@
 import { ClassIDTag } from "../Tag";
 import { SimpleAnchorTag } from "../global/Tags/Anchor";
 import HorizontalBreak from "../global/Tags/HorizontalBreak";
-import ProfileLinks from "./ProfileLinks";
 
 class Bio extends ClassIDTag {
     constructor() {

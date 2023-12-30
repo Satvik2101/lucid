@@ -7,6 +7,7 @@ import Navbar from './global/NavBar';
 import ProfileLinks from './Home/ProfileLinks';
 import Home from './Home/Home';
 import BackgroundImageSection from './Home/BackgroundImageSection';
+import Index from './Index';
 
 
 //read raw.json
@@ -15,7 +16,7 @@ var raw = JSON.parse(fs.readFileSync("./raw.json").toString());
 function Play() {
     // var ele = DefaultHeader();
 
-    var ele = new BackgroundImageSection();
+    var ele = new Index(raw);
     fs.writeFileSync("./out.html", ele.toString())
 }
 
