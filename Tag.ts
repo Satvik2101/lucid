@@ -108,13 +108,13 @@ class StylesheetTag extends LinkTag {
 }
 
 class ClassIDTag extends Tag {
-    constructor(name: string, children: childrenType, tagClass?: string, id?: string, otherAttributes?: { [key: string]: any }) {
+    constructor(props: { name: string, children: childrenType, class?: string, id?: string, otherAttributes?: { [key: string]: any } }) {
         var attributes = {
-            class: tagClass,
-            id: id,
-            ...(otherAttributes ?? {})
+            class: props.class,
+            id: props.id,
+            ...(props.otherAttributes ?? {})
         }
-        super(name, attributes, children);
+        super(props.name, attributes, props.children);
     }
 
 

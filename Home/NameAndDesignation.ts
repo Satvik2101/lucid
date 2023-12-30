@@ -7,8 +7,8 @@ class NameAndDesignation extends Div {
             id: "name_and_desig",
             divClass: "padded_centered",
             children: [
-                new ClassIDTag("h1", "> Hi. I'm Satvik Gupta.", undefined, "name_heading"),
-                new ClassIDTag("p", "Software Developer", undefined, "designation")
+                new ClassIDTag({ name: "h1", children: "> Hi. I'm Satvik Gupta.", id: "name_heading" }),
+                new ClassIDTag({ name: "p", children: "Software Developer", id: "designation" })
 
             ]
         });
