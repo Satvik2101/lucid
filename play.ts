@@ -4,6 +4,7 @@
 import fs from 'fs';
 import WorkexpSection from './Workexp/WorkexpSection';
 import Navbar from './global/NavBar';
+import ProfileLinks from './Home/ProfileLinks';
 
 
 //read raw.json
@@ -12,7 +13,7 @@ var raw = JSON.parse(fs.readFileSync("./raw.json").toString());
 function Play() {
     // var ele = DefaultHeader();
 
-    var ele = new Navbar();
+    var ele = new ProfileLinks();
     fs.writeFileSync("./out.html", ele.toString())
 }
 
