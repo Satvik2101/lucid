@@ -8,6 +8,9 @@ import ProfileLinks from './Home/ProfileLinks';
 import Home from './Home/Home';
 import BackgroundImageSection from './Home/BackgroundImageSection';
 import Index from './Index';
+import ProjectsAndPorsSection from './Project/ProjectsAndPorsSection';
+import Div from './Div';
+import { DefaultHeader } from './global/header';
 
 
 //read raw.json
@@ -15,8 +18,8 @@ var raw = JSON.parse(fs.readFileSync("./raw.json").toString());
 
 function Play() {
     // var ele = DefaultHeader();
-
-    var ele = new Index(raw);
+    // var ele = new Div({ divClass: "section", children: [new DefaultHeader()], style: "background-color:#000000;" })
+    var ele = new ProjectsAndPorsSection({ projects: raw.projects, pors: raw.pors });
     fs.writeFileSync("./out.html", ele.toString())
 }
 
