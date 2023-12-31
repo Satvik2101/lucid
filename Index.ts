@@ -1,4 +1,5 @@
 import BackgroundImageSection from "./Home/BackgroundImageSection";
+import ProjectsAndPorsSection from "./Project/ProjectsAndPorsSection";
 import { Tag } from "./Tag";
 import WorkexpSection from "./Workexp/WorkexpSection";
 import Script from "./global/Tags/Script";
@@ -11,6 +12,7 @@ class Index extends Tag {
             new Tag("body", {}, [
                 new BackgroundImageSection(),
                 new WorkexpSection(rawData.workexp),
+                new ProjectsAndPorsSection({ projects: rawData.projects, pors: rawData.pors })
             ]),
             new Script("./scripts/typewriter.js"),
             new Script("./scripts/workexp_chooser.js"),
