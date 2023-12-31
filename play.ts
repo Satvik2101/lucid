@@ -19,7 +19,7 @@ var raw = JSON.parse(fs.readFileSync("./raw.json").toString());
 function Play() {
     // var ele = DefaultHeader();
     // var ele = new Div({ divClass: "section", children: [new DefaultHeader()], style: "background-color:#000000;" })
-    var ele = new ProjectsAndPorsSection({ projects: raw.projects, pors: raw.pors });
+    var ele = new Index(raw);
     fs.writeFileSync("./out.html", ele.toString())
 }
 

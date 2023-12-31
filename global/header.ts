@@ -14,11 +14,7 @@ interface HeaderProps {
 class Header extends Tag {
     constructor(props: HeaderProps) {
         const titleTag = props.title ? new Tag("title", {}, [props.title]) : "";
-        const ogTitle = props.title ? new MetaTag({ property: "og:title", content: props.title }) : "";
-        const ogDescription = props.description ? new MetaTag({ property: "og:description", content: props.description }) : "";
-        const description = props.description ? new MetaTag({ name: "description", content: props.description }) : "";
-        const ogImage = props.image ? new MetaTag({ property: "og:image", content: props.image }) : "";
-        const ogUrl = props.url ? new MetaTag({ property: "og:url", content: props.url }) : "";
+
         var stylesheets = props.stylesheets?.map((stylesheet) => {
             return new StylesheetTag({ href: stylesheet });
         });
@@ -30,11 +26,11 @@ class Header extends Tag {
             new MetaTag({ name: "viewport", content: "width=device-width, initial-scale=1.0" }),
             new EmptyTag("base", { target: "_blank", rel: "noreferrer noopener" }),
             new LinkTag({ rel: "icon", href: "/favicon.ico", type: "image/x-icon" }),
-            description,
-            ogTitle,
-            ogDescription,
-            ogImage,
-            ogUrl,
+            props.description ? new MetaTag({ name: "description", content: props.description }) : "",
+            props.title ? new MetaTag({ property: "og:title", content: props.title }) : "",
+            props.description ? new MetaTag({ property: "og:description", content: props.description }) : "",
+            props.image ? new MetaTag({ property: "og:image", content: props.image }) : "",
+            props.url ? new MetaTag({ property: "og:url", content: props.url }) : "",
             new LinkTag({ rel: "canonical", href: "https://www.satvikgupta.com" }),
             new LinkTag({ rel: "preconnect", href: "https://fonts.googleapis.com" }),
             new LinkTag({ rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }),
