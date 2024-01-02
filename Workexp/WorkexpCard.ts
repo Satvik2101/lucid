@@ -1,6 +1,6 @@
 import Div from "../Div";
 import { Tag } from "../Tag";
-import Workexp from "../interface/workexp";
+import Workexp from "../interface/Workexp";
 import TechStack from "../global/TechStack";
 import UnorderedList from "../global/Tags/UnorderedList";
 

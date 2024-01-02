@@ -5,7 +5,7 @@ import { Tag } from "./Tag";
 import WorkexpSection from "./Workexp/WorkexpSection";
 import Footer from "./global/Footer";
 import Script from "./global/Tags/Script";
-import { DefaultHeader } from "./global/header";
+import { DefaultHeader } from "./global/Header";
 
 class Index extends Tag {
     constructor(rawData: { [key: string]: any }) {

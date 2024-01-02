@@ -1,3 +1,4 @@
+import Link from "./Link";
 
 
 interface Project {

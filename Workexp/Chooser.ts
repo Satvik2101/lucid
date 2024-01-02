@@ -1,20 +1,20 @@
-import {Tag} from "../Tag";
+import { Tag } from "../Tag";
 import Div from "../Div";
-import Workexp from "../interface/workexp";
+import Workexp from "../interface/Workexp";
 
 
-class ChooserItem extends Div{
+class ChooserItem extends Div {
 
-    constructor(companyShortName: string, idx: number){
-        
+    constructor(companyShortName: string, idx: number) {
+
         var chooserClass = "workexp_chooser_item";
         if (idx == 0) chooserClass += " workexp_chooser_item_selected";
-        super({ divClass: chooserClass, id : `workexp_chooser_item_${idx + 1}`,children: new Tag("button", {}, companyShortName) });
+        super({ divClass: chooserClass, id: `workexp_chooser_item_${idx + 1}`, children: new Tag("button", {}, companyShortName) });
     }
 }
 
 
-class Chooser extends Div{
+class Chooser extends Div {
     constructor(props: Workexp[]) {
         super({ id: "workexp_chooser", children: props.map((workexp, idx) => new ChooserItem(workexp.shortName, idx)) });
     }

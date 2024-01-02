@@ -10,7 +10,6 @@ import BackgroundImageSection from './Home/BackgroundImageSection';
 import Index from './Index';
 import ProjectsAndPorsSection from './Project/ProjectsAndPorsSection';
 import Div from './Div';
-import { DefaultHeader } from './global/header';
 
 
 //read raw.json
