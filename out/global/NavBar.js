@@ -22,6 +22,7 @@ var navbarLinksList = [
     {
         name: "Notes",
         short: "notes",
+        pre: "/"
     },
     {
         name: "Contact",
@@ -30,9 +31,10 @@ var navbarLinksList = [
 ];
 class NavbarLink extends Div_1.default {
     constructor(props) {
+        var _a;
         super({
             divClass: "navbar_link", id: `${props.short}_link`, children: [
-                new Anchor_1.SimpleAnchorTag({ href: `/#${props.short}`, linkText: props.name, target: "_self" })
+                new Anchor_1.SimpleAnchorTag({ href: `${(_a = props.pre) !== null && _a !== void 0 ? _a : "#"}${props.short}`, linkText: props.name, target: "_self" })
             ]
         });
     }

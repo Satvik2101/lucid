@@ -4,6 +4,7 @@ import { SimpleAnchorTag } from "./Tags/Anchor";
 interface NavbarLinkInterface {
     name: string;
     short: string;
+    pre?: string;
 }
 var navbarLinksList: NavbarLinkInterface[] = [
     {
@@ -21,6 +22,7 @@ var navbarLinksList: NavbarLinkInterface[] = [
     {
         name: "Notes",
         short: "notes",
+        pre: "/"
     },
     {
         name: "Contact",
@@ -33,7 +35,7 @@ class NavbarLink extends Div {
     constructor(props: NavbarLinkInterface) {
         super({
             divClass: "navbar_link", id: `${props.short}_link`, children: [
-                new SimpleAnchorTag({ href: `/#${props.short}`, linkText: props.name, target: "_self" })
+                new SimpleAnchorTag({ href: `${props.pre ?? "#"}${props.short}`, linkText: props.name, target: "_self" })
             ]
         })
     }
