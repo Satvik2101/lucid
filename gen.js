@@ -1,10 +1,12 @@
 const fs = require('fs');
 var raw = fs.readFileSync("html-elements-attributes.json");
 
+var obj = JSON.parse(raw);
+
+var globalAttributes = obj["*"];
 //raw is key-value pairs of each element and its attributes
 //iterate over key-value pairs
 
-var obj = JSON.parse(raw);
 var keys = Object.keys(obj);
 
 var voidTags = [
@@ -32,12 +34,35 @@ function getClassName(element) {
     return className;
 }
 
+function genFactoryConstructor(element, attributes, isVoid = false) {
+    const className = getClassName(element);
+    console.log("attributes ", attributes)
+    console.log("globalAttributes ", globalAttributes)
+    var newAttri = [...attributes, ...globalAttributes]
+    console.log(newAttri, newAttri.length)
+    var attributesParameterType = "{\n";
+    for (var i = 0; i < newAttri.length; i++) {
+        var attri = newAttri[i];
+        attributesParameterType += `\t\t${attri}?: string,\n`;
+    }
+    attributesParameterType += "\t\t[key: string]: any\n\t}";
+    var start = `
+    static withAttributes(attri:${attributesParameterType}${isVoid ? "" : ", children?: childrenType"}): ${className} {
+        var tag = new ${className}${isVoid ? "" : "(children)"};
+        tag.attrs(attri);
+        return tag;
+    }
+
+    `
+
+    return start;
+}
 
 function genSetterForAttri(attri) {
     const functionName = attri.replace(/-/g, "_");
     const template = `
-    ${functionName}(value: string) {
-        this.setAttr("${attri}", value);
+    ${functionName}(value?: string) {
+        if(value) this.setAttr("${attri}", value);
     }
 `;
 
@@ -64,7 +89,10 @@ class ${className} extends VoidTag {
         start += genSetterForAttri(attri);
     }
 
-    start += `}
+    start += `
+
+${genFactoryConstructor(element, attributes, true)}    
+}
     
 export default ${className};`;
 
@@ -81,6 +109,9 @@ class ${className} extends UnattributedTag {
     constructor(children?: childrenType) {
         super("${element}", children);
     }
+
+${genFactoryConstructor(element, [])}
+
 }
 
 export default ${className};
@@ -105,7 +136,12 @@ class ${className} extends Tag {
         super("${element}", children);
     }
     ${setter}
+${genFactoryConstructor(element, attributes)}
+
+
 }
+
+
 
 export default ${className};
     `;

@@ -48,6 +48,46 @@ class Area extends VoidTag {
     target(value?: string) {
         if(value) this.setAttr("target", value);
     }
+
+
+
+    static withAttributes(attri:{
+		alt?: string,
+		coords?: string,
+		download?: string,
+		href?: string,
+		media?: string,
+		ping?: string,
+		referrerpolicy?: string,
+		rel?: string,
+		shape?: string,
+		target?: string,
+		accesskey?: string,
+		autocapitalize?: string,
+		class?: string,
+		contenteditable?: string,
+		contextmenu?: string,
+		dir?: string,
+		draggable?: string,
+		hidden?: string,
+		id?: string,
+		itemprop?: string,
+		lang?: string,
+		role?: string,
+		slot?: string,
+		spellcheck?: string,
+		style?: string,
+		tabindex?: string,
+		title?: string,
+		translate?: string,
+		[key: string]: any
+	}): Area {
+        var tag = new Area;
+        tag.attrs(attri);
+        return tag;
+    }
+
+        
 }
     
 export default Area;

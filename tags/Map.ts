@@ -11,7 +11,40 @@ class Map extends Tag {
         if(value) this.setAttr("name", value);
     }
 
+
+    static withAttributes(attri:{
+		name?: string,
+		accesskey?: string,
+		autocapitalize?: string,
+		class?: string,
+		contenteditable?: string,
+		contextmenu?: string,
+		dir?: string,
+		draggable?: string,
+		hidden?: string,
+		id?: string,
+		itemprop?: string,
+		lang?: string,
+		role?: string,
+		slot?: string,
+		spellcheck?: string,
+		style?: string,
+		tabindex?: string,
+		title?: string,
+		translate?: string,
+		[key: string]: any
+	}, children?: childrenType): Map {
+        var tag = new Map(children);
+        tag.attrs(attri);
+        return tag;
+    }
+
+    
+
+
 }
+
+
 
 export default Map;
     

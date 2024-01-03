@@ -5,7 +5,6 @@
         "class",
         "contenteditable",
         "contextmenu",
-        "data-*",
         "dir",
         "draggable",
         "hidden",

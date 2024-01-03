@@ -28,6 +28,41 @@ class Track extends VoidTag {
     srclang(value?: string) {
         if(value) this.setAttr("srclang", value);
     }
+
+
+
+    static withAttributes(attri:{
+		default?: string,
+		kind?: string,
+		label?: string,
+		src?: string,
+		srclang?: string,
+		accesskey?: string,
+		autocapitalize?: string,
+		class?: string,
+		contenteditable?: string,
+		contextmenu?: string,
+		dir?: string,
+		draggable?: string,
+		hidden?: string,
+		id?: string,
+		itemprop?: string,
+		lang?: string,
+		role?: string,
+		slot?: string,
+		spellcheck?: string,
+		style?: string,
+		tabindex?: string,
+		title?: string,
+		translate?: string,
+		[key: string]: any
+	}): Track {
+        var tag = new Track;
+        tag.attrs(attri);
+        return tag;
+    }
+
+        
 }
     
 export default Track;

@@ -67,7 +67,54 @@ class Textarea extends Tag {
         if(value) this.setAttr("wrap", value);
     }
 
+
+    static withAttributes(attri:{
+		autocomplete?: string,
+		cols?: string,
+		dirname?: string,
+		disabled?: string,
+		enterkeyhint?: string,
+		form?: string,
+		inputmode?: string,
+		maxlength?: string,
+		minlength?: string,
+		name?: string,
+		placeholder?: string,
+		readonly?: string,
+		required?: string,
+		rows?: string,
+		wrap?: string,
+		accesskey?: string,
+		autocapitalize?: string,
+		class?: string,
+		contenteditable?: string,
+		contextmenu?: string,
+		dir?: string,
+		draggable?: string,
+		hidden?: string,
+		id?: string,
+		itemprop?: string,
+		lang?: string,
+		role?: string,
+		slot?: string,
+		spellcheck?: string,
+		style?: string,
+		tabindex?: string,
+		title?: string,
+		translate?: string,
+		[key: string]: any
+	}, children?: childrenType): Textarea {
+        var tag = new Textarea(children);
+        tag.attrs(attri);
+        return tag;
+    }
+
+    
+
+
 }
+
+
 
 export default Textarea;
     

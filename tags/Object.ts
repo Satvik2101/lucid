@@ -39,7 +39,47 @@ class Object extends Tag {
         if(value) this.setAttr("width", value);
     }
 
+
+    static withAttributes(attri:{
+		border?: string,
+		data?: string,
+		form?: string,
+		height?: string,
+		name?: string,
+		type?: string,
+		usemap?: string,
+		width?: string,
+		accesskey?: string,
+		autocapitalize?: string,
+		class?: string,
+		contenteditable?: string,
+		contextmenu?: string,
+		dir?: string,
+		draggable?: string,
+		hidden?: string,
+		id?: string,
+		itemprop?: string,
+		lang?: string,
+		role?: string,
+		slot?: string,
+		spellcheck?: string,
+		style?: string,
+		tabindex?: string,
+		title?: string,
+		translate?: string,
+		[key: string]: any
+	}, children?: childrenType): Object {
+        var tag = new Object(children);
+        tag.attrs(attri);
+        return tag;
+    }
+
+    
+
+
 }
+
+
 
 export default Object;
     

@@ -35,7 +35,46 @@ class Meter extends Tag {
         if(value) this.setAttr("value", value);
     }
 
+
+    static withAttributes(attri:{
+		form?: string,
+		high?: string,
+		low?: string,
+		max?: string,
+		min?: string,
+		optimum?: string,
+		value?: string,
+		accesskey?: string,
+		autocapitalize?: string,
+		class?: string,
+		contenteditable?: string,
+		contextmenu?: string,
+		dir?: string,
+		draggable?: string,
+		hidden?: string,
+		id?: string,
+		itemprop?: string,
+		lang?: string,
+		role?: string,
+		slot?: string,
+		spellcheck?: string,
+		style?: string,
+		tabindex?: string,
+		title?: string,
+		translate?: string,
+		[key: string]: any
+	}, children?: childrenType): Meter {
+        var tag = new Meter(children);
+        tag.attrs(attri);
+        return tag;
+    }
+
+    
+
+
 }
+
+
 
 export default Meter;
     

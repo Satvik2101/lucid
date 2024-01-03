@@ -15,7 +15,41 @@ class Body extends Tag {
         if(value) this.setAttr("bgcolor", value);
     }
 
+
+    static withAttributes(attri:{
+		background?: string,
+		bgcolor?: string,
+		accesskey?: string,
+		autocapitalize?: string,
+		class?: string,
+		contenteditable?: string,
+		contextmenu?: string,
+		dir?: string,
+		draggable?: string,
+		hidden?: string,
+		id?: string,
+		itemprop?: string,
+		lang?: string,
+		role?: string,
+		slot?: string,
+		spellcheck?: string,
+		style?: string,
+		tabindex?: string,
+		title?: string,
+		translate?: string,
+		[key: string]: any
+	}, children?: childrenType): Body {
+        var tag = new Body(children);
+        tag.attrs(attri);
+        return tag;
+    }
+
+    
+
+
 }
+
+
 
 export default Body;
     
