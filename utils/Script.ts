@@ -1,13 +1,11 @@
-import { Tag } from "./Tag";
+import Script from "../tags/Script";
 
-class Script extends Tag {
+class EnhancedScript extends Script {
     constructor(src: string) {
-        super("script", [], { src: src });
+        super();
+        this.src(src);
     }
 
-    src(value: string) {
-        this.setAttr("src", value);
-    }
 }
 
-export default Script;
+export default EnhancedScript;

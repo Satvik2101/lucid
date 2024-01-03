@@ -8,26 +8,26 @@ class Source extends VoidTag {
         super("source");
     }
 
-
-    media(value: string) {
-        this.setAttr("media", value);
+    
+    media(value?: string) {
+        if(value) this.setAttr("media", value);
     }
 
-    sizes(value: string) {
-        this.setAttr("sizes", value);
+    sizes(value?: string) {
+        if(value) this.setAttr("sizes", value);
     }
 
-    src(value: string) {
-        this.setAttr("src", value);
+    src(value?: string) {
+        if(value) this.setAttr("src", value);
     }
 
-    srcset(value: string) {
-        this.setAttr("srcset", value);
+    srcset(value?: string) {
+        if(value) this.setAttr("srcset", value);
     }
 
-    type(value: string) {
-        this.setAttr("type", value);
+    type(value?: string) {
+        if(value) this.setAttr("type", value);
     }
 }
-
+    
 export default Source;

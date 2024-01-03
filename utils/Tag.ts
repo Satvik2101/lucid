@@ -24,7 +24,7 @@ class Tag {
         return this.tagName;
     }
 
-    setAttr(key: string, value: any) {
+    setAttr(key: string, value?: any) {
         this.attributes[key] = value;
     }
 
@@ -43,110 +43,110 @@ class Tag {
     // Setters for global attributes
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
     // The values for these are NOT validated.
-    class(value: string) {
-        this.setAttr("class", value);
+    class(value?: string) {
+        if (value) this.setAttr("class", value);
     }
 
-    id(value: string) {
-        this.setAttr("id", value);
+    id(value?: string) {
+        if (value) this.setAttr("id", value);
     }
 
-    style(value: string) {
-        this.setAttr("style", value);
+    style(value?: string) {
+        if (value) this.setAttr("style", value);
     }
 
-    on(event: string, handler: string) {
-        this.setAttr(`on${event}`, handler);
+    on(event?: string, handler?: string) {
+        if (event) this.setAttr(`on${event}`, handler ?? "");
     }
 
-    accesskey(value: string) {
-        this.setAttr("accesskey", value);
+    accesskey(value?: string) {
+        if (value) this.setAttr("accesskey", value);
     }
 
-    autocapitalize(value: string) {
-        this.setAttr("autocapitalize", value);
+    autocapitalize(value?: string) {
+        if (value) this.setAttr("autocapitalize", value);
     }
 
-    autofocus(value: string) {
-        this.setAttr("autofocus", value);
+    autofocus(value?: string) {
+        if (value) this.setAttr("autofocus", value);
     }
 
-    contenteditable(value: string) {
-        this.setAttr("contenteditable", value);
+    contenteditable(value?: string) {
+        if (value) this.setAttr("contenteditable", value);
     }
 
-    dir(value: string) {
-        this.setAttr("dir", value);
+    dir(value?: string) {
+        if (value) this.setAttr("dir", value);
     }
 
-    draggable(value: string) {
-        this.setAttr("draggable", value);
+    draggable(value?: string) {
+        if (value) this.setAttr("draggable", value);
     }
 
-    enterkeyhint(value: string) {
-        this.setAttr("enterkeyhint", value);
+    enterkeyhint(value?: string) {
+        if (value) this.setAttr("enterkeyhint", value);
     }
 
-    exportparts(value: string) {
-        this.setAttr("exportparts", value);
+    exportparts(value?: string) {
+        if (value) this.setAttr("exportparts", value);
     }
 
-    hidden(value: string) {
-        this.setAttr("hidden", value);
+    hidden(value?: string) {
+        if (value) this.setAttr("hidden", value);
     }
 
-    inert(value: string) {
-        this.setAttr("inert", value);
+    inert(value?: string) {
+        if (value) this.setAttr("inert", value);
     }
 
-    inputmode(value: string) {
-        this.setAttr("inputmode", value);
+    inputmode(value?: string) {
+        if (value) this.setAttr("inputmode", value);
     }
 
-    is(value: string) {
-        this.setAttr("is", value);
+    is(value?: string) {
+        if (value) this.setAttr("is", value);
     }
 
     //WHATWG HTML Microdata feature attributes have been skipped.
 
-    lang(value: string) {
-        this.setAttr("lang", value);
+    lang(value?: string) {
+        if (value) this.setAttr("lang", value);
     }
 
-    nonce(value: string) {
-        this.setAttr("nonce", value);
+    nonce(value?: string) {
+        if (value) this.setAttr("nonce", value);
     }
 
-    part(value: string) {
-        this.setAttr("part", value);
+    part(value?: string) {
+        if (value) this.setAttr("part", value);
     }
 
-    popover(value: string) {
-        this.setAttr("popover", value);
+    popover(value?: string) {
+        if (value) this.setAttr("popover", value);
     }
 
-    role(value: string) {
-        this.setAttr("role", value);
+    role(value?: string) {
+        if (value) this.setAttr("role", value);
     }
 
-    slot(value: string) {
-        this.setAttr("slot", value);
+    slot(value?: string) {
+        if (value) this.setAttr("slot", value);
     }
 
-    spellcheck(value: string) {
-        this.setAttr("spellcheck", value);
+    spellcheck(value?: string) {
+        if (value) this.setAttr("spellcheck", value);
     }
 
-    tabindex(value: string) {
-        this.setAttr("tabindex", value);
+    tabindex(value?: string) {
+        if (value) this.setAttr("tabindex", value);
     }
 
-    title(value: string) {
-        this.setAttr("title", value);
+    title(value?: string) {
+        if (value) this.setAttr("title", value);
     }
 
-    translate(value: string) {
-        this.setAttr("translate", value);
+    translate(value?: string) {
+        if (value) this.setAttr("translate", value);
     }
 
 

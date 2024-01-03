@@ -8,22 +8,22 @@ class Meta extends VoidTag {
         super("meta");
     }
 
-
-    charset(value: string) {
-        this.setAttr("charset", value);
+    
+    charset(value?: string) {
+        if(value) this.setAttr("charset", value);
     }
 
-    content(value: string) {
-        this.setAttr("content", value);
+    content(value?: string) {
+        if(value) this.setAttr("content", value);
     }
 
-    http_equiv(value: string) {
-        this.setAttr("http-equiv", value);
+    http_equiv(value?: string) {
+        if(value) this.setAttr("http-equiv", value);
     }
 
-    name(value: string) {
-        this.setAttr("name", value);
+    name(value?: string) {
+        if(value) this.setAttr("name", value);
     }
 }
-
+    
 export default Meta;

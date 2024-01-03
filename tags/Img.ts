@@ -8,66 +8,66 @@ class Img extends VoidTag {
         super("img");
     }
 
-
-    align(value: string) {
-        this.setAttr("align", value);
+    
+    align(value?: string) {
+        if(value) this.setAttr("align", value);
     }
 
-    alt(value: string) {
-        this.setAttr("alt", value);
+    alt(value?: string) {
+        if(value) this.setAttr("alt", value);
     }
 
-    border(value: string) {
-        this.setAttr("border", value);
+    border(value?: string) {
+        if(value) this.setAttr("border", value);
     }
 
-    crossorigin(value: string) {
-        this.setAttr("crossorigin", value);
+    crossorigin(value?: string) {
+        if(value) this.setAttr("crossorigin", value);
     }
 
-    decoding(value: string) {
-        this.setAttr("decoding", value);
+    decoding(value?: string) {
+        if(value) this.setAttr("decoding", value);
     }
 
-    height(value: string) {
-        this.setAttr("height", value);
+    height(value?: string) {
+        if(value) this.setAttr("height", value);
     }
 
-    intrinsicsize(value: string) {
-        this.setAttr("intrinsicsize", value);
+    intrinsicsize(value?: string) {
+        if(value) this.setAttr("intrinsicsize", value);
     }
 
-    ismap(value: string) {
-        this.setAttr("ismap", value);
+    ismap(value?: string) {
+        if(value) this.setAttr("ismap", value);
     }
 
-    loading(value: string) {
-        this.setAttr("loading", value);
+    loading(value?: string) {
+        if(value) this.setAttr("loading", value);
     }
 
-    referrerpolicy(value: string) {
-        this.setAttr("referrerpolicy", value);
+    referrerpolicy(value?: string) {
+        if(value) this.setAttr("referrerpolicy", value);
     }
 
-    sizes(value: string) {
-        this.setAttr("sizes", value);
+    sizes(value?: string) {
+        if(value) this.setAttr("sizes", value);
     }
 
-    src(value: string) {
-        this.setAttr("src", value);
+    src(value?: string) {
+        if(value) this.setAttr("src", value);
     }
 
-    srcset(value: string) {
-        this.setAttr("srcset", value);
+    srcset(value?: string) {
+        if(value) this.setAttr("srcset", value);
     }
 
-    usemap(value: string) {
-        this.setAttr("usemap", value);
+    usemap(value?: string) {
+        if(value) this.setAttr("usemap", value);
     }
 
-    width(value: string) {
-        this.setAttr("width", value);
+    width(value?: string) {
+        if(value) this.setAttr("width", value);
     }
 }
-
+    
 export default Img;

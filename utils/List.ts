@@ -1,43 +1,21 @@
+import Li from "../tags/Li";
+import Ol from "../tags/Ol";
+import Ul from "../tags/Ul";
 import { Tag, childrenType } from "./Tag";
 import { UnattributedTag } from "./UnattributedTag";
 
-class ListItem extends UnattributedTag {
-    constructor(children?: childrenType) {
-        super("li", children);
-    }
 
-}
 
-class UnorderedList extends UnattributedTag {
-    constructor(children?: childrenType) {
-
-        super(
-            "ul",
-            children,
-        );
-    }
-}
-
-class SimpleUnorderedList extends UnorderedList {
+class SimpleUnorderedList extends Ul {
     constructor(items: string[]) {
-        super(items.map(item => new ListItem(item)));
+        super(items.map(item => new Li(item)));
     }
 }
 
 
-class OrderedList extends UnattributedTag {
-    constructor(children?: childrenType) {
-
-        super(
-            "ol",
-            children,
-        );
-    }
-}
-
-class SimpleOrderedList extends OrderedList {
+class SimpleOrderedList extends Ol {
     constructor(items: string[]) {
-        super(items.map(item => new ListItem(item)));
+        super(items.map(item => new Li(item)));
     }
 }
-export { ListItem, UnorderedList, SimpleUnorderedList, OrderedList, SimpleOrderedList };
+export { SimpleUnorderedList, SimpleOrderedList };

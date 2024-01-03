@@ -8,42 +8,42 @@ class Link extends VoidTag {
         super("link");
     }
 
-
-    crossorigin(value: string) {
-        this.setAttr("crossorigin", value);
+    
+    crossorigin(value?: string) {
+        if(value) this.setAttr("crossorigin", value);
     }
 
-    href(value: string) {
-        this.setAttr("href", value);
+    href(value?: string) {
+        if(value) this.setAttr("href", value);
     }
 
-    hreflang(value: string) {
-        this.setAttr("hreflang", value);
+    hreflang(value?: string) {
+        if(value) this.setAttr("hreflang", value);
     }
 
-    integrity(value: string) {
-        this.setAttr("integrity", value);
+    integrity(value?: string) {
+        if(value) this.setAttr("integrity", value);
     }
 
-    media(value: string) {
-        this.setAttr("media", value);
+    media(value?: string) {
+        if(value) this.setAttr("media", value);
     }
 
-    referrerpolicy(value: string) {
-        this.setAttr("referrerpolicy", value);
+    referrerpolicy(value?: string) {
+        if(value) this.setAttr("referrerpolicy", value);
     }
 
-    rel(value: string) {
-        this.setAttr("rel", value);
+    rel(value?: string) {
+        if(value) this.setAttr("rel", value);
     }
 
-    sizes(value: string) {
-        this.setAttr("sizes", value);
+    sizes(value?: string) {
+        if(value) this.setAttr("sizes", value);
     }
 
-    type(value: string) {
-        this.setAttr("type", value);
+    type(value?: string) {
+        if(value) this.setAttr("type", value);
     }
 }
-
+    
 export default Link;

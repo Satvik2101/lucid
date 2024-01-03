@@ -1,8 +1,11 @@
+import Img from "../tags/Img";
 import { VoidTag } from "./Tag";
 
-class Image extends VoidTag {
+class Image extends Img {
     constructor(props: { src: string, alt?: string }) {
-        super("img", { src: props.src, alt: props.alt })
+        super()
+        this.src(props.src);
+        this.alt(props.alt);
     }
 }
 

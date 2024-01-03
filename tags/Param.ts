@@ -8,14 +8,14 @@ class Param extends VoidTag {
         super("param");
     }
 
-
-    name(value: string) {
-        this.setAttr("name", value);
+    
+    name(value?: string) {
+        if(value) this.setAttr("name", value);
     }
 
-    value(value: string) {
-        this.setAttr("value", value);
+    value(value?: string) {
+        if(value) this.setAttr("value", value);
     }
 }
-
+    
 export default Param;

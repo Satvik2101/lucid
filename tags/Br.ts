@@ -8,6 +8,6 @@ class Br extends VoidTag {
         super("br");
     }
 
-}
-
+    }
+    
 export default Br;

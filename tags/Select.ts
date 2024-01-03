@@ -1,40 +1,41 @@
 
-import { Tag, childrenType } from "../utils/Tag";
+import { Tag,childrenType } from "../utils/Tag";
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
 class Select extends Tag {
     constructor(children?: childrenType) {
         super("select", children);
     }
-
-    autocomplete(value: string) {
-        this.setAttr("autocomplete", value);
+    
+    autocomplete(value?: string) {
+        if(value) this.setAttr("autocomplete", value);
     }
 
-    disabled(value: string) {
-        this.setAttr("disabled", value);
+    disabled(value?: string) {
+        if(value) this.setAttr("disabled", value);
     }
 
-    form(value: string) {
-        this.setAttr("form", value);
+    form(value?: string) {
+        if(value) this.setAttr("form", value);
     }
 
-    multiple(value: string) {
-        this.setAttr("multiple", value);
+    multiple(value?: string) {
+        if(value) this.setAttr("multiple", value);
     }
 
-    name(value: string) {
-        this.setAttr("name", value);
+    name(value?: string) {
+        if(value) this.setAttr("name", value);
     }
 
-    required(value: string) {
-        this.setAttr("required", value);
+    required(value?: string) {
+        if(value) this.setAttr("required", value);
     }
 
-    size(value: string) {
-        this.setAttr("size", value);
+    size(value?: string) {
+        if(value) this.setAttr("size", value);
     }
 
 }
 
 export default Select;
+    

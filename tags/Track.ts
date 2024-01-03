@@ -8,26 +8,26 @@ class Track extends VoidTag {
         super("track");
     }
 
-
-    default(value: string) {
-        this.setAttr("default", value);
+    
+    default(value?: string) {
+        if(value) this.setAttr("default", value);
     }
 
-    kind(value: string) {
-        this.setAttr("kind", value);
+    kind(value?: string) {
+        if(value) this.setAttr("kind", value);
     }
 
-    label(value: string) {
-        this.setAttr("label", value);
+    label(value?: string) {
+        if(value) this.setAttr("label", value);
     }
 
-    src(value: string) {
-        this.setAttr("src", value);
+    src(value?: string) {
+        if(value) this.setAttr("src", value);
     }
 
-    srclang(value: string) {
-        this.setAttr("srclang", value);
+    srclang(value?: string) {
+        if(value) this.setAttr("srclang", value);
     }
 }
-
+    
 export default Track;

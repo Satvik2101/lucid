@@ -8,18 +8,18 @@ class Col extends VoidTag {
         super("col");
     }
 
-
-    align(value: string) {
-        this.setAttr("align", value);
+    
+    align(value?: string) {
+        if(value) this.setAttr("align", value);
     }
 
-    bgcolor(value: string) {
-        this.setAttr("bgcolor", value);
+    bgcolor(value?: string) {
+        if(value) this.setAttr("bgcolor", value);
     }
 
-    span(value: string) {
-        this.setAttr("span", value);
+    span(value?: string) {
+        if(value) this.setAttr("span", value);
     }
 }
-
+    
 export default Col;

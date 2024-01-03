@@ -8,14 +8,14 @@ class Base extends VoidTag {
         super("base");
     }
 
-
-    href(value: string) {
-        this.setAttr("href", value);
+    
+    href(value?: string) {
+        if(value) this.setAttr("href", value);
     }
 
-    target(value: string) {
-        this.setAttr("target", value);
+    target(value?: string) {
+        if(value) this.setAttr("target", value);
     }
 }
-
+    
 export default Base;

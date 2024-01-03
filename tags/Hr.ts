@@ -8,14 +8,14 @@ class Hr extends VoidTag {
         super("hr");
     }
 
-
-    align(value: string) {
-        this.setAttr("align", value);
+    
+    align(value?: string) {
+        if(value) this.setAttr("align", value);
     }
 
-    color(value: string) {
-        this.setAttr("color", value);
+    color(value?: string) {
+        if(value) this.setAttr("color", value);
     }
 }
-
+    
 export default Hr;

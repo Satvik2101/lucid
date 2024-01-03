@@ -8,6 +8,6 @@ class Wbr extends VoidTag {
         super("wbr");
     }
 
-}
-
+    }
+    
 export default Wbr;

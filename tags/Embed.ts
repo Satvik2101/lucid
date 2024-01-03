@@ -8,22 +8,22 @@ class Embed extends VoidTag {
         super("embed");
     }
 
-
-    height(value: string) {
-        this.setAttr("height", value);
+    
+    height(value?: string) {
+        if(value) this.setAttr("height", value);
     }
 
-    src(value: string) {
-        this.setAttr("src", value);
+    src(value?: string) {
+        if(value) this.setAttr("src", value);
     }
 
-    type(value: string) {
-        this.setAttr("type", value);
+    type(value?: string) {
+        if(value) this.setAttr("type", value);
     }
 
-    width(value: string) {
-        this.setAttr("width", value);
+    width(value?: string) {
+        if(value) this.setAttr("width", value);
     }
 }
-
+    
 export default Embed;
