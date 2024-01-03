@@ -3,9 +3,9 @@ import BackgroundImageSection from "./Home/BackgroundImageSection";
 import ProjectsAndPorsSection from "./Project/ProjectsAndPorsSection";
 import { Tag } from "./Tag";
 import WorkexpSection from "./Workexp/WorkexpSection";
-import Footer from "./global/Footer";
+import Footer from "./global/PortfolioFooter";
 import Script from "./global/Tags/Script";
-import { DefaultHeader } from "./global/Header";
+import { DefaultHeader } from "./global/PortfolioHead";
 
 class Index extends Tag {
     constructor(rawData: { [key: string]: any }) {
