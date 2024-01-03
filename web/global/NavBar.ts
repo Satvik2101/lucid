@@ -1,6 +1,7 @@
-import Div from "../Div";
-import { Tag } from "../Tag";
-import { SimpleAnchorTag } from "./Tags/Anchor";
+import Div from "../../tags/Div";
+import I from "../../tags/I";
+import SimpleAnchor from "../../utils/SimpleAnchor";
+
 interface NavbarLinkInterface {
     name: string;
     short: string;
@@ -33,33 +34,38 @@ var navbarLinksList: NavbarLinkInterface[] = [
 
 class NavbarLink extends Div {
     constructor(props: NavbarLinkInterface) {
-        super({
-            divClass: "navbar_link", id: `${props.short}_link`, children: [
-                new SimpleAnchorTag({ href: `${props.pre ?? "#"}${props.short}`, linkText: props.name, target: "_self" })
-            ]
-        })
+        super(
+            new SimpleAnchor({ href: `${props.pre ?? "#"}${props.short}`, linkText: props.name }).target("_self")
+        )
+        super.class("navbar_link")
+        super.id(`${props.short}_link`)
     }
 }
 
 class NavbarLinks extends Div {
     constructor(links: NavbarLinkInterface[]) {
-        super({ id: "navbar_links", children: links.map((link) => new NavbarLink(link)) })
+        super(
+            links.map((link) => new NavbarLink(link))
+        )
+        super.id("navbar_links")
     }
 }
 
 class Navbar extends Div {
     constructor() {
-        super({
-            id: "navbar", onclick: " ", children: [
-                new Div({
-                    id: "navbar_text", children: [
+        super(
+            [
+                new Div(
+                    [
                         "satvik",
-                        new Tag("i", { id: "dropdown-arrow", class: "fa-solid fa-caret-down fa-xs", }, [])
+                        new I().id("dropdown-arrow").class("fa-solid fa-caret-down fa-xs"),
                     ]
-                }),
+                ).id("navbar_text"),
                 new NavbarLinks(navbarLinksList)
             ]
-        })
+        )
+        super.id("navbar");
+        super.on("click", " ");
     }
 }
 
