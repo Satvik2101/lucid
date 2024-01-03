@@ -31,15 +31,21 @@ function getClassName(element) {
     var className = element[0].toUpperCase() + element.slice(1);
     //replace - with _
     className = className.replace(/-/g, "_");
+    console.log(className)
+
+    if (className == "Object") {
+        className = "ObjectTag";
+        console.log(className)
+    }
     return className;
 }
 
 function genFactoryConstructor(element, attributes, isVoid = false) {
     const className = getClassName(element);
-    console.log("attributes ", attributes)
-    console.log("globalAttributes ", globalAttributes)
+    // console.log("attributes ", attributes)
+    // console.log("globalAttributes ", globalAttributes)
     var newAttri = [...attributes, ...globalAttributes]
-    console.log(newAttri, newAttri.length)
+    // console.log(newAttri, newAttri.length)
     var attributesParameterType = "{\n";
     for (var i = 0; i < newAttri.length; i++) {
         var attri = newAttri[i];
@@ -47,7 +53,7 @@ function genFactoryConstructor(element, attributes, isVoid = false) {
     }
     attributesParameterType += "\t\t[key: string]: any\n\t}";
     var start = `
-    static withAttributes(attri:${attributesParameterType}${isVoid ? "" : ", children?: childrenType"}): ${className} {
+    static withAttributes(attri: ${attributesParameterType}${isVoid ? "" : ", children?: childrenType"}): ${className} {
         var tag = new ${className}${isVoid ? "" : "(children)"};
         tag.attrs(attri);
         return tag;

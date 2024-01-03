@@ -2,7 +2,7 @@
 import { Tag,childrenType } from "../utils/Tag";
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object
-class Object extends Tag {
+class ObjectTag extends Tag {
     constructor(children?: childrenType) {
         super("object", children);
     }
@@ -68,8 +68,8 @@ class Object extends Tag {
 		"title"?: string,
 		"translate"?: string,
 		[key: string]: any
-	}, children?: childrenType): Object {
-        var tag = new Object(children);
+	}, children?: childrenType): ObjectTag {
+        var tag = new ObjectTag(children);
         tag.attrs(attri);
         return tag;
     }
@@ -81,5 +81,5 @@ class Object extends Tag {
 
 
 
-export default Object;
+export default ObjectTag;
     

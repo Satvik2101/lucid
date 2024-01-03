@@ -161,7 +161,7 @@ class Tag {
         }
         return attributeString;
     }
-    start(): string {
+    getStart(): string {
         return `<${this.tagName} ${this.attributeString()}>`
 
     }
@@ -173,12 +173,12 @@ class Tag {
         return this.children.map((child) => child.toString()).join("\n");
     }
 
-    end(): string {
+    getEnd(): string {
         return `</${this.tagName}>`
     }
 
     toString(): string {
-        return this.start() + this.body() + this.end();
+        return this.getStart() + this.body() + this.getEnd();
 
     }
 }
