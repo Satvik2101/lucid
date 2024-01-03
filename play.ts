@@ -2,24 +2,32 @@
 
 
 import fs from 'fs';
-import WorkexpSection from './Workexp/WorkexpSection';
-import Navbar from './global/NavBar';
-import ProfileLinks from './Home/ProfileLinks';
-import Home from './Home/Home';
-import BackgroundImageSection from './Home/BackgroundImageSection';
-import Index from './Index';
-import ProjectsAndPorsSection from './Project/ProjectsAndPorsSection';
-import Div from './Div';
 
 
 //read raw.json
 var raw = JSON.parse(fs.readFileSync("./raw.json").toString());
 
+
+class A {
+
+    x?: string;
+    y?: string;
+    constructor();
+    constructor(x: string | undefined, y: string | undefined);
+    constructor(x?: string, y?: string) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+
+export const a = (x?: string, y?: string): A => new A(x, y);
+
 function Play() {
     // var ele = DefaultHeader();
     // var ele = new Div({ divClass: "section", children: [new DefaultHeader()], style: "background-color:#000000;" })
-    var ele = new Index(raw);
-    fs.writeFileSync("./out.html", ele.toString())
+    // var ele = new Index(raw);
+    // fs.writeFileSync("./out.html", ele.toString())
 }
 
 Play();
