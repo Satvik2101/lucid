@@ -9,10 +9,11 @@ class Data extends Tag {
     
     value(value?: string) {
         if(value) this.setAttr("value", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"value"?: string,
 		"accesskey"?: string,
 		"autocapitalize"?: string,

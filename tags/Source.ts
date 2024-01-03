@@ -11,27 +11,32 @@ class Source extends VoidTag {
     
     media(value?: string) {
         if(value) this.setAttr("media", value);
+        return this;
     }
 
     sizes(value?: string) {
         if(value) this.setAttr("sizes", value);
+        return this;
     }
 
     src(value?: string) {
         if(value) this.setAttr("src", value);
+        return this;
     }
 
     srcset(value?: string) {
         if(value) this.setAttr("srcset", value);
+        return this;
     }
 
     type(value?: string) {
         if(value) this.setAttr("type", value);
+        return this;
     }
 
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"media"?: string,
 		"sizes"?: string,
 		"src"?: string,

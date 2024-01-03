@@ -1,7 +1,7 @@
 import Img from "../tags/Img";
 import { VoidTag } from "./Tag";
 
-class Image extends Img {
+class EnhancedImg extends Img {
     constructor(props: { src: string, alt?: string }) {
         super()
         this.src(props.src);
@@ -9,4 +9,4 @@ class Image extends Img {
     }
 }
 
-export default Image;
+export default EnhancedImg;

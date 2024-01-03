@@ -9,18 +9,21 @@ class Ol extends Tag {
     
     reversed(value?: string) {
         if(value) this.setAttr("reversed", value);
+        return this;
     }
 
     start(value?: string) {
         if(value) this.setAttr("start", value);
+        return this;
     }
 
     type(value?: string) {
         if(value) this.setAttr("type", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"reversed"?: string,
 		"start"?: string,
 		"type"?: string,

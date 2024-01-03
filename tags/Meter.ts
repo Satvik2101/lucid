@@ -9,34 +9,41 @@ class Meter extends Tag {
     
     form(value?: string) {
         if(value) this.setAttr("form", value);
+        return this;
     }
 
     high(value?: string) {
         if(value) this.setAttr("high", value);
+        return this;
     }
 
     low(value?: string) {
         if(value) this.setAttr("low", value);
+        return this;
     }
 
     max(value?: string) {
         if(value) this.setAttr("max", value);
+        return this;
     }
 
     min(value?: string) {
         if(value) this.setAttr("min", value);
+        return this;
     }
 
     optimum(value?: string) {
         if(value) this.setAttr("optimum", value);
+        return this;
     }
 
     value(value?: string) {
         if(value) this.setAttr("value", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"form"?: string,
 		"high"?: string,
 		"low"?: string,

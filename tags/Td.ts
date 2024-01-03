@@ -9,30 +9,36 @@ class Td extends Tag {
     
     align(value?: string) {
         if(value) this.setAttr("align", value);
+        return this;
     }
 
     background(value?: string) {
         if(value) this.setAttr("background", value);
+        return this;
     }
 
     bgcolor(value?: string) {
         if(value) this.setAttr("bgcolor", value);
+        return this;
     }
 
     colspan(value?: string) {
         if(value) this.setAttr("colspan", value);
+        return this;
     }
 
     headers(value?: string) {
         if(value) this.setAttr("headers", value);
+        return this;
     }
 
     rowspan(value?: string) {
         if(value) this.setAttr("rowspan", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"align"?: string,
 		"background"?: string,
 		"bgcolor"?: string,

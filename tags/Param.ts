@@ -11,15 +11,17 @@ class Param extends VoidTag {
     
     name(value?: string) {
         if(value) this.setAttr("name", value);
+        return this;
     }
 
     value(value?: string) {
         if(value) this.setAttr("value", value);
+        return this;
     }
 
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"name"?: string,
 		"value"?: string,
 		"accesskey"?: string,

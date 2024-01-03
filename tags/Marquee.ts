@@ -9,14 +9,16 @@ class Marquee extends Tag {
     
     bgcolor(value?: string) {
         if(value) this.setAttr("bgcolor", value);
+        return this;
     }
 
     loop(value?: string) {
         if(value) this.setAttr("loop", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"bgcolor"?: string,
 		"loop"?: string,
 		"accesskey"?: string,

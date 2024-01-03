@@ -9,14 +9,16 @@ class Canvas extends Tag {
     
     height(value?: string) {
         if(value) this.setAttr("height", value);
+        return this;
     }
 
     width(value?: string) {
         if(value) this.setAttr("width", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"height"?: string,
 		"width"?: string,
 		"accesskey"?: string,

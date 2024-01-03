@@ -9,10 +9,11 @@ class Html extends Tag {
     
     manifest(value?: string) {
         if(value) this.setAttr("manifest", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"manifest"?: string,
 		"accesskey"?: string,
 		"autocapitalize"?: string,

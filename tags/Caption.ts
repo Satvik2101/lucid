@@ -9,10 +9,11 @@ class Caption extends Tag {
     
     align(value?: string) {
         if(value) this.setAttr("align", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"align"?: string,
 		"accesskey"?: string,
 		"autocapitalize"?: string,

@@ -11,23 +11,27 @@ class Embed extends VoidTag {
     
     height(value?: string) {
         if(value) this.setAttr("height", value);
+        return this;
     }
 
     src(value?: string) {
         if(value) this.setAttr("src", value);
+        return this;
     }
 
     type(value?: string) {
         if(value) this.setAttr("type", value);
+        return this;
     }
 
     width(value?: string) {
         if(value) this.setAttr("width", value);
+        return this;
     }
 
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"height"?: string,
 		"src"?: string,
 		"type"?: string,

@@ -9,22 +9,26 @@ class Option extends Tag {
     
     disabled(value?: string) {
         if(value) this.setAttr("disabled", value);
+        return this;
     }
 
     label(value?: string) {
         if(value) this.setAttr("label", value);
+        return this;
     }
 
     selected(value?: string) {
         if(value) this.setAttr("selected", value);
+        return this;
     }
 
     value(value?: string) {
         if(value) this.setAttr("value", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"disabled"?: string,
 		"label"?: string,
 		"selected"?: string,
