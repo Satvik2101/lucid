@@ -2,11 +2,11 @@
 import { UnattributedTag } from "../utils/UnattributedTag";
 import { childrenType } from "../utils/Tag";
 
-//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
-class Div extends UnattributedTag {
+//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr
+class Abbr extends UnattributedTag {
     constructor(children?: childrenType) {
-        super("div", children);
+        super("abbr", children);
     }
 }
 
-export default Div;
+export default Abbr;

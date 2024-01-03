@@ -48,7 +48,7 @@ function genSetterForAttri(attri) {
 function genVoidElement(element, attributes) {
     const className = getClassName(element);
     var start = `
-import { VoidTag } from "../tags/Tag";
+import { VoidTag } from "../utils/Tag";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
@@ -73,8 +73,8 @@ export default ${className};`;
 function genUnattributedElement(element) {
     const className = getClassName(element);
     const template = `
-import { UnattributedTag } from "../tags/UnattributedTag";
-import { childrenType } from "../tags/Tag";
+import { UnattributedTag } from "../utils/UnattributedTag";
+import { childrenType } from "../utils/Tag";
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
 class ${className} extends UnattributedTag {
@@ -97,7 +97,7 @@ function genAttributedElement(element, attributes) {
         setter += genSetterForAttri(attri);
     }
     const template = `
-import { Tag,childrenType } from "../tags/Tag";
+import { Tag,childrenType } from "../utils/Tag";
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
 class ${className} extends Tag {
@@ -132,5 +132,5 @@ for (var i = 0; i < keys.length; i++) {
     }
     //create the file if it doesnt exist
 
-    fs.writeFileSync(`./out/${getClassName(element)}.ts`, template);
+    fs.writeFileSync(`./tags/${getClassName(element)}.ts`, template);
 }
