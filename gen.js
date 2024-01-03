@@ -43,7 +43,7 @@ function genFactoryConstructor(element, attributes, isVoid = false) {
     var attributesParameterType = "{\n";
     for (var i = 0; i < newAttri.length; i++) {
         var attri = newAttri[i];
-        attributesParameterType += `\t\t${attri}?: string,\n`;
+        attributesParameterType += `\t\t"${attri}"?: string,\n`;
     }
     attributesParameterType += "\t\t[key: string]: any\n\t}";
     var start = `

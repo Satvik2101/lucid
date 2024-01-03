@@ -285,7 +285,8 @@
         "charset",
         "content",
         "http-equiv",
-        "name"
+        "name",
+        "property"
     ],
     "meter": [
         "form",
