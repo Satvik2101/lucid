@@ -7,6 +7,7 @@ class Tag {
     };
     children: childrenType
 
+
     constructor(tagName: string, children?: childrenType, attributes?: { [key: string]: any }) {
         this.tagName = tagName;
         this.attributes = attributes ?? {};
@@ -14,6 +15,15 @@ class Tag {
     }
 
     // Getters and Setters
+
+    setName(name: string) {
+        this.tagName = name;
+    }
+
+    getName() {
+        return this.tagName;
+    }
+
     setAttr(key: string, value: any) {
         this.attributes[key] = value;
     }
@@ -140,9 +150,7 @@ class Tag {
     }
 
 
-
-
-
+    // Methods
 
     attributeString() {
         var attributeString = "";
@@ -175,7 +183,7 @@ class Tag {
     }
 }
 
-class EmptyTag extends Tag {
+class VoidTag extends Tag {
     constructor(tagName: string, attributes?: { [key: string]: any }) {
         super(tagName, [], attributes);
     }
@@ -189,74 +197,15 @@ class EmptyTag extends Tag {
 
 }
 
-class SelfClosingTag extends Tag {
-    constructor(tagName: string, attributes?: { [key: string]: any }) {
-        super(tagName, [], attributes);
-    }
-    start(): string {
-        return `<${this.tagName} ${this.attributeString()} />`
-    }
-
-    end(): string {
-        return "";
-    }
 
 
-}
+// class StylesheetTag extends LinkTag {
+//     constructor(href: string) {
+
+//         super("stylesheet", href)
+//     }
+// }
 
 
-class MetaTag extends SelfClosingTag {
-    constructor(attributes?: { [key: string]: any }) {
-        super("meta", attributes);
-    }
-
-    name(value: string) {
-        this.setAttr("name", value);
-    }
-
-    content(value: string) {
-        this.setAttr("content", value);
-    }
-
-    charset(value: string) {
-        this.setAttr("charset", value);
-    }
-}
-
-
-class LinkTag extends EmptyTag {
-
-    constructor();
-    constructor(rel: string | undefined, href: string | undefined);
-    constructor(rel?: string, href?: string) {
-        super("link");
-        if (rel) this.rel(rel);
-        if (href) this.href(href);
-    }
-
-    href(value: string) {
-        this.setAttr("href", value);
-    }
-
-    rel(value: string) {
-        this.setAttr("rel", value);
-    }
-
-    toString(): string {
-        if (!this.getAttr("rel") || !this.getAttr("href"))
-            throw new Error("LinkTag must have rel and href attributes");
-        return super.toString();
-    }
-}
-
-
-class StylesheetTag extends LinkTag {
-    constructor(href: string) {
-
-        super("stylesheet", href)
-    }
-}
-
-
-export { Tag, SelfClosingTag, EmptyTag, MetaTag, LinkTag, StylesheetTag, childrenType }
+export { Tag, VoidTag, childrenType }
 // export {Tag} ;
