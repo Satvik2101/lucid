@@ -89,7 +89,7 @@ const div = new EnhancedDiv({
 
 
 
-```ts
+```
 
 While most attributes listed in the MDN docs have their own functions, if there's an attribute that doesn't have a function, you can use the `setAttr` function to set it.
 
