@@ -1,31 +1,31 @@
-import Div from "../Div";
-import { Tag } from "../Tag";
-import UnorderedList from "../global/Tags/UnorderedList";
+
+import H3 from "../../tags/H3";
+import EnhancedDiv from "../../utils/EnhancedDiv";
+import { SimpleUnorderedList } from "../../utils/List";
 import TechStack from "../global/TechStack";
 import Project from "../interface/Project";
 import ProjectImage from "./ProjectImage";
 import ProjectLinks from "./ProjectLinks";
 
-class ProjectPoints extends Div {
+class ProjectPoints extends EnhancedDiv {
     constructor(props: { points: string[] }) {
-        super({ divClass: "project_por_points", children: new UnorderedList(props.points) })
+        super({ class: "project_por_points", children: new SimpleUnorderedList(props.points) })
     }
 }
 
-class ProjectDetails extends Div {
+class ProjectDetails extends EnhancedDiv {
     constructor(props: Project) {
         super({
-            divClass: "project_details",
+            class: "project_details",
             children: [
-                new Div({
-                    divClass: "project_title", children: [
-                        new Tag("h3", { class: "project_title_first" }, props.name),
-                        props.product ? new Tag("h3", { class: "project_title_second" }, props.product) : "",
-
+                new EnhancedDiv({
+                    class: "project_title", children: [
+                        new H3().class("project_title_first").p(props.name),
+                        props.product ? new H3().class("project_title_second").p(props.product) : "",
                     ]
                 },),
                 new ProjectLinks({ links: props.links }),
-                props.role ? new Div({ divClass: "por_designation", children: props.role }) : "",
+                props.role ? new EnhancedDiv({ class: "por_designation", children: props.role }) : "",
                 new ProjectPoints({ points: props.points }),
                 new TechStack(props.techstack),
             ]
@@ -33,7 +33,7 @@ class ProjectDetails extends Div {
     }
 }
 
-class ProjectCard extends Div {
+class ProjectCard extends EnhancedDiv {
     constructor(props: { project: Project, isEven: Boolean }) {
         if (props.project.product != null) {
             props.project.name = props.project.name + "'s"
@@ -47,8 +47,7 @@ class ProjectCard extends Div {
         }
         console.log(style)
         super({
-            divClass: "project_card",
-            style: style,
+            class: "project_card",
             children: [
                 new ProjectDetails(props.project),
                 props.project.image ? new ProjectImage({
@@ -60,6 +59,7 @@ class ProjectCard extends Div {
                 }) : "",
             ],
         })
+        this.style(style);
     }
 }
 

@@ -1,7 +1,8 @@
-import Div from "../Div";
-import Image from "../global/Tags/Image";
+import EnhancedDiv from "../../utils/EnhancedDiv";
+import EnhancedImg from "../../utils/EnhancedImg";
 
-class ProjectImage extends Div {
+
+class ProjectImage extends EnhancedDiv {
     constructor(props: { src: string | undefined, name: string, isEven: Boolean, alt?: string }) {
         if (props.alt === undefined) props.alt = props.name;
         if (props.src == undefined) {
@@ -21,10 +22,10 @@ class ProjectImage extends Div {
         }
 
         super({
-            divClass: "project_image",
-            style: style,
-            children: new Image({ src: props.src, alt: props.alt, style: imgStyle })
+            class: "project_image",
+            children: new EnhancedImg({ src: props.src, alt: props.alt }).style(imgStyle)
         });
+        this.style(style);
     }
 }
 

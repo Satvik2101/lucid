@@ -1,10 +1,11 @@
-import Div from "../Div";
-import { ClassIDTag } from "../Tag";
-import { Anchor } from "../global/Tags/Anchor";
+import A from "../../tags/A";
+import I from "../../tags/I";
+import Span from "../../tags/Span";
+import EnhancedDiv from "../../utils/EnhancedDiv";
 import Link from "../interface/Link";
 
 
-class ProjectLink extends Anchor {
+class ProjectLink extends A {
     constructor(props: Link) {
         var icon = "";
         if (props.name == "App Store") {
@@ -16,25 +17,20 @@ class ProjectLink extends Anchor {
         } else if (props.name == "Website") {
             icon = "fas fa-link fa-2x";
         }
-        super({
-            href: props.url, children: [
-                new ClassIDTag({
-                    name: "span", class: "project_link", children: [
-                        new ClassIDTag({
-                            name: "i",
-                            class: icon,
-                        })
-                    ]
-                })
-            ]
-        });
+
+        super()
+        super.href(props.url).p([
+            new Span().class("project_link").p([
+                new I().class(icon)
+            ])
+        ])
     }
 }
 
-class ProjectLinks extends Div {
+class ProjectLinks extends EnhancedDiv {
     constructor(props: { links: Link[] }) {
         super({
-            divClass: "project_links",
+            class: "project_links",
             children: props.links.map((link) => new ProjectLink(link))
         });
     }

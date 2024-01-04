@@ -1,20 +1,21 @@
-import Div from "../Div";
-import { Tag } from "../Tag";
-import HorizontalBreak from "../global/Tags/HorizontalBreak";
+
+import Br from "../../tags/Br";
+import H2 from "../../tags/H2";
+import Span from "../../tags/Span";
+import EnhancedDiv from "../../utils/EnhancedDiv";
 import Project from "../interface/Project";
 import ProjectCard from "./ProjectCard";
 
-class ProjectsSectionStart extends Div {
+class ProjectsSectionStart extends EnhancedDiv {
     constructor() {
         super({
             id: "projects_section_start",
             children: [
-                new Tag("h2", { class: "section_title" }, [
-                    "What I've Created",
-                    new Tag("span", { class: "separator_line" }, "")
+                new H2().class("section_title").p(["What I've Created",
+                    new Span().class("separator_line").p(""),
                 ]),
                 "I've worked on a lot of projects, both personal and professional, and have held Positions of Responsibility as a student.",
-                new HorizontalBreak(),
+                new Br(),
                 "Here are some of them."
             ]
 
@@ -22,15 +23,15 @@ class ProjectsSectionStart extends Div {
     }
 }
 
-class ProjectsAndPorsSection extends Div {
+class ProjectsAndPorsSection extends EnhancedDiv {
     constructor(props: { projects: Project[], pors: Project[] }) {
         const totalProjects = [...props.pors, ...props.projects]
         super({
             id: "projects",
-            divClass: "section",
+            class: "section",
             children: [
                 new ProjectsSectionStart(),
-                new Div({
+                new EnhancedDiv({
                     id: "projects_and_pors_cards_and_description",
                     children: totalProjects.map(
                         (project, index) => new ProjectCard({
