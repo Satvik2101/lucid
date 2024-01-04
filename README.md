@@ -100,7 +100,7 @@ const a = new A().setAttr("data-foo","bar").p("Google")
 ```
 
 
-For a more comprehensive example, see the website branch of this repo. It uses Lucid to generate the code for [my website](https://www.satvikgupta.com)
+For a more comprehensive example, see the [website branch](https://github.com/Satvik2101/lucid/tree/website) of this repo. It uses Lucid to generate the code for [my website](https://www.satvikgupta.com)
 
 You can also view the Website code [here](https://github.com/Satvik2101/portfolio). But that also contains other stuff (AWS stuff and other things) that you might not want to see.
 
