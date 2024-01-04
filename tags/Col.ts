@@ -11,19 +11,22 @@ class Col extends VoidTag {
     
     align(value?: string) {
         if(value) this.setAttr("align", value);
+        return this;
     }
 
     bgcolor(value?: string) {
         if(value) this.setAttr("bgcolor", value);
+        return this;
     }
 
     span(value?: string) {
         if(value) this.setAttr("span", value);
+        return this;
     }
 
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"align"?: string,
 		"bgcolor"?: string,
 		"span"?: string,

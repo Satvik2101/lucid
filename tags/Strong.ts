@@ -9,7 +9,7 @@ class Strong extends UnattributedTag {
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
 		"class"?: string,

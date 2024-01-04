@@ -9,10 +9,11 @@ class Map extends Tag {
     
     name(value?: string) {
         if(value) this.setAttr("name", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"name"?: string,
 		"accesskey"?: string,
 		"autocapitalize"?: string,

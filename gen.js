@@ -69,6 +69,7 @@ function genSetterForAttri(attri) {
     const template = `
     ${functionName}(value?: string) {
         if(value) this.setAttr("${attri}", value);
+        return this;
     }
 `;
 

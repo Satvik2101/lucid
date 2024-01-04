@@ -11,47 +11,57 @@ class Area extends VoidTag {
     
     alt(value?: string) {
         if(value) this.setAttr("alt", value);
+        return this;
     }
 
     coords(value?: string) {
         if(value) this.setAttr("coords", value);
+        return this;
     }
 
     download(value?: string) {
         if(value) this.setAttr("download", value);
+        return this;
     }
 
     href(value?: string) {
         if(value) this.setAttr("href", value);
+        return this;
     }
 
     media(value?: string) {
         if(value) this.setAttr("media", value);
+        return this;
     }
 
     ping(value?: string) {
         if(value) this.setAttr("ping", value);
+        return this;
     }
 
     referrerpolicy(value?: string) {
         if(value) this.setAttr("referrerpolicy", value);
+        return this;
     }
 
     rel(value?: string) {
         if(value) this.setAttr("rel", value);
+        return this;
     }
 
     shape(value?: string) {
         if(value) this.setAttr("shape", value);
+        return this;
     }
 
     target(value?: string) {
         if(value) this.setAttr("target", value);
+        return this;
     }
 
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"alt"?: string,
 		"coords"?: string,
 		"download"?: string,

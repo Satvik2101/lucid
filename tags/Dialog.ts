@@ -9,10 +9,11 @@ class Dialog extends Tag {
     
     open(value?: string) {
         if(value) this.setAttr("open", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"open"?: string,
 		"accesskey"?: string,
 		"autocapitalize"?: string,

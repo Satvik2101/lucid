@@ -11,7 +11,7 @@ class Wbr extends VoidTag {
     
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
 		"class"?: string,

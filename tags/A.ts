@@ -9,42 +9,51 @@ class A extends Tag {
     
     download(value?: string) {
         if(value) this.setAttr("download", value);
+        return this;
     }
 
     href(value?: string) {
         if(value) this.setAttr("href", value);
+        return this;
     }
 
     hreflang(value?: string) {
         if(value) this.setAttr("hreflang", value);
+        return this;
     }
 
     media(value?: string) {
         if(value) this.setAttr("media", value);
+        return this;
     }
 
     ping(value?: string) {
         if(value) this.setAttr("ping", value);
+        return this;
     }
 
     referrerpolicy(value?: string) {
         if(value) this.setAttr("referrerpolicy", value);
+        return this;
     }
 
     rel(value?: string) {
         if(value) this.setAttr("rel", value);
+        return this;
     }
 
     shape(value?: string) {
         if(value) this.setAttr("shape", value);
+        return this;
     }
 
     target(value?: string) {
         if(value) this.setAttr("target", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"download"?: string,
 		"href"?: string,
 		"hreflang"?: string,

@@ -9,14 +9,16 @@ class Contenteditable extends Tag {
     
     enterkeyhint(value?: string) {
         if(value) this.setAttr("enterkeyhint", value);
+        return this;
     }
 
     inputmode(value?: string) {
         if(value) this.setAttr("inputmode", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"enterkeyhint"?: string,
 		"inputmode"?: string,
 		"accesskey"?: string,

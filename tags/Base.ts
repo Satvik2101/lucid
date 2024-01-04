@@ -11,15 +11,17 @@ class Base extends VoidTag {
     
     href(value?: string) {
         if(value) this.setAttr("href", value);
+        return this;
     }
 
     target(value?: string) {
         if(value) this.setAttr("target", value);
+        return this;
     }
 
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"href"?: string,
 		"target"?: string,
 		"accesskey"?: string,

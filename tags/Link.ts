@@ -11,43 +11,52 @@ class Link extends VoidTag {
     
     crossorigin(value?: string) {
         if(value) this.setAttr("crossorigin", value);
+        return this;
     }
 
     href(value?: string) {
         if(value) this.setAttr("href", value);
+        return this;
     }
 
     hreflang(value?: string) {
         if(value) this.setAttr("hreflang", value);
+        return this;
     }
 
     integrity(value?: string) {
         if(value) this.setAttr("integrity", value);
+        return this;
     }
 
     media(value?: string) {
         if(value) this.setAttr("media", value);
+        return this;
     }
 
     referrerpolicy(value?: string) {
         if(value) this.setAttr("referrerpolicy", value);
+        return this;
     }
 
     rel(value?: string) {
         if(value) this.setAttr("rel", value);
+        return this;
     }
 
     sizes(value?: string) {
         if(value) this.setAttr("sizes", value);
+        return this;
     }
 
     type(value?: string) {
         if(value) this.setAttr("type", value);
+        return this;
     }
 
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"crossorigin"?: string,
 		"href"?: string,
 		"hreflang"?: string,

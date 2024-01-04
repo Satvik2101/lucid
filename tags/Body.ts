@@ -9,14 +9,16 @@ class Body extends Tag {
     
     background(value?: string) {
         if(value) this.setAttr("background", value);
+        return this;
     }
 
     bgcolor(value?: string) {
         if(value) this.setAttr("bgcolor", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"background"?: string,
 		"bgcolor"?: string,
 		"accesskey"?: string,

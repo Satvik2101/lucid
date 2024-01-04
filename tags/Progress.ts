@@ -9,18 +9,21 @@ class Progress extends Tag {
     
     form(value?: string) {
         if(value) this.setAttr("form", value);
+        return this;
     }
 
     max(value?: string) {
         if(value) this.setAttr("max", value);
+        return this;
     }
 
     value(value?: string) {
         if(value) this.setAttr("value", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"form"?: string,
 		"max"?: string,
 		"value"?: string,

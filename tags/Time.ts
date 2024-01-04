@@ -9,10 +9,11 @@ class Time extends Tag {
     
     datetime(value?: string) {
         if(value) this.setAttr("datetime", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"datetime"?: string,
 		"accesskey"?: string,
 		"autocapitalize"?: string,

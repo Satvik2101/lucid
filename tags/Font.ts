@@ -9,10 +9,11 @@ class Font extends Tag {
     
     color(value?: string) {
         if(value) this.setAttr("color", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"color"?: string,
 		"accesskey"?: string,
 		"autocapitalize"?: string,

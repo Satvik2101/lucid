@@ -9,18 +9,21 @@ class Output extends Tag {
     
     for(value?: string) {
         if(value) this.setAttr("for", value);
+        return this;
     }
 
     form(value?: string) {
         if(value) this.setAttr("form", value);
+        return this;
     }
 
     name(value?: string) {
         if(value) this.setAttr("name", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"for"?: string,
 		"form"?: string,
 		"name"?: string,

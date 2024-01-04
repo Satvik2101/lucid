@@ -9,10 +9,11 @@ class Menu extends Tag {
     
     type(value?: string) {
         if(value) this.setAttr("type", value);
+        return this;
     }
 
 
-    static withAttributes(attri:{
+    static withAttributes(attri: {
 		"type"?: string,
 		"accesskey"?: string,
 		"autocapitalize"?: string,
