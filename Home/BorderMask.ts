@@ -1,4 +1,4 @@
-import Div from "../../tags/Div";
+import Div from "../tags/Div";
 
 class BorderMask extends Div {
     //divClass: "border_mask", 

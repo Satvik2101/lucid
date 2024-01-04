@@ -1,7 +1,7 @@
 
-import H3 from "../../tags/H3";
-import EnhancedDiv from "../../utils/EnhancedDiv";
-import { SimpleUnorderedList } from "../../utils/List";
+import H3 from "../tags/H3";
+import EnhancedDiv from "../utils/EnhancedDiv";
+import { SimpleUnorderedList } from "../utils/List";
 import TechStack from "../global/TechStack";
 import Project from "../interface/Project";
 import ProjectImage from "./ProjectImage";

@@ -1,4 +1,4 @@
-import EnhancedDiv from "../../utils/EnhancedDiv";
+import EnhancedDiv from "../utils/EnhancedDiv";
 import Navbar from "../global/NavBar";
 import ArcReactor from "./ArcReactor";
 import BorderMask from "./BorderMask";

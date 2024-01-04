@@ -1,6 +1,6 @@
-import Div from "../../tags/Div";
-import I from "../../tags/I";
-import SimpleAnchor from "../../utils/SimpleAnchor";
+import Div from "../tags/Div";
+import I from "../tags/I";
+import SimpleAnchor from "../utils/SimpleAnchor";
 
 interface NavbarLinkInterface {
     name: string;

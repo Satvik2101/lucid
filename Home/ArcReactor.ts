@@ -1,6 +1,6 @@
-import A from "../../tags/A";
-import Div from "../../tags/Div";
-import EnhancedImg from "../../utils/EnhancedImg";
+import A from "../tags/A";
+import Div from "../tags/Div";
+import EnhancedImg from "../utils/EnhancedImg";
 
 class ArcReactor extends Div {
     constructor() {
@@ -13,7 +13,7 @@ class ArcReactor extends Div {
             ]).href("#home").target("_self")
         ]
         super(children);
-        super.class("arc_reactor");
+        super.id("arc_reactor");
     }
 }
 

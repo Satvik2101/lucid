@@ -1,8 +1,8 @@
-import A from "../../tags/A";
-import Span from "../../tags/Span";
-import EnhancedDiv from "../../utils/EnhancedDiv";
-import EnhancedImg from "../../utils/EnhancedImg";
-import { Tag } from "../../utils/Tag";
+import A from "../tags/A";
+import Span from "../tags/Span";
+import EnhancedDiv from "../utils/EnhancedDiv";
+import EnhancedImg from "../utils/EnhancedImg";
+import { Tag } from "../utils/Tag";
 
 
 class ProfileLinkIcon extends EnhancedImg {

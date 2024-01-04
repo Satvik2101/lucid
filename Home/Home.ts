@@ -1,4 +1,4 @@
-import EnhancedDiv from "../../utils/EnhancedDiv";
+import EnhancedDiv from "../utils/EnhancedDiv";
 import Bio from "./Bio";
 import NameAndDesignation from "./NameAndDesignation";
 import ProfileLinks from "./ProfileLinks";

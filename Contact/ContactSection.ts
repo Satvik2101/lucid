@@ -1,10 +1,10 @@
-import Br from "../../tags/Br";
-import Div from "../../tags/Div";
-import H2 from "../../tags/H2";
-import H3 from "../../tags/H3";
-import EnhancedDiv from "../../utils/EnhancedDiv";
-import EnhancedImg from "../../utils/EnhancedImg";
-import SimpleAnchor from "../../utils/SimpleAnchor";
+import Br from "../tags/Br";
+import Div from "../tags/Div";
+import H2 from "../tags/H2";
+import H3 from "../tags/H3";
+import EnhancedDiv from "../utils/EnhancedDiv";
+import EnhancedImg from "../utils/EnhancedImg";
+import SimpleAnchor from "../utils/SimpleAnchor";
 
 
 class ContactSection extends EnhancedDiv {

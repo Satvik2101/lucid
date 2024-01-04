@@ -1,6 +1,6 @@
-import Br from "../../tags/Br";
-import P from "../../tags/P";
-import SimpleAnchor from "../../utils/SimpleAnchor";
+import Br from "../tags/Br";
+import P from "../tags/P";
+import SimpleAnchor from "../utils/SimpleAnchor";
 
 class Bio extends P {
     constructor() {

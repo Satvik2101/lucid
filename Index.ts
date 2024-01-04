@@ -1,30 +1,30 @@
+import Script from "./tags/Script";
+import { Tag } from "./utils/Tag";
 import ContactSection from "./Contact/ContactSection";
 import BackgroundImageSection from "./Home/BackgroundImageSection";
 import ProjectsAndPorsSection from "./Project/ProjectsAndPorsSection";
-import { Tag } from "./Tag";
 import WorkexpSection from "./Workexp/WorkexpSection";
 import Footer from "./global/PortfolioFooter";
-import Script from "./global/Tags/Script";
 import { DefaultHeader } from "./global/PortfolioHead";
 
 class Index extends Tag {
     constructor(rawData: { [key: string]: any }) {
-        super("html", { lang: "en", ontouchmove: "" }, [
+        super("html", [
             new DefaultHeader(),
-            new Tag("body", {}, [
+            new Tag("body", [
                 new BackgroundImageSection(),
                 new WorkexpSection(rawData.workexp),
                 new ProjectsAndPorsSection({ projects: rawData.projects, pors: rawData.pors })
             ]),
             new ContactSection(),
             new Footer(),
-            new Script("./scripts/typewriter.js"),
-            new Script("./scripts/workexp_chooser.js"),
-        ])
+            new Script().src("./scripts/typewriter.js"),
+            new Script().src("./scripts/workexp_chooser.js"),
+        ], { lang: "en", ontouchmove: "" })
     }
 
-    start(): string {
-        return `<!DOCTYPE html>` + "\n" + super.start();
+    getStart(): string {
+        return `<!DOCTYPE html>` + "\n" + super.getStart();
     }
 }
 

@@ -1,5 +1,5 @@
-import Footer from "../../tags/Footer";
-import I from "../../tags/I";
+import Footer from "../tags/Footer";
+import I from "../tags/I";
 
 class PortfolioFooter extends Footer {
     constructor() {

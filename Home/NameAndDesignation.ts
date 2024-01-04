@@ -1,6 +1,6 @@
-import H1 from "../../tags/H1";
-import P from "../../tags/P";
-import EnhancedDiv from "../../utils/EnhancedDiv";
+import H1 from "../tags/H1";
+import P from "../tags/P";
+import EnhancedDiv from "../utils/EnhancedDiv";
 
 class NameAndDesignation extends EnhancedDiv {
     constructor() {

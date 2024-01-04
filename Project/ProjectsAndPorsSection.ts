@@ -1,8 +1,8 @@
 
-import Br from "../../tags/Br";
-import H2 from "../../tags/H2";
-import Span from "../../tags/Span";
-import EnhancedDiv from "../../utils/EnhancedDiv";
+import Br from "../tags/Br";
+import H2 from "../tags/H2";
+import Span from "../tags/Span";
+import EnhancedDiv from "../utils/EnhancedDiv";
 import Project from "../interface/Project";
 import ProjectCard from "./ProjectCard";
 

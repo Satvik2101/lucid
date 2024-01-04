@@ -1,5 +1,5 @@
-import EnhancedDiv from "../../utils/EnhancedDiv";
-import EnhancedImg from "../../utils/EnhancedImg";
+import EnhancedDiv from "../utils/EnhancedDiv";
+import EnhancedImg from "../utils/EnhancedImg";
 
 
 class ProjectImage extends EnhancedDiv {

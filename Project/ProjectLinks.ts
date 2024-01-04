@@ -1,7 +1,7 @@
-import A from "../../tags/A";
-import I from "../../tags/I";
-import Span from "../../tags/Span";
-import EnhancedDiv from "../../utils/EnhancedDiv";
+import A from "../tags/A";
+import I from "../tags/I";
+import Span from "../tags/Span";
+import EnhancedDiv from "../utils/EnhancedDiv";
 import Link from "../interface/Link";
 
 

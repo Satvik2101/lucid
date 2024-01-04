@@ -1,8 +1,8 @@
-import Base from "../../tags/Base";
-import Head from "../../tags/Head";
-import Link from "../../tags/Link";
-import Meta from "../../tags/Meta";
-import Title from "../../tags/Title";
+import Base from "../tags/Base";
+import Head from "../tags/Head";
+import Link from "../tags/Link";
+import Meta from "../tags/Meta";
+import Title from "../tags/Title";
 
 interface HeaderProps {
     title?: string;
