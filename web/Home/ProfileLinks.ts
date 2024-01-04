@@ -1,23 +1,26 @@
-import Div from "../Div"
-import { Tag } from "../Tag"
-import { Anchor } from "../global/Tags/Anchor"
-import Image from "../global/Tags/Image"
+import A from "../../tags/A";
+import Span from "../../tags/Span";
+import EnhancedDiv from "../../utils/EnhancedDiv";
+import EnhancedImg from "../../utils/EnhancedImg";
+import { Tag } from "../../utils/Tag";
 
-class ProfileLinkIcon extends Image {
+
+class ProfileLinkIcon extends EnhancedImg {
     constructor(props: { src: string, alt: string, id?: string }) {
-        super({ ...props, class: "profile_link_icon" })
+        super(props)
+        this.class("profile_link_icon");
     }
 }
 
 
-class ProfileLinkButton extends Anchor {
+class ProfileLinkButton extends A {
     constructor(props: { href: string, name: string, shortName: string, imgSrc?: string, customChild?: Tag }) {
 
-        super({
-            href: props.href,
-            anchorClass: "profile_link_button",
-            id: `${props.shortName}_button`,
-            children: [props.customChild ?
+        super()
+        super.href(props.href)
+            .class("profile_link_button")
+            .id(`${props.shortName}_button`)
+            .p([props.customChild ?
                 props.customChild
                 : new ProfileLinkIcon({
                     src: props.imgSrc as string,
@@ -25,9 +28,7 @@ class ProfileLinkButton extends Anchor {
                     id: props.shortName + "_icon"
                 }),
             props.name,
-            ],
-
-        })
+            ])
     }
 }
 
@@ -48,17 +49,17 @@ const ProfileLinksData = [
         href: "https://www.satvikgupta.com/satvik-gupta-resume.pdf",
         shortName: "resume",
         name: "Resume",
-        customChild: new Tag("span", { id: "resume_icon" }, [])
+        customChild: new Span().id("resume_icon"),
     }
 ]
 
-class ProfileLinks extends Div {
+class ProfileLinks extends EnhancedDiv {
 
     constructor() {
         super({
             id: "profile_links",
             children: ProfileLinksData.map((linkData) => new ProfileLinkButton(linkData)),
-            divClass: "padded_centered"
+            class: "padded_centered"
         })
     }
 

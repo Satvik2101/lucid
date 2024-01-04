@@ -1,16 +1,18 @@
-import Div from "../Div";
+import Div from "../../tags/Div";
 
-class TechStackItem extends Div{
-    constructor(techStackName: string){
+class TechStackItem extends Div {
+    constructor(techStackName: string) {
         var techStackClass = "tech_stack_item";
-        super({ divClass: techStackClass, children: techStackName })
+        super(techStackName);
+        this.class(techStackClass);
     }
 }
 
-class TechStack extends Div{
+class TechStack extends Div {
     constructor(props: string[]) {
-        
-        super({ divClass: "tech_stack", children: props.map((techStackName) => new TechStackItem(techStackName)) });
+        super(props.map((techStackName) => new TechStackItem(techStackName)));
+        super.class("tech_stack");
+
     }
 }
 

@@ -1,21 +1,20 @@
-import { ClassIDTag } from "../Tag";
-import { SimpleAnchorTag } from "../global/Tags/Anchor";
-import HorizontalBreak from "../global/Tags/HorizontalBreak";
+import Br from "../../tags/Br";
+import P from "../../tags/P";
+import SimpleAnchor from "../../utils/SimpleAnchor";
 
-class Bio extends ClassIDTag {
+class Bio extends P {
     constructor() {
-        super({
-            name: "p",
-            class: "padded_centered", id: "bio",
-            children: [
-                "Computer Engineering senior at Delhi Technological University.",
-                new HorizontalBreak(),
-                "Technology,coding, and programming have been my passions since I wrote my",
-                new SimpleAnchorTag({ href: "https://github.com/Satvik2101/Clean-Folder", linkText: "first Python Script" }),
-                "at the age of 15. Building stuff, solving problems, automating tasks, and above all - learning new things - are what I love to do.",
-            ],
-        });
+        super();
+        this.class("padded_centered").id("bio").p([
+            "Computer Engineering senior at Delhi Technological University.",
+            new Br(),
+            "Technology,coding, and programming have been my passions since I wrote my",
+            new SimpleAnchor({ href: "https://github.com/Satvik2101/Clean-Folder", linkText: "first Python Script" }),
+            "at the age of 15. Building stuff, solving problems, automating tasks, and above all - learning new things - are what I love to do.",
+
+        ])
     }
 }
+
 
 export default Bio;

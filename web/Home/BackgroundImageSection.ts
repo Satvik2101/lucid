@@ -1,10 +1,10 @@
-import Div from "../Div";
+import EnhancedDiv from "../../utils/EnhancedDiv";
 import Navbar from "../global/NavBar";
 import ArcReactor from "./ArcReactor";
 import BorderMask from "./BorderMask";
 import Home from "./Home";
 
-class BackgroundImageSection extends Div {
+class BackgroundImageSection extends EnhancedDiv {
     constructor() {
         super({
             id: "bg_image",

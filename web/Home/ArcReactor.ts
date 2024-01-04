@@ -1,23 +1,19 @@
-import Div from "../Div";
-import { Anchor } from "../global/Tags/Anchor";
-import Image from "../global/Tags/Image";
+import A from "../../tags/A";
+import Div from "../../tags/Div";
+import EnhancedImg from "../../utils/EnhancedImg";
 
 class ArcReactor extends Div {
     constructor() {
-        super({
-            id: "arc_reactor", children: [
-                new Anchor({
-                    href: "#home",
-                    target: "_self",
-                    children: [
-                        new Image({
-                            src: "./images/arcblue.png",
-                            alt: "nav_bar_logo",
-                        })
-                    ]
+        var children = [
+            new A([
+                new EnhancedImg({
+                    src: "./images/arcblue.png",
+                    alt: "nav_bar_logo",
                 })
-            ]
-        });
+            ]).href("#home").target("_self")
+        ]
+        super(children);
+        super.class("arc_reactor");
     }
 }
 

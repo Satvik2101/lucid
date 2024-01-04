@@ -43,10 +43,17 @@ class Tag {
         return this.attributes[key];
     }
 
-    setChildren(children: childrenType) {
+
+    //sets the children array
+    populate(children: childrenType) {
         this.children = children;
         return this;
 
+    }
+
+    //shorthand for populate
+    p(children: childrenType) {
+        return this.populate(children);
     }
 
     attrs(attributes: { [key: string]: any }) {

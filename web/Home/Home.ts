@@ -1,14 +1,14 @@
-import Div from "../Div";
+import EnhancedDiv from "../../utils/EnhancedDiv";
 import Bio from "./Bio";
 import NameAndDesignation from "./NameAndDesignation";
 import ProfileLinks from "./ProfileLinks";
 
-class Home extends Div {
+class Home extends EnhancedDiv {
     constructor() {
         super({
             id: "home",
             children: [
-                new Div({
+                new EnhancedDiv({
                     id: "home_section",
                     children: [
                         new NameAndDesignation(),
