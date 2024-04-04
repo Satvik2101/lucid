@@ -238,11 +238,11 @@ class VoidTag extends Tag {
     constructor(tagName: string, attributes?: { [key: string]: any }) {
         super(tagName, [], attributes);
     }
-    start(): string {
+    getStart(): string {
         return `<${this.tagName} ${this.attributeString()}>`
     }
 
-    end(): string {
+    getEnd(): string {
         return "";
     }
 
