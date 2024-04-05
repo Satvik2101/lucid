@@ -1,0 +1,22 @@
+{
+    "name": "@satvik2101/lucid",
+    "version": "0.0.1",
+    "description": "A (one of many) HTML templating engine that produces static HTML files. At it's core it's a new way to write HTML. ",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Satvik2101/lucid.git"
+    },
+    "keywords": [
+        "HTML",
+        "templating"
+    ],
+    "author": "satvik2101",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Satvik2101/lucid/issues"
+    },
+    "homepage": "https://github.com/Satvik2101/lucid#readme"
+}
