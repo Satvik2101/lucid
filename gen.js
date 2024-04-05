@@ -158,6 +158,7 @@ export default ${className};
 }
 
 
+let classNames = [];
 for (var i = 0; i < keys.length; i++) {
     var element = keys[i];
     var attributes = obj[element];
@@ -176,5 +177,35 @@ for (var i = 0; i < keys.length; i++) {
     }
     //create the file if it doesnt exist
 
-    fs.writeFileSync(`./tags/${getClassName(element)}.ts`, template);
+    const className = getClassName(element);
+    classNames.push(className);
+    // fs.writeFileSync(`./tags/${getClassName(element)}.ts`, template);
 }
+
+function genIndexFile() {
+
+    //get all files in the /utils directory
+    const utils = fs.readdirSync("./utils");
+    let indexFileContents = "//utils \n\n";
+
+    for (var i = 0; i < utils.length; i++) {
+        var util = utils[i].replace(".ts", "");
+        indexFileContents += `export { default as ${util.replace(".ts", "")} } from "./utils/${util}";\n`;
+        // indexFileContents += `export * from "./utils/${util}";\n`;
+
+    }
+
+    indexFileContents += "\n\n//tags\n\n";
+
+    for (var i = 0; i < classNames.length; i++) {
+        var className = classNames[i];
+        indexFileContents += `export { default as ${className} } from "./tags/${className}";\n`;
+        // indexFileContents += `export * from "./tags/${className}";\n`;
+
+    }
+
+    fs.writeFileSync("./index.ts", indexFileContents);
+
+}
+
+genIndexFile();
