@@ -1,5 +1,4 @@
 import Img from "../tags/Img";
-import { VoidTag } from "./Tag";
 
 class EnhancedImg extends Img {
     constructor(props: { src: string, alt?: string }) {

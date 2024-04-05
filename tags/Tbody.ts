@@ -1,5 +1,6 @@
 
-import { Tag,childrenType } from "../utils/Tag";
+import Tag from "../utils/Tag";
+import childrenType from "../childrenType";
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody
 class Tbody extends Tag {

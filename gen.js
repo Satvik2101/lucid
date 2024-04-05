@@ -80,7 +80,7 @@ function genSetterForAttri(attri) {
 function genVoidElement(element, attributes) {
     const className = getClassName(element);
     var start = `
-import { VoidTag } from "../utils/Tag";
+import VoidTag from "../utils/VoidTag";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
@@ -108,8 +108,8 @@ export default ${className};`;
 function genUnattributedElement(element) {
     const className = getClassName(element);
     const template = `
-import { UnattributedTag } from "../utils/UnattributedTag";
-import { childrenType } from "../utils/Tag";
+import UnattributedTag from "../utils/UnattributedTag";
+import childrenType from "../childrenType";
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
 class ${className} extends UnattributedTag {
@@ -135,7 +135,8 @@ function genAttributedElement(element, attributes) {
         setter += genSetterForAttri(attri);
     }
     const template = `
-import { Tag,childrenType } from "../utils/Tag";
+import Tag from "../utils/Tag";
+import childrenType from "../childrenType";
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
 class ${className} extends Tag {

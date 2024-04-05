@@ -1,5 +1,4 @@
-type childrenType = (string | Tag)[] | string | Tag | undefined;
-
+import childrenType from "../childrenType";
 class Tag {
     tagName: string;
     attributes: {
@@ -234,20 +233,6 @@ class Tag {
     }
 }
 
-class VoidTag extends Tag {
-    constructor(tagName: string, attributes?: { [key: string]: any }) {
-        super(tagName, [], attributes);
-    }
-    getStart(): string {
-        return `<${this.tagName} ${this.attributeString()}>`
-    }
-
-    getEnd(): string {
-        return "";
-    }
-
-}
-
 
 
 // class StylesheetTag extends LinkTag {
@@ -258,5 +243,5 @@ class VoidTag extends Tag {
 // }
 
 
-export { Tag, VoidTag, childrenType }
+export default Tag;
 // export {Tag} ;

@@ -1,5 +1,5 @@
 
-import { VoidTag } from "../utils/Tag";
+import VoidTag from "../utils/VoidTag";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param

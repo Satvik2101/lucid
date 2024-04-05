@@ -1,6 +1,6 @@
 
-import { UnattributedTag } from "../utils/UnattributedTag";
-import { childrenType } from "../utils/Tag";
+import UnattributedTag from "../utils/UnattributedTag";
+import childrenType from "../childrenType";
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strike
 class Strike extends UnattributedTag {

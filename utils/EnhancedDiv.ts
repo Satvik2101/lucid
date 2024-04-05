@@ -1,5 +1,5 @@
+import childrenType from "../childrenType";
 import Div from "../tags/Div";
-import { Tag, childrenType } from "./Tag";
 
 class EnhancedDiv extends Div {
 
