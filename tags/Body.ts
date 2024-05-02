@@ -39,10 +39,9 @@ class Body extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Body {
-        var tag = new Body(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Body(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Body;

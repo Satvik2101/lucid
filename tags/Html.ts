@@ -34,10 +34,9 @@ class Html extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Html {
-        var tag = new Html(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Html(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Html;

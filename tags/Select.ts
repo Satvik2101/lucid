@@ -64,10 +64,9 @@ class Select extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Select {
-        var tag = new Select(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Select(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Select;

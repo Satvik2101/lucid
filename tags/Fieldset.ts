@@ -44,10 +44,9 @@ class Fieldset extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Fieldset {
-        var tag = new Fieldset(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Fieldset(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Fieldset;

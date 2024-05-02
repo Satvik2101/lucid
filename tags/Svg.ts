@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/svg
-class Svg extends UnattributedTag {
+class Svg extends Tag {
     constructor(children?: childrenType) {
         super("svg", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Svg extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Svg {
-        var tag = new Svg(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Svg(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Svg;

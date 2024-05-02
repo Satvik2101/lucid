@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi
-class Bdi extends UnattributedTag {
+class Bdi extends Tag {
     constructor(children?: childrenType) {
         super("bdi", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Bdi extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Bdi {
-        var tag = new Bdi(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Bdi(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Bdi;

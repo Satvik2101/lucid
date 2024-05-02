@@ -84,10 +84,9 @@ class Iframe extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Iframe {
-        var tag = new Iframe(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Iframe(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Iframe;

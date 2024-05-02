@@ -34,10 +34,9 @@ class Caption extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Caption {
-        var tag = new Caption(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Caption(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Caption;

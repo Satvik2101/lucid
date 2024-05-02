@@ -64,10 +64,9 @@ class Th extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Th {
-        var tag = new Th(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Th(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Th;

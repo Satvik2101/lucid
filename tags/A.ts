@@ -74,10 +74,9 @@ class A extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): A {
-        var tag = new A(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new A(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default A;

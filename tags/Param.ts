@@ -1,12 +1,13 @@
 import VoidTag from "../utils/VoidTag";
+import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param
 class Param extends VoidTag {
     constructor() {
-        super("param");
-    }
-
-
+                super("param");
+            }
+    
     name(value?: string) {
         if (value) this.setAttr("name", value);
         return this;
@@ -15,7 +16,6 @@ class Param extends VoidTag {
         if (value) this.setAttr("value", value);
         return this;
     }
-
     static withAttributes(attri: {
 		"name"?: string,
 		"value"?: string,
@@ -39,10 +39,9 @@ class Param extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Param {
-        var tag = new Param;
-        tag.attrs(attri);
-        return tag;
-    }    
+                var tag = new Param();
+                tag.attrs(attri);
+                return tag;
+            }
 }
-    
 export default Param;

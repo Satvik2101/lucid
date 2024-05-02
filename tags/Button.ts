@@ -79,10 +79,9 @@ class Button extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Button {
-        var tag = new Button(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Button(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Button;

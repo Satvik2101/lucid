@@ -34,10 +34,9 @@ class Data extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Data {
-        var tag = new Data(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Data(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Data;

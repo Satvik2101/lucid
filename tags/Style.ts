@@ -44,10 +44,9 @@ class Style extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Style {
-        var tag = new Style(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Style(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Style;

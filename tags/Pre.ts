@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
-class Pre extends UnattributedTag {
+class Pre extends Tag {
     constructor(children?: childrenType) {
         super("pre", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Pre extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Pre {
-        var tag = new Pre(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Pre(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Pre;

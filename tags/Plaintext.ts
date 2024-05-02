@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/plaintext
-class Plaintext extends UnattributedTag {
+class Plaintext extends Tag {
     constructor(children?: childrenType) {
         super("plaintext", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Plaintext extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Plaintext {
-        var tag = new Plaintext(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Plaintext(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Plaintext;

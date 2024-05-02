@@ -34,10 +34,9 @@ class Blockquote extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Blockquote {
-        var tag = new Blockquote(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Blockquote(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Blockquote;

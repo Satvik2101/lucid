@@ -39,10 +39,9 @@ class Tr extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Tr {
-        var tag = new Tr(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Tr(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Tr;

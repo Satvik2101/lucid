@@ -39,10 +39,9 @@ class Contenteditable extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Contenteditable {
-        var tag = new Contenteditable(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Contenteditable(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Contenteditable;

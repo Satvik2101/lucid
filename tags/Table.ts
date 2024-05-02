@@ -54,10 +54,9 @@ class Table extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Table {
-        var tag = new Table(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Table(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Table;

@@ -104,10 +104,9 @@ class Textarea extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Textarea {
-        var tag = new Textarea(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Textarea(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Textarea;

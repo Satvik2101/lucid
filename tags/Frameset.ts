@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/frameset
-class Frameset extends UnattributedTag {
+class Frameset extends Tag {
     constructor(children?: childrenType) {
         super("frameset", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Frameset extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Frameset {
-        var tag = new Frameset(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Frameset(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Frameset;

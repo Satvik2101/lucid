@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
-class Mark extends UnattributedTag {
+class Mark extends Tag {
     constructor(children?: childrenType) {
         super("mark", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Mark extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Mark {
-        var tag = new Mark(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Mark(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Mark;

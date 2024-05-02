@@ -39,10 +39,9 @@ class Canvas extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Canvas {
-        var tag = new Canvas(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Canvas(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Canvas;

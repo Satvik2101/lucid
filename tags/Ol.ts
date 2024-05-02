@@ -44,10 +44,9 @@ class Ol extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Ol {
-        var tag = new Ol(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Ol(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Ol;

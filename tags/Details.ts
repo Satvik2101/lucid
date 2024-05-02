@@ -34,10 +34,9 @@ class Details extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Details {
-        var tag = new Details(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Details(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Details;

@@ -39,10 +39,9 @@ class Optgroup extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Optgroup {
-        var tag = new Optgroup(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Optgroup(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Optgroup;

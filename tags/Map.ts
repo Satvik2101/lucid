@@ -34,10 +34,9 @@ class Map extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Map {
-        var tag = new Map(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Map(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Map;

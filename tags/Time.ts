@@ -34,10 +34,9 @@ class Time extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Time {
-        var tag = new Time(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Time(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Time;

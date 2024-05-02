@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search
-class Search extends UnattributedTag {
+class Search extends Tag {
     constructor(children?: childrenType) {
         super("search", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Search extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Search {
-        var tag = new Search(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Search(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Search;

@@ -1,12 +1,13 @@
 import VoidTag from "../utils/VoidTag";
+import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
 class Img extends VoidTag {
     constructor() {
-        super("img");
-    }
-
-
+                super("img");
+            }
+    
     align(value?: string) {
         if (value) this.setAttr("align", value);
         return this;
@@ -67,7 +68,6 @@ class Img extends VoidTag {
         if (value) this.setAttr("width", value);
         return this;
     }
-
     static withAttributes(attri: {
 		"align"?: string,
 		"alt"?: string,
@@ -104,10 +104,9 @@ class Img extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Img {
-        var tag = new Img;
-        tag.attrs(attri);
-        return tag;
-    }    
+                var tag = new Img();
+                tag.attrs(attri);
+                return tag;
+            }
 }
-    
 export default Img;
