@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
 class Fieldset extends Tag {
@@ -9,21 +9,17 @@ class Fieldset extends Tag {
     }
     
     disabled(value?: string) {
-        if(value) this.setAttr("disabled", value);
+        if (value) this.setAttr("disabled", value);
         return this;
     }
-
     form(value?: string) {
-        if(value) this.setAttr("form", value);
+        if (value) this.setAttr("form", value);
         return this;
     }
-
     name(value?: string) {
-        if(value) this.setAttr("name", value);
+        if (value) this.setAttr("name", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"disabled"?: string,
 		"form"?: string,
@@ -48,17 +44,9 @@ class Fieldset extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Fieldset {
-        var tag = new Fieldset(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Fieldset(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Fieldset;
-    

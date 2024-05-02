@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee
 class Marquee extends Tag {
@@ -9,16 +9,13 @@ class Marquee extends Tag {
     }
     
     bgcolor(value?: string) {
-        if(value) this.setAttr("bgcolor", value);
+        if (value) this.setAttr("bgcolor", value);
         return this;
     }
-
     loop(value?: string) {
-        if(value) this.setAttr("loop", value);
+        if (value) this.setAttr("loop", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"bgcolor"?: string,
 		"loop"?: string,
@@ -42,17 +39,9 @@ class Marquee extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Marquee {
-        var tag = new Marquee(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Marquee(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Marquee;
-    

@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
-class Aside extends UnattributedTag {
+class Aside extends Tag {
     constructor(children?: childrenType) {
         super("aside", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Aside extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Aside {
-        var tag = new Aside(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Aside(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Aside;
-    

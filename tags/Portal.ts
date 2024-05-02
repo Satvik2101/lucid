@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/portal
-class Portal extends UnattributedTag {
+class Portal extends Tag {
     constructor(children?: childrenType) {
         super("portal", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Portal extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Portal {
-        var tag = new Portal(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Portal(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Portal;
-    

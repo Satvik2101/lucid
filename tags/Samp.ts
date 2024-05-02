@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp
-class Samp extends UnattributedTag {
+class Samp extends Tag {
     constructor(children?: childrenType) {
         super("samp", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Samp extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Samp {
-        var tag = new Samp(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Samp(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Samp;
-    

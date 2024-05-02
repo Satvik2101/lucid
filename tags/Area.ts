@@ -1,66 +1,53 @@
-
 import VoidTag from "../utils/VoidTag";
+import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area
 class Area extends VoidTag {
     constructor() {
-        super("area");
-    }
-
+                super("area");
+            }
     
     alt(value?: string) {
-        if(value) this.setAttr("alt", value);
+        if (value) this.setAttr("alt", value);
         return this;
     }
-
     coords(value?: string) {
-        if(value) this.setAttr("coords", value);
+        if (value) this.setAttr("coords", value);
         return this;
     }
-
     download(value?: string) {
-        if(value) this.setAttr("download", value);
+        if (value) this.setAttr("download", value);
         return this;
     }
-
     href(value?: string) {
-        if(value) this.setAttr("href", value);
+        if (value) this.setAttr("href", value);
         return this;
     }
-
     media(value?: string) {
-        if(value) this.setAttr("media", value);
+        if (value) this.setAttr("media", value);
         return this;
     }
-
     ping(value?: string) {
-        if(value) this.setAttr("ping", value);
+        if (value) this.setAttr("ping", value);
         return this;
     }
-
     referrerpolicy(value?: string) {
-        if(value) this.setAttr("referrerpolicy", value);
+        if (value) this.setAttr("referrerpolicy", value);
         return this;
     }
-
     rel(value?: string) {
-        if(value) this.setAttr("rel", value);
+        if (value) this.setAttr("rel", value);
         return this;
     }
-
     shape(value?: string) {
-        if(value) this.setAttr("shape", value);
+        if (value) this.setAttr("shape", value);
         return this;
     }
-
     target(value?: string) {
-        if(value) this.setAttr("target", value);
+        if (value) this.setAttr("target", value);
         return this;
     }
-
-
-
     static withAttributes(attri: {
 		"alt"?: string,
 		"coords"?: string,
@@ -92,12 +79,9 @@ class Area extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Area {
-        var tag = new Area;
-        tag.attrs(attri);
-        return tag;
-    }
-
-        
+                var tag = new Area();
+                tag.attrs(attri);
+                return tag;
+            }
 }
-    
 export default Area;

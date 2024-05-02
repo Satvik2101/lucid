@@ -7,7 +7,6 @@ export { default as SimpleAnchor } from "./utils/SimpleAnchor";
 export { default as SimpleOrderedList } from "./utils/SimpleOrderedList";
 export { default as SimpleUnorderedList } from "./utils/SimpleUnorderedList";
 export { default as Tag } from "./utils/Tag";
-export { default as UnattributedTag } from "./utils/UnattributedTag";
 export { default as VoidTag } from "./utils/VoidTag";
 
 

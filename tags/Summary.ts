@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary
-class Summary extends UnattributedTag {
+class Summary extends Tag {
     constructor(children?: childrenType) {
         super("summary", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Summary extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Summary {
-        var tag = new Summary(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Summary(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Summary;
-    

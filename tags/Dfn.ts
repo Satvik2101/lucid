@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn
-class Dfn extends UnattributedTag {
+class Dfn extends Tag {
     constructor(children?: childrenType) {
         super("dfn", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Dfn extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Dfn {
-        var tag = new Dfn(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Dfn(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Dfn;
-    

@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
-class Figure extends UnattributedTag {
+class Figure extends Tag {
     constructor(children?: childrenType) {
         super("figure", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Figure extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Figure {
-        var tag = new Figure(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Figure(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Figure;
-    

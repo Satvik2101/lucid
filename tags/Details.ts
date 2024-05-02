@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
 class Details extends Tag {
@@ -9,11 +9,9 @@ class Details extends Tag {
     }
     
     open(value?: string) {
-        if(value) this.setAttr("open", value);
+        if (value) this.setAttr("open", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"open"?: string,
 		"accesskey"?: string,
@@ -36,17 +34,9 @@ class Details extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Details {
-        var tag = new Details(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Details(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Details;
-    

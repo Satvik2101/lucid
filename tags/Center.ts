@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center
-class Center extends UnattributedTag {
+class Center extends Tag {
     constructor(children?: childrenType) {
         super("center", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Center extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Center {
-        var tag = new Center(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Center(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Center;
-    

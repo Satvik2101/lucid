@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
 class Map extends Tag {
@@ -9,11 +9,9 @@ class Map extends Tag {
     }
     
     name(value?: string) {
-        if(value) this.setAttr("name", value);
+        if (value) this.setAttr("name", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"name"?: string,
 		"accesskey"?: string,
@@ -36,17 +34,9 @@ class Map extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Map {
-        var tag = new Map(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Map(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Map;
-    

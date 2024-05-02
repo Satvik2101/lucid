@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font
 class Font extends Tag {
@@ -9,11 +9,9 @@ class Font extends Tag {
     }
     
     color(value?: string) {
-        if(value) this.setAttr("color", value);
+        if (value) this.setAttr("color", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"color"?: string,
 		"accesskey"?: string,
@@ -36,17 +34,9 @@ class Font extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Font {
-        var tag = new Font(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Font(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Font;
-    

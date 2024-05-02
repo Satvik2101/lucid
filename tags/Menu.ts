@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu
 class Menu extends Tag {
@@ -9,11 +9,9 @@ class Menu extends Tag {
     }
     
     type(value?: string) {
-        if(value) this.setAttr("type", value);
+        if (value) this.setAttr("type", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"type"?: string,
 		"accesskey"?: string,
@@ -36,17 +34,9 @@ class Menu extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Menu {
-        var tag = new Menu(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Menu(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Menu;
-    

@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noframes
-class Noframes extends UnattributedTag {
+class Noframes extends Tag {
     constructor(children?: childrenType) {
         super("noframes", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Noframes extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Noframes {
-        var tag = new Noframes(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Noframes(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Noframes;
-    

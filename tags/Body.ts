@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body
 class Body extends Tag {
@@ -9,16 +9,13 @@ class Body extends Tag {
     }
     
     background(value?: string) {
-        if(value) this.setAttr("background", value);
+        if (value) this.setAttr("background", value);
         return this;
     }
-
     bgcolor(value?: string) {
-        if(value) this.setAttr("bgcolor", value);
+        if (value) this.setAttr("bgcolor", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"background"?: string,
 		"bgcolor"?: string,
@@ -42,17 +39,9 @@ class Body extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Body {
-        var tag = new Body(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Body(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Body;
-    

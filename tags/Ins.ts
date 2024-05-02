@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins
 class Ins extends Tag {
@@ -9,16 +9,13 @@ class Ins extends Tag {
     }
     
     cite(value?: string) {
-        if(value) this.setAttr("cite", value);
+        if (value) this.setAttr("cite", value);
         return this;
     }
-
     datetime(value?: string) {
-        if(value) this.setAttr("datetime", value);
+        if (value) this.setAttr("datetime", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"cite"?: string,
 		"datetime"?: string,
@@ -42,17 +39,9 @@ class Ins extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Ins {
-        var tag = new Ins(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Ins(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Ins;
-    

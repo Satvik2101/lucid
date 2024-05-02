@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
-class Template extends UnattributedTag {
+class Template extends Tag {
     constructor(children?: childrenType) {
         super("template", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Template extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Template {
-        var tag = new Template(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Template(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Template;
-    

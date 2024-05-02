@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
 class Canvas extends Tag {
@@ -9,16 +9,13 @@ class Canvas extends Tag {
     }
     
     height(value?: string) {
-        if(value) this.setAttr("height", value);
+        if (value) this.setAttr("height", value);
         return this;
     }
-
     width(value?: string) {
-        if(value) this.setAttr("width", value);
+        if (value) this.setAttr("width", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"height"?: string,
 		"width"?: string,
@@ -42,17 +39,9 @@ class Canvas extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Canvas {
-        var tag = new Canvas(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Canvas(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Canvas;
-    

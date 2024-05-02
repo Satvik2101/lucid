@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead
 class Thead extends Tag {
@@ -9,11 +9,9 @@ class Thead extends Tag {
     }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"accesskey"?: string,
@@ -36,17 +34,9 @@ class Thead extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Thead {
-        var tag = new Thead(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Thead(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Thead;
-    

@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption
-class Figcaption extends UnattributedTag {
+class Figcaption extends Tag {
     constructor(children?: childrenType) {
         super("figcaption", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Figcaption extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Figcaption {
-        var tag = new Figcaption(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Figcaption(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Figcaption;
-    

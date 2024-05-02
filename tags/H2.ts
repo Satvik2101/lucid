@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h2
-class H2 extends UnattributedTag {
+class H2 extends Tag {
     constructor(children?: childrenType) {
         super("h2", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class H2 extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): H2 {
-        var tag = new H2(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new H2(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default H2;
-    

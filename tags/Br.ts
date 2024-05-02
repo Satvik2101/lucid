@@ -1,16 +1,13 @@
-
 import VoidTag from "../utils/VoidTag";
+import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br
 class Br extends VoidTag {
     constructor() {
-        super("br");
-    }
-
+                super("br");
+            }
     
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -32,12 +29,9 @@ class Br extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Br {
-        var tag = new Br;
-        tag.attrs(attri);
-        return tag;
-    }
-
-        
+                var tag = new Br();
+                tag.attrs(attri);
+                return tag;
+            }
 }
-    
 export default Br;

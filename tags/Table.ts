@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 class Table extends Tag {
@@ -9,31 +9,25 @@ class Table extends Tag {
     }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     background(value?: string) {
-        if(value) this.setAttr("background", value);
+        if (value) this.setAttr("background", value);
         return this;
     }
-
     bgcolor(value?: string) {
-        if(value) this.setAttr("bgcolor", value);
+        if (value) this.setAttr("bgcolor", value);
         return this;
     }
-
     border(value?: string) {
-        if(value) this.setAttr("border", value);
+        if (value) this.setAttr("border", value);
         return this;
     }
-
     summary(value?: string) {
-        if(value) this.setAttr("summary", value);
+        if (value) this.setAttr("summary", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"background"?: string,
@@ -60,17 +54,9 @@ class Table extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Table {
-        var tag = new Table(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Table(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Table;
-    

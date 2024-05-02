@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist
-class Datalist extends UnattributedTag {
+class Datalist extends Tag {
     constructor(children?: childrenType) {
         super("datalist", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Datalist extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Datalist {
-        var tag = new Datalist(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Datalist(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Datalist;
-    

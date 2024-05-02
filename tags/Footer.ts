@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer
-class Footer extends UnattributedTag {
+class Footer extends Tag {
     constructor(children?: childrenType) {
         super("footer", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Footer extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Footer {
-        var tag = new Footer(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Footer(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Footer;
-    

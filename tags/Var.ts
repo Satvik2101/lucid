@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var
-class Var extends UnattributedTag {
+class Var extends Tag {
     constructor(children?: childrenType) {
         super("var", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Var extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Var {
-        var tag = new Var(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Var(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Var;
-    

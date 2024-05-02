@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
 class Time extends Tag {
@@ -9,11 +9,9 @@ class Time extends Tag {
     }
     
     datetime(value?: string) {
-        if(value) this.setAttr("datetime", value);
+        if (value) this.setAttr("datetime", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"datetime"?: string,
 		"accesskey"?: string,
@@ -36,17 +34,9 @@ class Time extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Time {
-        var tag = new Time(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Time(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Time;
-    

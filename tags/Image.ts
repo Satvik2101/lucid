@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/image
-class Image extends UnattributedTag {
+class Image extends Tag {
     constructor(children?: childrenType) {
         super("image", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Image extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Image {
-        var tag = new Image(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Image(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Image;
-    

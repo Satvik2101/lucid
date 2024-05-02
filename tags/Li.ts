@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
 class Li extends Tag {
@@ -9,11 +9,9 @@ class Li extends Tag {
     }
     
     value(value?: string) {
-        if(value) this.setAttr("value", value);
+        if (value) this.setAttr("value", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"value"?: string,
 		"accesskey"?: string,
@@ -36,17 +34,9 @@ class Li extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Li {
-        var tag = new Li(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Li(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Li;
-    

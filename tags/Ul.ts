@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
-class Ul extends UnattributedTag {
+class Ul extends Tag {
     constructor(children?: childrenType) {
         super("ul", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Ul extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Ul {
-        var tag = new Ul(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Ul(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Ul;
-    

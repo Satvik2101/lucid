@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rb
-class Rb extends UnattributedTag {
+class Rb extends Tag {
     constructor(children?: childrenType) {
         super("rb", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Rb extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Rb {
-        var tag = new Rb(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Rb(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Rb;
-    

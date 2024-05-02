@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noembed
-class Noembed extends UnattributedTag {
+class Noembed extends Tag {
     constructor(children?: childrenType) {
         super("noembed", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Noembed extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Noembed {
-        var tag = new Noembed(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Noembed(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Noembed;
-    

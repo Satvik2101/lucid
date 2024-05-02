@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr
 class Tr extends Tag {
@@ -9,16 +9,13 @@ class Tr extends Tag {
     }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     bgcolor(value?: string) {
-        if(value) this.setAttr("bgcolor", value);
+        if (value) this.setAttr("bgcolor", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"bgcolor"?: string,
@@ -42,17 +39,9 @@ class Tr extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Tr {
-        var tag = new Tr(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Tr(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Tr;
-    

@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby
-class Ruby extends UnattributedTag {
+class Ruby extends Tag {
     constructor(children?: childrenType) {
         super("ruby", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Ruby extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Ruby {
-        var tag = new Ruby(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Ruby(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Ruby;
-    

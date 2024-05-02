@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span
-class Span extends UnattributedTag {
+class Span extends Tag {
     constructor(children?: childrenType) {
         super("span", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Span extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Span {
-        var tag = new Span(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Span(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Span;
-    

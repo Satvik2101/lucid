@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup
-class Hgroup extends UnattributedTag {
+class Hgroup extends Tag {
     constructor(children?: childrenType) {
         super("hgroup", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Hgroup extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Hgroup {
-        var tag = new Hgroup(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Hgroup(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Hgroup;
-    

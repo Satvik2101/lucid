@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
-class Strong extends UnattributedTag {
+class Strong extends Tag {
     constructor(children?: childrenType) {
         super("strong", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Strong extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Strong {
-        var tag = new Strong(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Strong(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Strong;
-    

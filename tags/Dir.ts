@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dir
-class Dir extends UnattributedTag {
+class Dir extends Tag {
     constructor(children?: childrenType) {
         super("dir", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Dir extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Dir {
-        var tag = new Dir(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Dir(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Dir;
-    

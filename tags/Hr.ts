@@ -1,26 +1,21 @@
-
 import VoidTag from "../utils/VoidTag";
+import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 class Hr extends VoidTag {
     constructor() {
-        super("hr");
-    }
-
+                super("hr");
+            }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     color(value?: string) {
-        if(value) this.setAttr("color", value);
+        if (value) this.setAttr("color", value);
         return this;
     }
-
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"color"?: string,
@@ -44,12 +39,9 @@ class Hr extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Hr {
-        var tag = new Hr;
-        tag.attrs(attri);
-        return tag;
-    }
-
-        
+                var tag = new Hr();
+                tag.attrs(attri);
+                return tag;
+            }
 }
-    
 export default Hr;

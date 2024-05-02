@@ -1,36 +1,29 @@
-
 import VoidTag from "../utils/VoidTag";
+import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed
 class Embed extends VoidTag {
     constructor() {
-        super("embed");
-    }
-
+                super("embed");
+            }
     
     height(value?: string) {
-        if(value) this.setAttr("height", value);
+        if (value) this.setAttr("height", value);
         return this;
     }
-
     src(value?: string) {
-        if(value) this.setAttr("src", value);
+        if (value) this.setAttr("src", value);
         return this;
     }
-
     type(value?: string) {
-        if(value) this.setAttr("type", value);
+        if (value) this.setAttr("type", value);
         return this;
     }
-
     width(value?: string) {
-        if(value) this.setAttr("width", value);
+        if (value) this.setAttr("width", value);
         return this;
     }
-
-
-
     static withAttributes(attri: {
 		"height"?: string,
 		"src"?: string,
@@ -56,12 +49,9 @@ class Embed extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Embed {
-        var tag = new Embed;
-        tag.attrs(attri);
-        return tag;
-    }
-
-        
+                var tag = new Embed();
+                tag.attrs(attri);
+                return tag;
+            }
 }
-    
 export default Embed;

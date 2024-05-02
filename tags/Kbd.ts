@@ -1,14 +1,12 @@
-
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
+
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd
-class Kbd extends UnattributedTag {
+class Kbd extends Tag {
     constructor(children?: childrenType) {
         super("kbd", children);
     }
-
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -30,14 +28,10 @@ class Kbd extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Kbd {
-        var tag = new Kbd(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
+            var tag = new Kbd(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Kbd;
-    

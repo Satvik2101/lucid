@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th
 class Th extends Tag {
@@ -9,41 +9,33 @@ class Th extends Tag {
     }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     background(value?: string) {
-        if(value) this.setAttr("background", value);
+        if (value) this.setAttr("background", value);
         return this;
     }
-
     bgcolor(value?: string) {
-        if(value) this.setAttr("bgcolor", value);
+        if (value) this.setAttr("bgcolor", value);
         return this;
     }
-
     colspan(value?: string) {
-        if(value) this.setAttr("colspan", value);
+        if (value) this.setAttr("colspan", value);
         return this;
     }
-
     headers(value?: string) {
-        if(value) this.setAttr("headers", value);
+        if (value) this.setAttr("headers", value);
         return this;
     }
-
     rowspan(value?: string) {
-        if(value) this.setAttr("rowspan", value);
+        if (value) this.setAttr("rowspan", value);
         return this;
     }
-
     scope(value?: string) {
-        if(value) this.setAttr("scope", value);
+        if (value) this.setAttr("scope", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"background"?: string,
@@ -72,17 +64,9 @@ class Th extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Th {
-        var tag = new Th(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
-    
-
-
+            var tag = new Th(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
-
-
 export default Th;
-    
