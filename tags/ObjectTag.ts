@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object
 class ObjectTag extends Tag {
@@ -9,46 +9,37 @@ class ObjectTag extends Tag {
     }
     
     border(value?: string) {
-        if(value) this.setAttr("border", value);
+        if (value) this.setAttr("border", value);
         return this;
     }
-
     data(value?: string) {
-        if(value) this.setAttr("data", value);
+        if (value) this.setAttr("data", value);
         return this;
     }
-
     form(value?: string) {
-        if(value) this.setAttr("form", value);
+        if (value) this.setAttr("form", value);
         return this;
     }
-
     height(value?: string) {
-        if(value) this.setAttr("height", value);
+        if (value) this.setAttr("height", value);
         return this;
     }
-
     name(value?: string) {
-        if(value) this.setAttr("name", value);
+        if (value) this.setAttr("name", value);
         return this;
     }
-
     type(value?: string) {
-        if(value) this.setAttr("type", value);
+        if (value) this.setAttr("type", value);
         return this;
     }
-
     usemap(value?: string) {
-        if(value) this.setAttr("usemap", value);
+        if (value) this.setAttr("usemap", value);
         return this;
     }
-
     width(value?: string) {
-        if(value) this.setAttr("width", value);
+        if (value) this.setAttr("width", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"border"?: string,
 		"data"?: string,
@@ -82,13 +73,6 @@ class ObjectTag extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default ObjectTag;
-    

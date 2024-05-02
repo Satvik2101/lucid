@@ -1,6 +1,4 @@
-
 import VoidTag from "../utils/VoidTag";
-
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col
 class Col extends VoidTag {
@@ -8,23 +6,19 @@ class Col extends VoidTag {
         super("col");
     }
 
-    
+
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     bgcolor(value?: string) {
-        if(value) this.setAttr("bgcolor", value);
+        if (value) this.setAttr("bgcolor", value);
         return this;
     }
-
     span(value?: string) {
-        if(value) this.setAttr("span", value);
+        if (value) this.setAttr("span", value);
         return this;
     }
-
-
 
     static withAttributes(attri: {
 		"align"?: string,
@@ -53,9 +47,7 @@ class Col extends VoidTag {
         var tag = new Col;
         tag.attrs(attri);
         return tag;
-    }
-
-        
+    }    
 }
     
 export default Col;

@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h3
 class H3 extends UnattributedTag {
     constructor(children?: childrenType) {
         super("h3", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class H3 extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default H3;
-    

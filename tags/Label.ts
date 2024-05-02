@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
 class Label extends Tag {
@@ -9,16 +9,13 @@ class Label extends Tag {
     }
     
     for(value?: string) {
-        if(value) this.setAttr("for", value);
+        if (value) this.setAttr("for", value);
         return this;
     }
-
     form(value?: string) {
-        if(value) this.setAttr("form", value);
+        if (value) this.setAttr("form", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"for"?: string,
 		"form"?: string,
@@ -46,13 +43,6 @@ class Label extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Label;
-    

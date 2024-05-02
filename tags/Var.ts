@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var
 class Var extends UnattributedTag {
     constructor(children?: childrenType) {
         super("var", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Var extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Var;
-    

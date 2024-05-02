@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style
 class Style extends Tag {
@@ -9,21 +9,17 @@ class Style extends Tag {
     }
     
     media(value?: string) {
-        if(value) this.setAttr("media", value);
+        if (value) this.setAttr("media", value);
         return this;
     }
-
     scoped(value?: string) {
-        if(value) this.setAttr("scoped", value);
+        if (value) this.setAttr("scoped", value);
         return this;
     }
-
     type(value?: string) {
-        if(value) this.setAttr("type", value);
+        if (value) this.setAttr("type", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"media"?: string,
 		"scoped"?: string,
@@ -52,13 +48,6 @@ class Style extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Style;
-    

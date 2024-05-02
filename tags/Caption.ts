@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption
 class Caption extends Tag {
@@ -9,11 +9,9 @@ class Caption extends Tag {
     }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"accesskey"?: string,
@@ -40,13 +38,6 @@ class Caption extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Caption;
-    

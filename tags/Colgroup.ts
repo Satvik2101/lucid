@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup
 class Colgroup extends Tag {
@@ -9,21 +9,17 @@ class Colgroup extends Tag {
     }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     bgcolor(value?: string) {
-        if(value) this.setAttr("bgcolor", value);
+        if (value) this.setAttr("bgcolor", value);
         return this;
     }
-
     span(value?: string) {
-        if(value) this.setAttr("span", value);
+        if (value) this.setAttr("span", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"bgcolor"?: string,
@@ -52,13 +48,6 @@ class Colgroup extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Colgroup;
-    

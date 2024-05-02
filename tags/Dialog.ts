@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 class Dialog extends Tag {
@@ -9,11 +9,9 @@ class Dialog extends Tag {
     }
     
     open(value?: string) {
-        if(value) this.setAttr("open", value);
+        if (value) this.setAttr("open", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"open"?: string,
 		"accesskey"?: string,
@@ -40,13 +38,6 @@ class Dialog extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Dialog;
-    

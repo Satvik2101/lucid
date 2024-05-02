@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/xmp
 class Xmp extends UnattributedTag {
     constructor(children?: childrenType) {
         super("xmp", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Xmp extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Xmp;
-    

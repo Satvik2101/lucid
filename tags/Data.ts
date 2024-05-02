@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data
 class Data extends Tag {
@@ -9,11 +9,9 @@ class Data extends Tag {
     }
     
     value(value?: string) {
-        if(value) this.setAttr("value", value);
+        if (value) this.setAttr("value", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"value"?: string,
 		"accesskey"?: string,
@@ -40,13 +38,6 @@ class Data extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Data;
-    

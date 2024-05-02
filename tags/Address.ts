@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address
 class Address extends UnattributedTag {
     constructor(children?: childrenType) {
         super("address", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Address extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Address;
-    

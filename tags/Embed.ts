@@ -1,6 +1,4 @@
-
 import VoidTag from "../utils/VoidTag";
-
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed
 class Embed extends VoidTag {
@@ -8,28 +6,23 @@ class Embed extends VoidTag {
         super("embed");
     }
 
-    
+
     height(value?: string) {
-        if(value) this.setAttr("height", value);
+        if (value) this.setAttr("height", value);
         return this;
     }
-
     src(value?: string) {
-        if(value) this.setAttr("src", value);
+        if (value) this.setAttr("src", value);
         return this;
     }
-
     type(value?: string) {
-        if(value) this.setAttr("type", value);
+        if (value) this.setAttr("type", value);
         return this;
     }
-
     width(value?: string) {
-        if(value) this.setAttr("width", value);
+        if (value) this.setAttr("width", value);
         return this;
     }
-
-
 
     static withAttributes(attri: {
 		"height"?: string,
@@ -59,9 +52,7 @@ class Embed extends VoidTag {
         var tag = new Embed;
         tag.attrs(attri);
         return tag;
-    }
-
-        
+    }    
 }
     
 export default Embed;

@@ -1,6 +1,4 @@
-
 import VoidTag from "../utils/VoidTag";
-
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 class Base extends VoidTag {
@@ -8,18 +6,15 @@ class Base extends VoidTag {
         super("base");
     }
 
-    
+
     href(value?: string) {
-        if(value) this.setAttr("href", value);
+        if (value) this.setAttr("href", value);
         return this;
     }
-
     target(value?: string) {
-        if(value) this.setAttr("target", value);
+        if (value) this.setAttr("target", value);
         return this;
     }
-
-
 
     static withAttributes(attri: {
 		"href"?: string,
@@ -47,9 +42,7 @@ class Base extends VoidTag {
         var tag = new Base;
         tag.attrs(attri);
         return tag;
-    }
-
-        
+    }    
 }
     
 export default Base;

@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option
 class Option extends Tag {
@@ -9,26 +9,21 @@ class Option extends Tag {
     }
     
     disabled(value?: string) {
-        if(value) this.setAttr("disabled", value);
+        if (value) this.setAttr("disabled", value);
         return this;
     }
-
     label(value?: string) {
-        if(value) this.setAttr("label", value);
+        if (value) this.setAttr("label", value);
         return this;
     }
-
     selected(value?: string) {
-        if(value) this.setAttr("selected", value);
+        if (value) this.setAttr("selected", value);
         return this;
     }
-
     value(value?: string) {
-        if(value) this.setAttr("value", value);
+        if (value) this.setAttr("value", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"disabled"?: string,
 		"label"?: string,
@@ -58,13 +53,6 @@ class Option extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Option;
-    

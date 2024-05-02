@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress
 class Progress extends Tag {
@@ -9,21 +9,17 @@ class Progress extends Tag {
     }
     
     form(value?: string) {
-        if(value) this.setAttr("form", value);
+        if (value) this.setAttr("form", value);
         return this;
     }
-
     max(value?: string) {
-        if(value) this.setAttr("max", value);
+        if (value) this.setAttr("max", value);
         return this;
     }
-
     value(value?: string) {
-        if(value) this.setAttr("value", value);
+        if (value) this.setAttr("value", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"form"?: string,
 		"max"?: string,
@@ -52,13 +48,6 @@ class Progress extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Progress;
-    

@@ -1,6 +1,4 @@
-
 import VoidTag from "../utils/VoidTag";
-
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 class Meta extends VoidTag {
@@ -8,33 +6,27 @@ class Meta extends VoidTag {
         super("meta");
     }
 
-    
+
     charset(value?: string) {
-        if(value) this.setAttr("charset", value);
+        if (value) this.setAttr("charset", value);
         return this;
     }
-
     content(value?: string) {
-        if(value) this.setAttr("content", value);
+        if (value) this.setAttr("content", value);
         return this;
     }
-
     http_equiv(value?: string) {
-        if(value) this.setAttr("http-equiv", value);
+        if (value) this.setAttr("http-equiv", value);
         return this;
     }
-
     name(value?: string) {
-        if(value) this.setAttr("name", value);
+        if (value) this.setAttr("name", value);
         return this;
     }
-
     property(value?: string) {
-        if(value) this.setAttr("property", value);
+        if (value) this.setAttr("property", value);
         return this;
     }
-
-
 
     static withAttributes(attri: {
 		"charset"?: string,
@@ -65,9 +57,7 @@ class Meta extends VoidTag {
         var tag = new Meta;
         tag.attrs(attri);
         return tag;
-    }
-
-        
+    }    
 }
     
 export default Meta;

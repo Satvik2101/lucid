@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote
 class Blockquote extends Tag {
@@ -9,11 +9,9 @@ class Blockquote extends Tag {
     }
     
     cite(value?: string) {
-        if(value) this.setAttr("cite", value);
+        if (value) this.setAttr("cite", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"cite"?: string,
 		"accesskey"?: string,
@@ -40,13 +38,6 @@ class Blockquote extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Blockquote;
-    

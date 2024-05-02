@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup
 class Optgroup extends Tag {
@@ -9,16 +9,13 @@ class Optgroup extends Tag {
     }
     
     disabled(value?: string) {
-        if(value) this.setAttr("disabled", value);
+        if (value) this.setAttr("disabled", value);
         return this;
     }
-
     label(value?: string) {
-        if(value) this.setAttr("label", value);
+        if (value) this.setAttr("label", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"disabled"?: string,
 		"label"?: string,
@@ -46,13 +43,6 @@ class Optgroup extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Optgroup;
-    

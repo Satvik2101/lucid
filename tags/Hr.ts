@@ -1,6 +1,4 @@
-
 import VoidTag from "../utils/VoidTag";
-
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 class Hr extends VoidTag {
@@ -8,18 +6,15 @@ class Hr extends VoidTag {
         super("hr");
     }
 
-    
+
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     color(value?: string) {
-        if(value) this.setAttr("color", value);
+        if (value) this.setAttr("color", value);
         return this;
     }
-
-
 
     static withAttributes(attri: {
 		"align"?: string,
@@ -47,9 +42,7 @@ class Hr extends VoidTag {
         var tag = new Hr;
         tag.attrs(attri);
         return tag;
-    }
-
-        
+    }    
 }
     
 export default Hr;

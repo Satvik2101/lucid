@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody
 class Tbody extends Tag {
@@ -9,16 +9,13 @@ class Tbody extends Tag {
     }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     bgcolor(value?: string) {
-        if(value) this.setAttr("bgcolor", value);
+        if (value) this.setAttr("bgcolor", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"bgcolor"?: string,
@@ -46,13 +43,6 @@ class Tbody extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Tbody;
-    

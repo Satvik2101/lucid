@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del
 class Del extends Tag {
@@ -9,16 +9,13 @@ class Del extends Tag {
     }
     
     cite(value?: string) {
-        if(value) this.setAttr("cite", value);
+        if (value) this.setAttr("cite", value);
         return this;
     }
-
     datetime(value?: string) {
-        if(value) this.setAttr("datetime", value);
+        if (value) this.setAttr("datetime", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"cite"?: string,
 		"datetime"?: string,
@@ -46,13 +43,6 @@ class Del extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Del;
-    

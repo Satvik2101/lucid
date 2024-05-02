@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
 class Script extends Tag {
@@ -9,46 +9,37 @@ class Script extends Tag {
     }
     
     async(value?: string) {
-        if(value) this.setAttr("async", value);
+        if (value) this.setAttr("async", value);
         return this;
     }
-
     crossorigin(value?: string) {
-        if(value) this.setAttr("crossorigin", value);
+        if (value) this.setAttr("crossorigin", value);
         return this;
     }
-
     defer(value?: string) {
-        if(value) this.setAttr("defer", value);
+        if (value) this.setAttr("defer", value);
         return this;
     }
-
     integrity(value?: string) {
-        if(value) this.setAttr("integrity", value);
+        if (value) this.setAttr("integrity", value);
         return this;
     }
-
     language(value?: string) {
-        if(value) this.setAttr("language", value);
+        if (value) this.setAttr("language", value);
         return this;
     }
-
     referrerpolicy(value?: string) {
-        if(value) this.setAttr("referrerpolicy", value);
+        if (value) this.setAttr("referrerpolicy", value);
         return this;
     }
-
     src(value?: string) {
-        if(value) this.setAttr("src", value);
+        if (value) this.setAttr("src", value);
         return this;
     }
-
     type(value?: string) {
-        if(value) this.setAttr("type", value);
+        if (value) this.setAttr("type", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"async"?: string,
 		"crossorigin"?: string,
@@ -82,13 +73,6 @@ class Script extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Script;
-    

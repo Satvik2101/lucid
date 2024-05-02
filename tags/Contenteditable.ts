@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/contenteditable
 class Contenteditable extends Tag {
@@ -9,16 +9,13 @@ class Contenteditable extends Tag {
     }
     
     enterkeyhint(value?: string) {
-        if(value) this.setAttr("enterkeyhint", value);
+        if (value) this.setAttr("enterkeyhint", value);
         return this;
     }
-
     inputmode(value?: string) {
-        if(value) this.setAttr("inputmode", value);
+        if (value) this.setAttr("inputmode", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"enterkeyhint"?: string,
 		"inputmode"?: string,
@@ -46,13 +43,6 @@ class Contenteditable extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Contenteditable;
-    

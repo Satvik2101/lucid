@@ -1,6 +1,4 @@
-
 import VoidTag from "../utils/VoidTag";
-
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr
 class Wbr extends VoidTag {
@@ -8,7 +6,6 @@ class Wbr extends VoidTag {
         super("wbr");
     }
 
-    
 
 
     static withAttributes(attri: {
@@ -35,9 +32,7 @@ class Wbr extends VoidTag {
         var tag = new Wbr;
         tag.attrs(attri);
         return tag;
-    }
-
-        
+    }    
 }
     
 export default Wbr;

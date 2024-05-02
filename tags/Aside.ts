@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
 class Aside extends UnattributedTag {
     constructor(children?: childrenType) {
         super("aside", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Aside extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Aside;
-    

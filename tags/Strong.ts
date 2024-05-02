@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
 class Strong extends UnattributedTag {
     constructor(children?: childrenType) {
         super("strong", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Strong extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Strong;
-    

@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/shadow
 class Shadow extends UnattributedTag {
     constructor(children?: childrenType) {
         super("shadow", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Shadow extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Shadow;
-    

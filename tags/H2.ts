@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h2
 class H2 extends UnattributedTag {
     constructor(children?: childrenType) {
         super("h2", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class H2 extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default H2;
-    

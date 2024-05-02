@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter
 class Meter extends Tag {
@@ -9,41 +9,33 @@ class Meter extends Tag {
     }
     
     form(value?: string) {
-        if(value) this.setAttr("form", value);
+        if (value) this.setAttr("form", value);
         return this;
     }
-
     high(value?: string) {
-        if(value) this.setAttr("high", value);
+        if (value) this.setAttr("high", value);
         return this;
     }
-
     low(value?: string) {
-        if(value) this.setAttr("low", value);
+        if (value) this.setAttr("low", value);
         return this;
     }
-
     max(value?: string) {
-        if(value) this.setAttr("max", value);
+        if (value) this.setAttr("max", value);
         return this;
     }
-
     min(value?: string) {
-        if(value) this.setAttr("min", value);
+        if (value) this.setAttr("min", value);
         return this;
     }
-
     optimum(value?: string) {
-        if(value) this.setAttr("optimum", value);
+        if (value) this.setAttr("optimum", value);
         return this;
     }
-
     value(value?: string) {
-        if(value) this.setAttr("value", value);
+        if (value) this.setAttr("value", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"form"?: string,
 		"high"?: string,
@@ -76,13 +68,6 @@ class Meter extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Meter;
-    

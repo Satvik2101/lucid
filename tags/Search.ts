@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search
 class Search extends UnattributedTag {
     constructor(children?: childrenType) {
         super("search", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Search extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Search;
-    

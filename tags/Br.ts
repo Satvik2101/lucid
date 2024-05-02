@@ -1,6 +1,4 @@
-
 import VoidTag from "../utils/VoidTag";
-
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br
 class Br extends VoidTag {
@@ -8,7 +6,6 @@ class Br extends VoidTag {
         super("br");
     }
 
-    
 
 
     static withAttributes(attri: {
@@ -35,9 +32,7 @@ class Br extends VoidTag {
         var tag = new Br;
         tag.attrs(attri);
         return tag;
-    }
-
-        
+    }    
 }
     
 export default Br;

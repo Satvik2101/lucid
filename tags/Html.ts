@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html
 class Html extends Tag {
@@ -9,11 +9,9 @@ class Html extends Tag {
     }
     
     manifest(value?: string) {
-        if(value) this.setAttr("manifest", value);
+        if (value) this.setAttr("manifest", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"manifest"?: string,
 		"accesskey"?: string,
@@ -40,13 +38,6 @@ class Html extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Html;
-    

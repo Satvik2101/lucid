@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noframes
 class Noframes extends UnattributedTag {
     constructor(children?: childrenType) {
         super("noframes", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Noframes extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Noframes;
-    

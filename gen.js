@@ -1,14 +1,13 @@
 const fs = require('fs');
-var raw = fs.readFileSync("html-elements-attributes.json");
+var rawJsonContents = fs.readFileSync("html-tags-attributes.json");
 
-var obj = JSON.parse(raw);
+var htmlTagsAndAttributes = JSON.parse(rawJsonContents);
 
-var globalAttributes = obj["*"];
-//raw is key-value pairs of each element and its attributes
-//iterate over key-value pairs
+var globalAttributes = htmlTagsAndAttributes["*"];
 
-var keys = Object.keys(obj);
+var htmlTags = Object.keys(htmlTagsAndAttributes); //also contains "*". Not an actual HTML tag, it is a wildcard for global attributes
 
+//hard-coded void tags. These tags do not have closing tags. Should probably not be hard-coded, but it's unlikely to change anytime soon.
 var voidTags = [
     "area",
     "base",
@@ -26,163 +25,183 @@ var voidTags = [
     "wbr"
 ]
 
-function getClassName(element) {
-    //capitalize first letter
-    var className = element[0].toUpperCase() + element.slice(1);
-    //replace - with _
-    className = className.replace(/-/g, "_");
-    console.log(className)
+function isVoidTag(tag) {
+    return voidTags.includes(tag);
+}
 
+function getParentTagImportStatement(parentTagClass) {
+    return `import ${parentTagClass} from "../utils/${parentTagClass}";`;
+}
+function getChildrenTypeImportStatement() {
+    return `import childrenType from "../childrenType";\n`;
+
+}
+function getExportStatement(className) {
+    return `export default ${className};`;
+}
+function getMdnUrl(tag) {
+    return `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${tag}`
+
+}
+function replaceDashWithUnderscore(str) {
+    return str.replace(/-/g, "_");
+}
+function getClassName(htmlTag) {
+
+    //capitalize first letter
+    var className = htmlTag[0].toUpperCase() + htmlTag.slice(1);
+    //replace - with _
+    className = replaceDashWithUnderscore(className);
+
+    //ugly hack to avoid reserved words
     if (className == "Object") {
         className = "ObjectTag";
-        console.log(className)
     }
     return className;
 }
 
-function genFactoryConstructor(element, attributes, isVoid = false) {
-    const className = getClassName(element);
-    // console.log("attributes ", attributes)
-    // console.log("globalAttributes ", globalAttributes)
-    var newAttri = [...attributes, ...globalAttributes]
-    // console.log(newAttri, newAttri.length)
+function getChildrenParameterForTag(tag, comma = false) {
+    if (isVoidTag(tag)) return "";
+    return `${comma ? ", " : ""}children?: childrenType`;
+
+}
+
+
+function generateTagConstructor(tag) {
+    const isVoid = isVoidTag(tag);
+
+    return `constructor(${getChildrenParameterForTag(tag)}) {
+        super("${tag}"${isVoid ? "" : ", children"});
+    }`
+}
+
+function generateAttributesParameterType(attributes) {
     var attributesParameterType = "{\n";
-    for (var i = 0; i < newAttri.length; i++) {
-        var attri = newAttri[i];
+    for (var i = 0; i < attributes.length; i++) {
+        var attri = attributes[i];
         attributesParameterType += `\t\t"${attri}"?: string,\n`;
     }
     attributesParameterType += "\t\t[key: string]: any\n\t}";
-    var start = `
-    static withAttributes(attri: ${attributesParameterType}${isVoid ? "" : ", children?: childrenType"}): ${className} {
+    return attributesParameterType;
+}
+function generateFactoryConstructor(tag, localAttributes, isVoid = false) {
+    const className = getClassName(tag);
+    var attributes = [...localAttributes, ...globalAttributes]
+
+    const attributesParameterType = generateAttributesParameterType(attributes);
+    var start = `static withAttributes(attri: ${attributesParameterType}${getChildrenParameterForTag(tag, true)}): ${className} {
         var tag = new ${className}${isVoid ? "" : "(children)"};
         tag.attrs(attri);
         return tag;
-    }
-
-    `
+    }`
+    //TODO: just found a bug above, shoudl be isVoid? "()": "(children)".
+    //Will fix it after this refactoring, because I want it to be a separate commit.
 
     return start;
 }
 
-function genSetterForAttri(attri) {
-    const functionName = attri.replace(/-/g, "_");
-    const template = `
+function generateSetterForAttribute(attribute) {
+    const functionName = replaceDashWithUnderscore(attribute);
+    const attributeSetterFunctionString = `
     ${functionName}(value?: string) {
-        if(value) this.setAttr("${attri}", value);
+        if (value) this.setAttr("${attribute}", value);
         return this;
-    }
-`;
-
-    return template;
+    }`;
+    return attributeSetterFunctionString;
 
 }
 
-function genVoidElement(element, attributes) {
-    const className = getClassName(element);
-    var start = `
-import VoidTag from "../utils/VoidTag";
+function generateVoidTag(tag, attributes) {
+    const className = getClassName(tag);
+    var start =
+        `${getParentTagImportStatement("VoidTag")}
 
-
-//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
+//${getMdnUrl(tag)}
 class ${className} extends VoidTag {
-    constructor() {
-        super("${element}");
-    }
+    ${generateTagConstructor(tag)}
 
-    `
+`
 
     for (var i = 0; i < attributes.length; i++) {
         var attri = attributes[i];
-        start += genSetterForAttri(attri);
+        start += generateSetterForAttribute(attri);
     }
 
     start += `
 
-${genFactoryConstructor(element, attributes, true)}    
+    ${generateFactoryConstructor(tag, attributes, true)}    
 }
     
-export default ${className};`;
+${getExportStatement(className)}`;
 
     return start;
 }
-function genUnattributedElement(element) {
-    const className = getClassName(element);
-    const template = `
-import UnattributedTag from "../utils/UnattributedTag";
-import childrenType from "../childrenType";
+function generateUnattributedTag(tag) {
+    const className = getClassName(tag);
+    const template =
+        `${getParentTagImportStatement("UnattributedTag")}
+${getChildrenTypeImportStatement()}
 
-//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
+//${getMdnUrl(tag)}
 class ${className} extends UnattributedTag {
-    constructor(children?: childrenType) {
-        super("${element}", children);
-    }
+    ${generateTagConstructor(tag)}
 
-${genFactoryConstructor(element, [])}
+    ${generateFactoryConstructor(tag, [])}
 
 }
 
-export default ${className};
-    `;
+${getExportStatement(className)}`;
 
     return template;
 }
 
-function genAttributedElement(element, attributes) {
-    const className = getClassName(element);
-    var setter = "";
+function generateAttributedTag(tag, attributes) {
+    const className = getClassName(tag);
+    var attributeSetters = "";
     for (var i = 0; i < attributes.length; i++) {
         var attri = attributes[i];
-        setter += genSetterForAttri(attri);
+        attributeSetters += generateSetterForAttribute(attri);
     }
-    const template = `
-import Tag from "../utils/Tag";
-import childrenType from "../childrenType";
+    const template =
+        `${getParentTagImportStatement("Tag")}
+${getChildrenTypeImportStatement()}
 
-//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}
+//${getMdnUrl(tag)}
 class ${className} extends Tag {
-    constructor(children?: childrenType) {
-        super("${element}", children);
-    }
-    ${setter}
-${genFactoryConstructor(element, attributes)}
-
-
+    ${generateTagConstructor(tag)}
+    ${attributeSetters}
+    ${generateFactoryConstructor(tag, attributes)}
 }
 
-
-
-export default ${className};
-    `;
+${getExportStatement(className)}`;
 
     return template;
 }
 
 
 let classNames = [];
-for (var i = 0; i < keys.length; i++) {
-    var element = keys[i];
-    var attributes = obj[element];
-    var template;
-    if (element == "*") continue;
-    if (voidTags.includes(element)) {
-        template = genVoidElement(element, attributes);
+for (var i = 0; i < htmlTags.length; i++) {
+    var tag = htmlTags[i];
+    var attributes = htmlTagsAndAttributes[tag];
+    var codeForTagClass;
+    if (tag == "*") continue;
+    if (voidTags.includes(tag)) {
+        codeForTagClass = generateVoidTag(tag, attributes);
     }
     else if (attributes.length == 0) {
-        // console.log(element);
-        template = genUnattributedElement(element);
+        codeForTagClass = generateUnattributedTag(tag);
     }
     else {
-
-        template = genAttributedElement(element, attributes);
+        codeForTagClass = generateAttributedTag(tag, attributes);
     }
     //create the file if it doesnt exist
 
-    const className = getClassName(element);
+    const className = getClassName(tag);
     classNames.push(className);
-    // fs.writeFileSync(`./tags/${getClassName(element)}.ts`, template);
+    fs.writeFileSync(`./tags/${className}.ts`, codeForTagClass);
 }
 
-function genIndexFile() {
+function generateIndexFile() {
 
     //get all files in the /utils directory
     const utils = fs.readdirSync("./utils");
@@ -190,8 +209,7 @@ function genIndexFile() {
 
     for (var i = 0; i < utils.length; i++) {
         var util = utils[i].replace(".ts", "");
-        indexFileContents += `export { default as ${util.replace(".ts", "")} } from "./utils/${util}";\n`;
-        // indexFileContents += `export * from "./utils/${util}";\n`;
+        indexFileContents += `export { default as ${util} } from "./utils/${util}";\n`;
 
     }
 
@@ -200,12 +218,10 @@ function genIndexFile() {
     for (var i = 0; i < classNames.length; i++) {
         var className = classNames[i];
         indexFileContents += `export { default as ${className} } from "./tags/${className}";\n`;
-        // indexFileContents += `export * from "./tags/${className}";\n`;
-
     }
 
     fs.writeFileSync("./index.ts", indexFileContents);
 
 }
 
-genIndexFile();
+generateIndexFile();

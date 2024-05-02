@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 class Iframe extends Tag {
@@ -9,61 +9,49 @@ class Iframe extends Tag {
     }
     
     align(value?: string) {
-        if(value) this.setAttr("align", value);
+        if (value) this.setAttr("align", value);
         return this;
     }
-
     allow(value?: string) {
-        if(value) this.setAttr("allow", value);
+        if (value) this.setAttr("allow", value);
         return this;
     }
-
     csp(value?: string) {
-        if(value) this.setAttr("csp", value);
+        if (value) this.setAttr("csp", value);
         return this;
     }
-
     height(value?: string) {
-        if(value) this.setAttr("height", value);
+        if (value) this.setAttr("height", value);
         return this;
     }
-
     loading(value?: string) {
-        if(value) this.setAttr("loading", value);
+        if (value) this.setAttr("loading", value);
         return this;
     }
-
     name(value?: string) {
-        if(value) this.setAttr("name", value);
+        if (value) this.setAttr("name", value);
         return this;
     }
-
     referrerpolicy(value?: string) {
-        if(value) this.setAttr("referrerpolicy", value);
+        if (value) this.setAttr("referrerpolicy", value);
         return this;
     }
-
     sandbox(value?: string) {
-        if(value) this.setAttr("sandbox", value);
+        if (value) this.setAttr("sandbox", value);
         return this;
     }
-
     src(value?: string) {
-        if(value) this.setAttr("src", value);
+        if (value) this.setAttr("src", value);
         return this;
     }
-
     srcdoc(value?: string) {
-        if(value) this.setAttr("srcdoc", value);
+        if (value) this.setAttr("srcdoc", value);
         return this;
     }
-
     width(value?: string) {
-        if(value) this.setAttr("width", value);
+        if (value) this.setAttr("width", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"align"?: string,
 		"allow"?: string,
@@ -100,13 +88,6 @@ class Iframe extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Iframe;
-    

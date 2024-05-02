@@ -1,13 +1,12 @@
-
 import UnattributedTag from "../utils/UnattributedTag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn
 class Dfn extends UnattributedTag {
     constructor(children?: childrenType) {
         super("dfn", children);
     }
-
 
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -35,9 +34,6 @@ class Dfn extends UnattributedTag {
         return tag;
     }
 
-    
-
 }
 
 export default Dfn;
-    

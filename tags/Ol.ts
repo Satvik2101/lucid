@@ -1,6 +1,6 @@
-
 import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
 class Ol extends Tag {
@@ -9,21 +9,17 @@ class Ol extends Tag {
     }
     
     reversed(value?: string) {
-        if(value) this.setAttr("reversed", value);
+        if (value) this.setAttr("reversed", value);
         return this;
     }
-
     start(value?: string) {
-        if(value) this.setAttr("start", value);
+        if (value) this.setAttr("start", value);
         return this;
     }
-
     type(value?: string) {
-        if(value) this.setAttr("type", value);
+        if (value) this.setAttr("type", value);
         return this;
     }
-
-
     static withAttributes(attri: {
 		"reversed"?: string,
 		"start"?: string,
@@ -52,13 +48,6 @@ class Ol extends Tag {
         tag.attrs(attri);
         return tag;
     }
-
-    
-
-
 }
 
-
-
 export default Ol;
-    
