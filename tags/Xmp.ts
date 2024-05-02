@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/xmp
-class Xmp extends UnattributedTag {
+class Xmp extends Tag {
     constructor(children?: childrenType) {
         super("xmp", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Xmp extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Xmp {
-        var tag = new Xmp(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Xmp(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Xmp;

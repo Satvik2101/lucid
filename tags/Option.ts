@@ -49,10 +49,9 @@ class Option extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Option {
-        var tag = new Option(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Option(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Option;

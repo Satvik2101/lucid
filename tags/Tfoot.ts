@@ -39,10 +39,9 @@ class Tfoot extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Tfoot {
-        var tag = new Tfoot(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Tfoot(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Tfoot;

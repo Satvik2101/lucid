@@ -69,10 +69,9 @@ class ObjectTag extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): ObjectTag {
-        var tag = new ObjectTag(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new ObjectTag(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default ObjectTag;

@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript
-class Noscript extends UnattributedTag {
+class Noscript extends Tag {
     constructor(children?: childrenType) {
         super("noscript", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Noscript extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Noscript {
-        var tag = new Noscript(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Noscript(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Noscript;

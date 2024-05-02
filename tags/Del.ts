@@ -39,10 +39,9 @@ class Del extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Del {
-        var tag = new Del(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Del(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Del;

@@ -34,10 +34,9 @@ class Q extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Q {
-        var tag = new Q(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Q(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Q;

@@ -44,10 +44,9 @@ class Output extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Output {
-        var tag = new Output(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Output(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Output;

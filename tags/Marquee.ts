@@ -39,10 +39,9 @@ class Marquee extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Marquee {
-        var tag = new Marquee(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Marquee(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Marquee;

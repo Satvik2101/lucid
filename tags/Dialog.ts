@@ -34,10 +34,9 @@ class Dialog extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Dialog {
-        var tag = new Dialog(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Dialog(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Dialog;

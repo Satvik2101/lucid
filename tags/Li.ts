@@ -34,10 +34,9 @@ class Li extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Li {
-        var tag = new Li(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Li(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Li;

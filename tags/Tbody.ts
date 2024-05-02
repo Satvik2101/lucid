@@ -39,10 +39,9 @@ class Tbody extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Tbody {
-        var tag = new Tbody(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Tbody(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Tbody;

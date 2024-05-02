@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strike
-class Strike extends UnattributedTag {
+class Strike extends Tag {
     constructor(children?: childrenType) {
         super("strike", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Strike extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Strike {
-        var tag = new Strike(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Strike(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Strike;

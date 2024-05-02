@@ -1,12 +1,13 @@
 import VoidTag from "../utils/VoidTag";
+import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 class Input extends VoidTag {
     constructor() {
-        super("input");
-    }
-
-
+                super("input");
+            }
+    
     accept(value?: string) {
         if (value) this.setAttr("accept", value);
         return this;
@@ -135,7 +136,6 @@ class Input extends VoidTag {
         if (value) this.setAttr("width", value);
         return this;
     }
-
     static withAttributes(attri: {
 		"accept"?: string,
 		"alt"?: string,
@@ -189,10 +189,9 @@ class Input extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Input {
-        var tag = new Input;
-        tag.attrs(attri);
-        return tag;
-    }    
+                var tag = new Input();
+                tag.attrs(attri);
+                return tag;
+            }
 }
-    
 export default Input;

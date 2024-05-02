@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h4
-class H4 extends UnattributedTag {
+class H4 extends Tag {
     constructor(children?: childrenType) {
         super("h4", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class H4 extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): H4 {
-        var tag = new H4(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new H4(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default H4;

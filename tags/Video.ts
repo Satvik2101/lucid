@@ -89,10 +89,9 @@ class Video extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Video {
-        var tag = new Video(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Video(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Video;

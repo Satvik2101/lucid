@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo
-class Bdo extends UnattributedTag {
+class Bdo extends Tag {
     constructor(children?: childrenType) {
         super("bdo", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Bdo extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Bdo {
-        var tag = new Bdo(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Bdo(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Bdo;

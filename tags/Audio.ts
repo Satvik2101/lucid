@@ -69,10 +69,9 @@ class Audio extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Audio {
-        var tag = new Audio(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Audio(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Audio;

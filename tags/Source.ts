@@ -1,12 +1,13 @@
 import VoidTag from "../utils/VoidTag";
+import childrenType from "../childrenType";
+
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source
 class Source extends VoidTag {
     constructor() {
-        super("source");
-    }
-
-
+                super("source");
+            }
+    
     media(value?: string) {
         if (value) this.setAttr("media", value);
         return this;
@@ -27,7 +28,6 @@ class Source extends VoidTag {
         if (value) this.setAttr("type", value);
         return this;
     }
-
     static withAttributes(attri: {
 		"media"?: string,
 		"sizes"?: string,
@@ -54,10 +54,9 @@ class Source extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Source {
-        var tag = new Source;
-        tag.attrs(attri);
-        return tag;
-    }    
+                var tag = new Source();
+                tag.attrs(attri);
+                return tag;
+            }
 }
-    
 export default Source;

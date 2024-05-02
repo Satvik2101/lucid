@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
-class Nav extends UnattributedTag {
+class Nav extends Tag {
     constructor(children?: childrenType) {
         super("nav", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Nav extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Nav {
-        var tag = new Nav(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Nav(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Nav;

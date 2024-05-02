@@ -44,10 +44,9 @@ class Progress extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Progress {
-        var tag = new Progress(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Progress(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Progress;

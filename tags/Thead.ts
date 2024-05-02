@@ -34,10 +34,9 @@ class Thead extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Thead {
-        var tag = new Thead(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Thead(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Thead;

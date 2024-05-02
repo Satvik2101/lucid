@@ -39,10 +39,9 @@ class Label extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Label {
-        var tag = new Label(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Label(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Label;

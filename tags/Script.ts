@@ -69,10 +69,9 @@ class Script extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Script {
-        var tag = new Script(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Script(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Script;

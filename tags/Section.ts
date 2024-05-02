@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section
-class Section extends UnattributedTag {
+class Section extends Tag {
     constructor(children?: childrenType) {
         super("section", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Section extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Section {
-        var tag = new Section(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Section(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Section;

@@ -64,10 +64,9 @@ class Meter extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Meter {
-        var tag = new Meter(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Meter(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Meter;

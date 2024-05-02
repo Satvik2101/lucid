@@ -39,10 +39,9 @@ class Ins extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Ins {
-        var tag = new Ins(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Ins(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Ins;

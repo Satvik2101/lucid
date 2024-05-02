@@ -34,10 +34,9 @@ class Font extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Font {
-        var tag = new Font(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Font(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Font;

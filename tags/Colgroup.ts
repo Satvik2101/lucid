@@ -44,10 +44,9 @@ class Colgroup extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Colgroup {
-        var tag = new Colgroup(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Colgroup(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Colgroup;

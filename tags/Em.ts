@@ -1,13 +1,12 @@
-import UnattributedTag from "../utils/UnattributedTag";
+import Tag from "../utils/Tag";
 import childrenType from "../childrenType";
 
 
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
-class Em extends UnattributedTag {
+class Em extends Tag {
     constructor(children?: childrenType) {
         super("em", children);
     }
-
     static withAttributes(attri: {
 		"accesskey"?: string,
 		"autocapitalize"?: string,
@@ -29,11 +28,10 @@ class Em extends UnattributedTag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Em {
-        var tag = new Em(children);
-        tag.attrs(attri);
-        return tag;
-    }
-
+            var tag = new Em(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
 
 export default Em;

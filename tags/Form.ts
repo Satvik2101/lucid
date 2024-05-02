@@ -74,10 +74,9 @@ class Form extends Tag {
 		"translate"?: string,
 		[key: string]: any
 	}, children?: childrenType): Form {
-        var tag = new Form(children);
-        tag.attrs(attri);
-        return tag;
-    }
+            var tag = new Form(children);
+            tag.attrs(attri);
+            return tag;
+        }
 }
-
 export default Form;
