@@ -3,9 +3,9 @@ const TagRegistry = require("./generator/TagRegistry");
 const fs = require('fs');
 
 const registry = new TagRegistry();
-const tags = registry.getAllTags();
-
 const tagCodeGeneratorFactory = new TagCodeGeneratorFactory();
+
+const tags = registry.getAllTags();
 
 let classNames = [];
 

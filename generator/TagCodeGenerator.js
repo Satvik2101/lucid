@@ -9,24 +9,18 @@ class TagCodeGenerator {
         this.parentTagClass = "Tag";
     }
 
+    generateClassCode() {
+        const className = this.getClassName();
+        return `${this.getImportStatements()}\n\n
+//${this.getMdnUrl()}
+class ${className} extends ${this.parentTagClass} {
+    ${this.generateTagConstructor()}
+    ${this.generateFactoryConstructor()}
+}
 
-    getMdnUrl() {
-        return `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${this.tagName}`
-
+${this.getExportStatement()}`
     }
 
-    getChildrenTypeImportStatement() {
-        return `import childrenType from "../childrenType";`;
-
-    }
-
-    getParentTagImportStatement() {
-        return `import ${this.parentTagClass} from "../utils/${this.parentTagClass}";`;
-    }
-
-    getImportStatements() {
-        return this.getParentTagImportStatement("Tag") + "\n" + this.getChildrenTypeImportStatement();
-    }
     getClassName() {
 
         //capitalize first letter
@@ -41,20 +35,28 @@ class TagCodeGenerator {
         return className;
     }
 
+    getImportStatements() {
+        return this.getParentTagImportStatement("Tag") + "\n" + this.getChildrenTypeImportStatement();
+    }
+
+    getParentTagImportStatement() {
+        return `import ${this.parentTagClass} from "../utils/${this.parentTagClass}";`;
+    }
+
+    getChildrenTypeImportStatement() {
+        return `import childrenType from "../childrenType";`;
+
+    }
+
+    getMdnUrl() {
+        return `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${this.tagName}`
+
+    }
+
     generateTagConstructor() {
         return `constructor(children?: childrenType) {
         super("${this.tagName}", children);
     }`
-    }
-
-    generateAttributesParameterType() {
-        var attributesParameterType = "{\n";
-        for (var i = 0; i < this.attributes.length; i++) {
-            var attri = this.attributes[i];
-            attributesParameterType += `\t\t"${attri}"?: string,\n`;
-        }
-        attributesParameterType += "\t\t[key: string]: any\n\t}";
-        return attributesParameterType;
     }
 
     generateFactoryConstructor() {
@@ -71,6 +73,18 @@ class TagCodeGenerator {
 
         return start;
     }
+
+    generateAttributesParameterType() {
+        var attributesParameterType = "{\n";
+        for (var i = 0; i < this.attributes.length; i++) {
+            var attri = this.attributes[i];
+            attributesParameterType += `\t\t"${attri}"?: string,\n`;
+        }
+        attributesParameterType += "\t\t[key: string]: any\n\t}";
+        return attributesParameterType;
+    }
+
+
     getExportStatement() {
         return `export default ${this.getClassName()};`;
     }
@@ -79,17 +93,7 @@ class TagCodeGenerator {
         return str.replace(/-/g, "_");
     }
 
-    generateClassCode() {
-        const className = this.getClassName();
-        return `${this.getImportStatements()}\n\n
-//${this.getMdnUrl()}
-class ${className} extends ${this.parentTagClass} {
-    ${this.generateTagConstructor()}
-    ${this.generateFactoryConstructor()}
-}
 
-${this.getExportStatement()}`
-    }
 }
 
 module.exports = TagCodeGenerator;
