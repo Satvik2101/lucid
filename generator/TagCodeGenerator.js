@@ -1,11 +1,8 @@
-const TagRegistry = require("./TagRegistry");
-
 class TagCodeGenerator {
 
     constructor(tagName, attributes) {
         this.tagName = tagName;
         this.attributes = attributes; //all attributes, global and local
-        // this.registry = new TagRegistry();
         this.parentTagClass = "Tag";
     }
 
@@ -68,8 +65,6 @@ ${this.getExportStatement()}`
             tag.attrs(attri);
             return tag;
         }`
-        //TODO: just found a bug above, shoudl be isVoid? "()": "(children)".
-        //Will fix it after this refactoring, because I want it to be a separate commit.
 
         return start;
     }
