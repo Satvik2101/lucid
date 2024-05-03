@@ -201,8 +201,8 @@ class Tag {
     attributeString() {
         var attributeString = "";
         for (var attribute in this.attributes) {
-            const value = this.attributes[attribute];
-            if (value == undefined || null) continue;
+            let value = this.attributes[attribute];
+            if (value == undefined || null) value = "";
             attributeString += `${attribute}="${value}" `;
         }
         return attributeString;
