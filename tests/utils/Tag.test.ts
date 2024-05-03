@@ -102,4 +102,161 @@ describe("Tag", () => {
         expect(renderedTag).toMatch(/<input lang="en" class="inputBox" checked="">Some Text<\/input>/);
 
     })
+
+    //Tests for Global Setters
+    //-----------------------------------------------------------------------
+    //-----------------------------------------------------------------------
+
+
+    //class
+    it("should set class attribute correctly", () => {
+        tag.class("container");
+        expect(tag.getAttr("class")).toBe("container");
+    });
+
+
+    //id
+    it("should set the id attribute correctly", () => {
+        tag.id("main");
+        expect(tag.getAttr("id")).toBe("main");
+    });
+
+    //style
+    it("should set the style attribute correctly", () => {
+        tag.style("color:red");
+        expect(tag.getAttr("style")).toBe("color:red");
+    });
+
+    //on-*
+    it("should set event attributes (on-*) correctly", () => {
+        tag.on("click", "alert('Hello')");
+        expect(tag.getAttr("onclick")).toBe("alert('Hello')");
+    });
+
+    //accesskey
+    it("should set accesskey attribute correctly", () => {
+        tag.accesskey("a");
+        expect(tag.getAttr("accesskey")).toBe("a");
+    });
+
+    //autocapitalize
+    it("should set autocapitalize attribute correctly", () => {
+        tag.autocapitalize("off");
+        expect(tag.getAttr("autocapitalize")).toBe("off");
+    });
+
+    //autofocus
+    it("should set autofocus attribute correctly", () => {
+        tag.autofocus();
+        expect(tag.getAttr("autofocus")).toBe("");
+    });
+
+    //contenteditable
+    it("should set contenteditable attribute correctly", () => {
+        tag.contenteditable("true");
+        expect(tag.getAttr("contenteditable")).toBe("true");
+    });
+
+    //dir
+    it("should set dir attribute correctly", () => {
+        tag.dir("rtl");
+        expect(tag.getAttr("dir")).toBe("rtl");
+    });
+
+    //enterkeyhint
+    it("should set enterkeyhint attribute correctly", () => {
+        tag.enterkeyhint("enter");
+        expect(tag.getAttr("enterkeyhint")).toBe("enter");
+    });
+
+    //exportparts
+    it("should set exportparts attribute correctly", () => {
+        tag.exportparts("part1");
+        expect(tag.getAttr("exportparts")).toBe("part1");
+    });
+
+    //hidden
+    it("should set hidden attribute correctly", () => {
+        tag.hidden("true");
+        expect(tag.getAttr("hidden")).toBe("true");
+    });
+
+    //inert
+    it("should set inert attribute correctly", () => {
+        tag.inert("true");
+        expect(tag.getAttr("inert")).toBe("true");
+    });
+
+    //inputmode
+    it("should set inputmode attribute correctly", () => {
+        tag.inputmode("numeric");
+        expect(tag.getAttr("inputmode")).toBe("numeric");
+    });
+
+    //is
+    it("should set is attribute correctly", () => {
+        tag.is("input");
+        expect(tag.getAttr("is")).toBe("input");
+    });
+
+    //lang
+    it("should set lang attribute correctly", () => {
+        tag.lang("en");
+        expect(tag.getAttr("lang")).toBe("en");
+    });
+
+    //nonce
+    it("should set nonce attribute correctly", () => {
+        tag.nonce("1234");
+        expect(tag.getAttr("nonce")).toBe("1234");
+    });
+
+    //part
+    it("should set part attribute correctly", () => {
+        tag.part("part1");
+        expect(tag.getAttr("part")).toBe("part1");
+    });
+
+    //popover
+    it("should set popover attribute correctly", () => {
+        tag.popover("popover1");
+        expect(tag.getAttr("popover")).toBe("popover1");
+    });
+
+    //role
+    it("should set role attribute correctly", () => {
+        tag.role("button");
+        expect(tag.getAttr("role")).toBe("button");
+    });
+
+    //slot
+    it("should set slot attribute correctly", () => {
+        tag.slot("slot1");
+        expect(tag.getAttr("slot")).toBe("slot1");
+    });
+
+    //spellcheck
+    it("should set spellcheck attribute correctly", () => {
+        tag.spellcheck("true");
+        expect(tag.getAttr("spellcheck")).toBe("true");
+    });
+
+    //tabindex
+    it("should set tabindex attribute correctly", () => {
+        tag.tabindex("1");
+        expect(tag.getAttr("tabindex")).toBe("1");
+    });
+
+    //title
+    it("should set title attribute correctly", () => {
+        tag.title("Hello");
+        expect(tag.getAttr("title")).toBe("Hello");
+    });
+
+    //translate
+    it("should set translate attribute correctly", () => {
+        tag.translate("no");
+        expect(tag.getAttr("translate")).toBe("no");
+    });
+
 })
