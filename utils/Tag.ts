@@ -6,10 +6,6 @@ class Tag {
     };
     children: childrenType
 
-
-
-
-
     constructor(tagName: string, children?: childrenType, attributes?: { [key: string]: any }) {
         this.tagName = tagName;
         this.attributes = attributes ?? {};
@@ -233,15 +229,4 @@ class Tag {
     }
 }
 
-
-
-// class StylesheetTag extends LinkTag {
-//     constructor(href: string) {
-
-//         super("stylesheet", href)
-//     }
-// }
-
-
 export default Tag;
-// export {Tag} ;
