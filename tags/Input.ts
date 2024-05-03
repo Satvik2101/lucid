@@ -9,131 +9,131 @@ class Input extends VoidTag {
             }
     
     accept(value?: string) {
-        if (value) this.setAttr("accept", value);
+        this.setAttr("accept", value);
         return this;
     }
     alt(value?: string) {
-        if (value) this.setAttr("alt", value);
+        this.setAttr("alt", value);
         return this;
     }
     autocomplete(value?: string) {
-        if (value) this.setAttr("autocomplete", value);
+        this.setAttr("autocomplete", value);
         return this;
     }
     capture(value?: string) {
-        if (value) this.setAttr("capture", value);
+        this.setAttr("capture", value);
         return this;
     }
     checked(value?: string) {
-        if (value) this.setAttr("checked", value);
+        this.setAttr("checked", value);
         return this;
     }
     dirname(value?: string) {
-        if (value) this.setAttr("dirname", value);
+        this.setAttr("dirname", value);
         return this;
     }
     disabled(value?: string) {
-        if (value) this.setAttr("disabled", value);
+        this.setAttr("disabled", value);
         return this;
     }
     form(value?: string) {
-        if (value) this.setAttr("form", value);
+        this.setAttr("form", value);
         return this;
     }
     formaction(value?: string) {
-        if (value) this.setAttr("formaction", value);
+        this.setAttr("formaction", value);
         return this;
     }
     formenctype(value?: string) {
-        if (value) this.setAttr("formenctype", value);
+        this.setAttr("formenctype", value);
         return this;
     }
     formmethod(value?: string) {
-        if (value) this.setAttr("formmethod", value);
+        this.setAttr("formmethod", value);
         return this;
     }
     formnovalidate(value?: string) {
-        if (value) this.setAttr("formnovalidate", value);
+        this.setAttr("formnovalidate", value);
         return this;
     }
     formtarget(value?: string) {
-        if (value) this.setAttr("formtarget", value);
+        this.setAttr("formtarget", value);
         return this;
     }
     height(value?: string) {
-        if (value) this.setAttr("height", value);
+        this.setAttr("height", value);
         return this;
     }
     list(value?: string) {
-        if (value) this.setAttr("list", value);
+        this.setAttr("list", value);
         return this;
     }
     max(value?: string) {
-        if (value) this.setAttr("max", value);
+        this.setAttr("max", value);
         return this;
     }
     maxlength(value?: string) {
-        if (value) this.setAttr("maxlength", value);
+        this.setAttr("maxlength", value);
         return this;
     }
     minlength(value?: string) {
-        if (value) this.setAttr("minlength", value);
+        this.setAttr("minlength", value);
         return this;
     }
     min(value?: string) {
-        if (value) this.setAttr("min", value);
+        this.setAttr("min", value);
         return this;
     }
     multiple(value?: string) {
-        if (value) this.setAttr("multiple", value);
+        this.setAttr("multiple", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     pattern(value?: string) {
-        if (value) this.setAttr("pattern", value);
+        this.setAttr("pattern", value);
         return this;
     }
     placeholder(value?: string) {
-        if (value) this.setAttr("placeholder", value);
+        this.setAttr("placeholder", value);
         return this;
     }
     readonly(value?: string) {
-        if (value) this.setAttr("readonly", value);
+        this.setAttr("readonly", value);
         return this;
     }
     required(value?: string) {
-        if (value) this.setAttr("required", value);
+        this.setAttr("required", value);
         return this;
     }
     size(value?: string) {
-        if (value) this.setAttr("size", value);
+        this.setAttr("size", value);
         return this;
     }
     src(value?: string) {
-        if (value) this.setAttr("src", value);
+        this.setAttr("src", value);
         return this;
     }
     step(value?: string) {
-        if (value) this.setAttr("step", value);
+        this.setAttr("step", value);
         return this;
     }
     type(value?: string) {
-        if (value) this.setAttr("type", value);
+        this.setAttr("type", value);
         return this;
     }
     usemap(value?: string) {
-        if (value) this.setAttr("usemap", value);
+        this.setAttr("usemap", value);
         return this;
     }
     value(value?: string) {
-        if (value) this.setAttr("value", value);
+        this.setAttr("value", value);
         return this;
     }
     width(value?: string) {
-        if (value) this.setAttr("width", value);
+        this.setAttr("width", value);
         return this;
     }
     static withAttributes(attri: {

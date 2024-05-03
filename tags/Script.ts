@@ -9,35 +9,35 @@ class Script extends Tag {
     }
     
     async(value?: string) {
-        if (value) this.setAttr("async", value);
+        this.setAttr("async", value);
         return this;
     }
     crossorigin(value?: string) {
-        if (value) this.setAttr("crossorigin", value);
+        this.setAttr("crossorigin", value);
         return this;
     }
     defer(value?: string) {
-        if (value) this.setAttr("defer", value);
+        this.setAttr("defer", value);
         return this;
     }
     integrity(value?: string) {
-        if (value) this.setAttr("integrity", value);
+        this.setAttr("integrity", value);
         return this;
     }
     language(value?: string) {
-        if (value) this.setAttr("language", value);
+        this.setAttr("language", value);
         return this;
     }
     referrerpolicy(value?: string) {
-        if (value) this.setAttr("referrerpolicy", value);
+        this.setAttr("referrerpolicy", value);
         return this;
     }
     src(value?: string) {
-        if (value) this.setAttr("src", value);
+        this.setAttr("src", value);
         return this;
     }
     type(value?: string) {
-        if (value) this.setAttr("type", value);
+        this.setAttr("type", value);
         return this;
     }
     static withAttributes(attri: {

@@ -9,11 +9,11 @@ class Optgroup extends Tag {
     }
     
     disabled(value?: string) {
-        if (value) this.setAttr("disabled", value);
+        this.setAttr("disabled", value);
         return this;
     }
     label(value?: string) {
-        if (value) this.setAttr("label", value);
+        this.setAttr("label", value);
         return this;
     }
     static withAttributes(attri: {

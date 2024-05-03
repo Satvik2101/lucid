@@ -9,7 +9,7 @@ class Blockquote extends Tag {
     }
     
     cite(value?: string) {
-        if (value) this.setAttr("cite", value);
+        this.setAttr("cite", value);
         return this;
     }
     static withAttributes(attri: {

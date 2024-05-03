@@ -9,35 +9,35 @@ class ObjectTag extends Tag {
     }
     
     border(value?: string) {
-        if (value) this.setAttr("border", value);
+        this.setAttr("border", value);
         return this;
     }
     data(value?: string) {
-        if (value) this.setAttr("data", value);
+        this.setAttr("data", value);
         return this;
     }
     form(value?: string) {
-        if (value) this.setAttr("form", value);
+        this.setAttr("form", value);
         return this;
     }
     height(value?: string) {
-        if (value) this.setAttr("height", value);
+        this.setAttr("height", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     type(value?: string) {
-        if (value) this.setAttr("type", value);
+        this.setAttr("type", value);
         return this;
     }
     usemap(value?: string) {
-        if (value) this.setAttr("usemap", value);
+        this.setAttr("usemap", value);
         return this;
     }
     width(value?: string) {
-        if (value) this.setAttr("width", value);
+        this.setAttr("width", value);
         return this;
     }
     static withAttributes(attri: {

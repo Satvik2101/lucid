@@ -9,43 +9,43 @@ class Button extends Tag {
     }
     
     disabled(value?: string) {
-        if (value) this.setAttr("disabled", value);
+        this.setAttr("disabled", value);
         return this;
     }
     form(value?: string) {
-        if (value) this.setAttr("form", value);
+        this.setAttr("form", value);
         return this;
     }
     formaction(value?: string) {
-        if (value) this.setAttr("formaction", value);
+        this.setAttr("formaction", value);
         return this;
     }
     formenctype(value?: string) {
-        if (value) this.setAttr("formenctype", value);
+        this.setAttr("formenctype", value);
         return this;
     }
     formmethod(value?: string) {
-        if (value) this.setAttr("formmethod", value);
+        this.setAttr("formmethod", value);
         return this;
     }
     formnovalidate(value?: string) {
-        if (value) this.setAttr("formnovalidate", value);
+        this.setAttr("formnovalidate", value);
         return this;
     }
     formtarget(value?: string) {
-        if (value) this.setAttr("formtarget", value);
+        this.setAttr("formtarget", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     type(value?: string) {
-        if (value) this.setAttr("type", value);
+        this.setAttr("type", value);
         return this;
     }
     value(value?: string) {
-        if (value) this.setAttr("value", value);
+        this.setAttr("value", value);
         return this;
     }
     static withAttributes(attri: {

@@ -9,7 +9,7 @@ class Thead extends Tag {
     }
     
     align(value?: string) {
-        if (value) this.setAttr("align", value);
+        this.setAttr("align", value);
         return this;
     }
     static withAttributes(attri: {

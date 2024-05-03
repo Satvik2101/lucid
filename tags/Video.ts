@@ -9,51 +9,51 @@ class Video extends Tag {
     }
     
     autoplay(value?: string) {
-        if (value) this.setAttr("autoplay", value);
+        this.setAttr("autoplay", value);
         return this;
     }
     buffered(value?: string) {
-        if (value) this.setAttr("buffered", value);
+        this.setAttr("buffered", value);
         return this;
     }
     controls(value?: string) {
-        if (value) this.setAttr("controls", value);
+        this.setAttr("controls", value);
         return this;
     }
     crossorigin(value?: string) {
-        if (value) this.setAttr("crossorigin", value);
+        this.setAttr("crossorigin", value);
         return this;
     }
     height(value?: string) {
-        if (value) this.setAttr("height", value);
+        this.setAttr("height", value);
         return this;
     }
     loop(value?: string) {
-        if (value) this.setAttr("loop", value);
+        this.setAttr("loop", value);
         return this;
     }
     muted(value?: string) {
-        if (value) this.setAttr("muted", value);
+        this.setAttr("muted", value);
         return this;
     }
     playsinline(value?: string) {
-        if (value) this.setAttr("playsinline", value);
+        this.setAttr("playsinline", value);
         return this;
     }
     poster(value?: string) {
-        if (value) this.setAttr("poster", value);
+        this.setAttr("poster", value);
         return this;
     }
     preload(value?: string) {
-        if (value) this.setAttr("preload", value);
+        this.setAttr("preload", value);
         return this;
     }
     src(value?: string) {
-        if (value) this.setAttr("src", value);
+        this.setAttr("src", value);
         return this;
     }
     width(value?: string) {
-        if (value) this.setAttr("width", value);
+        this.setAttr("width", value);
         return this;
     }
     static withAttributes(attri: {

@@ -9,19 +9,19 @@ class Option extends Tag {
     }
     
     disabled(value?: string) {
-        if (value) this.setAttr("disabled", value);
+        this.setAttr("disabled", value);
         return this;
     }
     label(value?: string) {
-        if (value) this.setAttr("label", value);
+        this.setAttr("label", value);
         return this;
     }
     selected(value?: string) {
-        if (value) this.setAttr("selected", value);
+        this.setAttr("selected", value);
         return this;
     }
     value(value?: string) {
-        if (value) this.setAttr("value", value);
+        this.setAttr("value", value);
         return this;
     }
     static withAttributes(attri: {

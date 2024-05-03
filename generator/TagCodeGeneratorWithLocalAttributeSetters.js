@@ -11,7 +11,7 @@ class TagCodeGeneratorWithLocalAttributeSetters extends TagCodeGenerator {
         const functionName = this.replaceDashWithUnderscore(attribute);
         const attributeSetterFunctionString = `
     ${functionName}(value?: string) {
-        if (value) this.setAttr("${attribute}", value);
+        this.setAttr("${attribute}", value);
         return this;
     }`;
         return attributeSetterFunctionString;

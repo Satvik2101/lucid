@@ -9,15 +9,15 @@ class Style extends Tag {
     }
     
     media(value?: string) {
-        if (value) this.setAttr("media", value);
+        this.setAttr("media", value);
         return this;
     }
     scoped(value?: string) {
-        if (value) this.setAttr("scoped", value);
+        this.setAttr("scoped", value);
         return this;
     }
     type(value?: string) {
-        if (value) this.setAttr("type", value);
+        this.setAttr("type", value);
         return this;
     }
     static withAttributes(attri: {

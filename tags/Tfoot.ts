@@ -9,11 +9,11 @@ class Tfoot extends Tag {
     }
     
     align(value?: string) {
-        if (value) this.setAttr("align", value);
+        this.setAttr("align", value);
         return this;
     }
     bgcolor(value?: string) {
-        if (value) this.setAttr("bgcolor", value);
+        this.setAttr("bgcolor", value);
         return this;
     }
     static withAttributes(attri: {

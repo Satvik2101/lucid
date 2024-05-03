@@ -9,11 +9,11 @@ class Del extends Tag {
     }
     
     cite(value?: string) {
-        if (value) this.setAttr("cite", value);
+        this.setAttr("cite", value);
         return this;
     }
     datetime(value?: string) {
-        if (value) this.setAttr("datetime", value);
+        this.setAttr("datetime", value);
         return this;
     }
     static withAttributes(attri: {

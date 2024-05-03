@@ -9,31 +9,31 @@ class Select extends Tag {
     }
     
     autocomplete(value?: string) {
-        if (value) this.setAttr("autocomplete", value);
+        this.setAttr("autocomplete", value);
         return this;
     }
     disabled(value?: string) {
-        if (value) this.setAttr("disabled", value);
+        this.setAttr("disabled", value);
         return this;
     }
     form(value?: string) {
-        if (value) this.setAttr("form", value);
+        this.setAttr("form", value);
         return this;
     }
     multiple(value?: string) {
-        if (value) this.setAttr("multiple", value);
+        this.setAttr("multiple", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     required(value?: string) {
-        if (value) this.setAttr("required", value);
+        this.setAttr("required", value);
         return this;
     }
     size(value?: string) {
-        if (value) this.setAttr("size", value);
+        this.setAttr("size", value);
         return this;
     }
     static withAttributes(attri: {

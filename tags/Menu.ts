@@ -9,7 +9,7 @@ class Menu extends Tag {
     }
     
     type(value?: string) {
-        if (value) this.setAttr("type", value);
+        this.setAttr("type", value);
         return this;
     }
     static withAttributes(attri: {

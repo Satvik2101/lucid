@@ -9,23 +9,23 @@ class Meta extends VoidTag {
             }
     
     charset(value?: string) {
-        if (value) this.setAttr("charset", value);
+        this.setAttr("charset", value);
         return this;
     }
     content(value?: string) {
-        if (value) this.setAttr("content", value);
+        this.setAttr("content", value);
         return this;
     }
     http_equiv(value?: string) {
-        if (value) this.setAttr("http-equiv", value);
+        this.setAttr("http-equiv", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     property(value?: string) {
-        if (value) this.setAttr("property", value);
+        this.setAttr("property", value);
         return this;
     }
     static withAttributes(attri: {

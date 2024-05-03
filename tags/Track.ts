@@ -9,23 +9,23 @@ class Track extends VoidTag {
             }
     
     default(value?: string) {
-        if (value) this.setAttr("default", value);
+        this.setAttr("default", value);
         return this;
     }
     kind(value?: string) {
-        if (value) this.setAttr("kind", value);
+        this.setAttr("kind", value);
         return this;
     }
     label(value?: string) {
-        if (value) this.setAttr("label", value);
+        this.setAttr("label", value);
         return this;
     }
     src(value?: string) {
-        if (value) this.setAttr("src", value);
+        this.setAttr("src", value);
         return this;
     }
     srclang(value?: string) {
-        if (value) this.setAttr("srclang", value);
+        this.setAttr("srclang", value);
         return this;
     }
     static withAttributes(attri: {

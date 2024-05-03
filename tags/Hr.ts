@@ -9,11 +9,11 @@ class Hr extends VoidTag {
             }
     
     align(value?: string) {
-        if (value) this.setAttr("align", value);
+        this.setAttr("align", value);
         return this;
     }
     color(value?: string) {
-        if (value) this.setAttr("color", value);
+        this.setAttr("color", value);
         return this;
     }
     static withAttributes(attri: {

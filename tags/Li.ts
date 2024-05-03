@@ -9,7 +9,7 @@ class Li extends Tag {
     }
     
     value(value?: string) {
-        if (value) this.setAttr("value", value);
+        this.setAttr("value", value);
         return this;
     }
     static withAttributes(attri: {
