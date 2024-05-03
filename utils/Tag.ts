@@ -205,10 +205,12 @@ class Tag {
             if (value == undefined || null) value = "";
             attributeString += `${attribute}="${value}" `;
         }
-        return attributeString;
+        //remove last space and return
+        return attributeString.trim();
     }
     getStart(): string {
-        return `<${this.tagName} ${this.attributeString()}>`
+        if (this.attributeString() == "") return `<${this.tagName}>`;
+        return `<${this.tagName} ${this.attributeString()}>`;
 
     }
 
