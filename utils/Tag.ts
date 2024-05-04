@@ -219,7 +219,7 @@ class Tag {
         if (this.children == undefined) return "";
         if (typeof this.children == "string") return this.children;
         if (this.children instanceof Tag) return this.children.toString();
-        return this.children.map((child) => child.toString()).join("\n");
+        return this.children.map((child) => child.toString()).join("");
     }
 
     getEnd(): string {
