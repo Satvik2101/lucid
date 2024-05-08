@@ -29,7 +29,7 @@ All the HTML tags have been implemented as subclasses of the parent class `Tag`.
 ### Basic
 
 ```ts
-import { A } from "./tags/A";
+import A from "./tags/A";
 
 const a = new A().href("www.google.com").rel("nofollow").target("_blank").p("Google")
 
@@ -41,8 +41,8 @@ console.log(a.toString())
 
 ```ts
 
-import { A } from "./tags/A";
-import { Div } from "./tags/Div";
+import A from "./tags/A";
+import Div from "./tags/Div";
 
 const div = new Div().class("link-container").populate(
     new A().href("www.google.com").rel("nofollow").target("_blank").p("Google"),
@@ -57,8 +57,8 @@ console.log(div.toString())
 
 ```ts
 
-import { A } from "./tags/A";
-import { Div } from "./tags/Div";
+import A from "./tags/A";
+import Div from "./tags/Div";
 
 const div = new Div().class("link-container").populate(
     new A().href("www.google.com").rel("nofollow").target("_blank").p("Google"),
@@ -76,7 +76,7 @@ There are also some convenience tags that make using them easier. For example, t
 Example for `EnhancedDiv`:
 
 ```ts
-import { EnhancedDiv } from "./urils/EnhancedDiv";
+import EnhancedDiv from "./urils/EnhancedDiv";
 
 const div = new EnhancedDiv({
     id:"my-id",
@@ -94,7 +94,7 @@ const div = new EnhancedDiv({
 While most attributes listed in the MDN docs have their own functions, if there's an attribute that doesn't have a function, you can use the `setAttr` function to set it.
 
 ```ts
-import { A } from "./tags/A";
+import A from "./tags/A";
 
 const a = new A().setAttr("data-foo","bar").p("Google")
 ```
