@@ -62,4 +62,18 @@ describe("Param", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set name attribute", () => {
+        const value = faker.lorem.word();
+        tag.name(value);
+        expect(tag.getAttr("name")).toBe(value);
+    });
+
+	it("should set value attribute", () => {
+        const value = faker.lorem.word();
+        tag.value(value);
+        expect(tag.getAttr("value")).toBe(value);
+    });
+
+	
 });

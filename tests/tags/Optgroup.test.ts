@@ -62,4 +62,18 @@ describe("Optgroup", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set disabled attribute", () => {
+        const value = faker.lorem.word();
+        tag.disabled(value);
+        expect(tag.getAttr("disabled")).toBe(value);
+    });
+
+	it("should set label attribute", () => {
+        const value = faker.lorem.word();
+        tag.label(value);
+        expect(tag.getAttr("label")).toBe(value);
+    });
+
+	
 });

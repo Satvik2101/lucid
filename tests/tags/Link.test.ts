@@ -76,4 +76,60 @@ describe("Link", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set crossorigin attribute", () => {
+        const value = faker.lorem.word();
+        tag.crossorigin(value);
+        expect(tag.getAttr("crossorigin")).toBe(value);
+    });
+
+	it("should set href attribute", () => {
+        const value = faker.lorem.word();
+        tag.href(value);
+        expect(tag.getAttr("href")).toBe(value);
+    });
+
+	it("should set hreflang attribute", () => {
+        const value = faker.lorem.word();
+        tag.hreflang(value);
+        expect(tag.getAttr("hreflang")).toBe(value);
+    });
+
+	it("should set integrity attribute", () => {
+        const value = faker.lorem.word();
+        tag.integrity(value);
+        expect(tag.getAttr("integrity")).toBe(value);
+    });
+
+	it("should set media attribute", () => {
+        const value = faker.lorem.word();
+        tag.media(value);
+        expect(tag.getAttr("media")).toBe(value);
+    });
+
+	it("should set referrerpolicy attribute", () => {
+        const value = faker.lorem.word();
+        tag.referrerpolicy(value);
+        expect(tag.getAttr("referrerpolicy")).toBe(value);
+    });
+
+	it("should set rel attribute", () => {
+        const value = faker.lorem.word();
+        tag.rel(value);
+        expect(tag.getAttr("rel")).toBe(value);
+    });
+
+	it("should set sizes attribute", () => {
+        const value = faker.lorem.word();
+        tag.sizes(value);
+        expect(tag.getAttr("sizes")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	
 });

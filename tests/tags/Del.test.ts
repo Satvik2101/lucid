@@ -62,4 +62,18 @@ describe("Del", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set cite attribute", () => {
+        const value = faker.lorem.word();
+        tag.cite(value);
+        expect(tag.getAttr("cite")).toBe(value);
+    });
+
+	it("should set datetime attribute", () => {
+        const value = faker.lorem.word();
+        tag.datetime(value);
+        expect(tag.getAttr("datetime")).toBe(value);
+    });
+
+	
 });

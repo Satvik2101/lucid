@@ -58,4 +58,6 @@ describe("Wbr", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    
 });

@@ -68,4 +68,36 @@ describe("Source", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set media attribute", () => {
+        const value = faker.lorem.word();
+        tag.media(value);
+        expect(tag.getAttr("media")).toBe(value);
+    });
+
+	it("should set sizes attribute", () => {
+        const value = faker.lorem.word();
+        tag.sizes(value);
+        expect(tag.getAttr("sizes")).toBe(value);
+    });
+
+	it("should set src attribute", () => {
+        const value = faker.lorem.word();
+        tag.src(value);
+        expect(tag.getAttr("src")).toBe(value);
+    });
+
+	it("should set srcset attribute", () => {
+        const value = faker.lorem.word();
+        tag.srcset(value);
+        expect(tag.getAttr("srcset")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	
 });

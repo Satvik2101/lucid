@@ -74,4 +74,54 @@ describe("ObjectTag", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set border attribute", () => {
+        const value = faker.lorem.word();
+        tag.border(value);
+        expect(tag.getAttr("border")).toBe(value);
+    });
+
+	it("should set data attribute", () => {
+        const value = faker.lorem.word();
+        tag.data(value);
+        expect(tag.getAttr("data")).toBe(value);
+    });
+
+	it("should set form attribute", () => {
+        const value = faker.lorem.word();
+        tag.form(value);
+        expect(tag.getAttr("form")).toBe(value);
+    });
+
+	it("should set height attribute", () => {
+        const value = faker.lorem.word();
+        tag.height(value);
+        expect(tag.getAttr("height")).toBe(value);
+    });
+
+	it("should set name attribute", () => {
+        const value = faker.lorem.word();
+        tag.name(value);
+        expect(tag.getAttr("name")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	it("should set usemap attribute", () => {
+        const value = faker.lorem.word();
+        tag.usemap(value);
+        expect(tag.getAttr("usemap")).toBe(value);
+    });
+
+	it("should set width attribute", () => {
+        const value = faker.lorem.word();
+        tag.width(value);
+        expect(tag.getAttr("width")).toBe(value);
+    });
+
+	
 });

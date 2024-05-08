@@ -78,4 +78,66 @@ describe("Button", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set disabled attribute", () => {
+        const value = faker.lorem.word();
+        tag.disabled(value);
+        expect(tag.getAttr("disabled")).toBe(value);
+    });
+
+	it("should set form attribute", () => {
+        const value = faker.lorem.word();
+        tag.form(value);
+        expect(tag.getAttr("form")).toBe(value);
+    });
+
+	it("should set formaction attribute", () => {
+        const value = faker.lorem.word();
+        tag.formaction(value);
+        expect(tag.getAttr("formaction")).toBe(value);
+    });
+
+	it("should set formenctype attribute", () => {
+        const value = faker.lorem.word();
+        tag.formenctype(value);
+        expect(tag.getAttr("formenctype")).toBe(value);
+    });
+
+	it("should set formmethod attribute", () => {
+        const value = faker.lorem.word();
+        tag.formmethod(value);
+        expect(tag.getAttr("formmethod")).toBe(value);
+    });
+
+	it("should set formnovalidate attribute", () => {
+        const value = faker.lorem.word();
+        tag.formnovalidate(value);
+        expect(tag.getAttr("formnovalidate")).toBe(value);
+    });
+
+	it("should set formtarget attribute", () => {
+        const value = faker.lorem.word();
+        tag.formtarget(value);
+        expect(tag.getAttr("formtarget")).toBe(value);
+    });
+
+	it("should set name attribute", () => {
+        const value = faker.lorem.word();
+        tag.name(value);
+        expect(tag.getAttr("name")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	it("should set value attribute", () => {
+        const value = faker.lorem.word();
+        tag.value(value);
+        expect(tag.getAttr("value")).toBe(value);
+    });
+
+	
 });

@@ -68,4 +68,36 @@ describe("Table", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set align attribute", () => {
+        const value = faker.lorem.word();
+        tag.align(value);
+        expect(tag.getAttr("align")).toBe(value);
+    });
+
+	it("should set background attribute", () => {
+        const value = faker.lorem.word();
+        tag.background(value);
+        expect(tag.getAttr("background")).toBe(value);
+    });
+
+	it("should set bgcolor attribute", () => {
+        const value = faker.lorem.word();
+        tag.bgcolor(value);
+        expect(tag.getAttr("bgcolor")).toBe(value);
+    });
+
+	it("should set border attribute", () => {
+        const value = faker.lorem.word();
+        tag.border(value);
+        expect(tag.getAttr("border")).toBe(value);
+    });
+
+	it("should set summary attribute", () => {
+        const value = faker.lorem.word();
+        tag.summary(value);
+        expect(tag.getAttr("summary")).toBe(value);
+    });
+
+	
 });

@@ -88,4 +88,96 @@ describe("Img", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set align attribute", () => {
+        const value = faker.lorem.word();
+        tag.align(value);
+        expect(tag.getAttr("align")).toBe(value);
+    });
+
+	it("should set alt attribute", () => {
+        const value = faker.lorem.word();
+        tag.alt(value);
+        expect(tag.getAttr("alt")).toBe(value);
+    });
+
+	it("should set border attribute", () => {
+        const value = faker.lorem.word();
+        tag.border(value);
+        expect(tag.getAttr("border")).toBe(value);
+    });
+
+	it("should set crossorigin attribute", () => {
+        const value = faker.lorem.word();
+        tag.crossorigin(value);
+        expect(tag.getAttr("crossorigin")).toBe(value);
+    });
+
+	it("should set decoding attribute", () => {
+        const value = faker.lorem.word();
+        tag.decoding(value);
+        expect(tag.getAttr("decoding")).toBe(value);
+    });
+
+	it("should set height attribute", () => {
+        const value = faker.lorem.word();
+        tag.height(value);
+        expect(tag.getAttr("height")).toBe(value);
+    });
+
+	it("should set intrinsicsize attribute", () => {
+        const value = faker.lorem.word();
+        tag.intrinsicsize(value);
+        expect(tag.getAttr("intrinsicsize")).toBe(value);
+    });
+
+	it("should set ismap attribute", () => {
+        const value = faker.lorem.word();
+        tag.ismap(value);
+        expect(tag.getAttr("ismap")).toBe(value);
+    });
+
+	it("should set loading attribute", () => {
+        const value = faker.lorem.word();
+        tag.loading(value);
+        expect(tag.getAttr("loading")).toBe(value);
+    });
+
+	it("should set referrerpolicy attribute", () => {
+        const value = faker.lorem.word();
+        tag.referrerpolicy(value);
+        expect(tag.getAttr("referrerpolicy")).toBe(value);
+    });
+
+	it("should set sizes attribute", () => {
+        const value = faker.lorem.word();
+        tag.sizes(value);
+        expect(tag.getAttr("sizes")).toBe(value);
+    });
+
+	it("should set src attribute", () => {
+        const value = faker.lorem.word();
+        tag.src(value);
+        expect(tag.getAttr("src")).toBe(value);
+    });
+
+	it("should set srcset attribute", () => {
+        const value = faker.lorem.word();
+        tag.srcset(value);
+        expect(tag.getAttr("srcset")).toBe(value);
+    });
+
+	it("should set usemap attribute", () => {
+        const value = faker.lorem.word();
+        tag.usemap(value);
+        expect(tag.getAttr("usemap")).toBe(value);
+    });
+
+	it("should set width attribute", () => {
+        const value = faker.lorem.word();
+        tag.width(value);
+        expect(tag.getAttr("width")).toBe(value);
+    });
+
+	
 });

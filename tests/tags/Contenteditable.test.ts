@@ -62,4 +62,18 @@ describe("Contenteditable", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set enterkeyhint attribute", () => {
+        const value = faker.lorem.word();
+        tag.enterkeyhint(value);
+        expect(tag.getAttr("enterkeyhint")).toBe(value);
+    });
+
+	it("should set inputmode attribute", () => {
+        const value = faker.lorem.word();
+        tag.inputmode(value);
+        expect(tag.getAttr("inputmode")).toBe(value);
+    });
+
+	
 });

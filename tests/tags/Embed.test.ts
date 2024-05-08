@@ -66,4 +66,30 @@ describe("Embed", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set height attribute", () => {
+        const value = faker.lorem.word();
+        tag.height(value);
+        expect(tag.getAttr("height")).toBe(value);
+    });
+
+	it("should set src attribute", () => {
+        const value = faker.lorem.word();
+        tag.src(value);
+        expect(tag.getAttr("src")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	it("should set width attribute", () => {
+        const value = faker.lorem.word();
+        tag.width(value);
+        expect(tag.getAttr("width")).toBe(value);
+    });
+
+	
 });

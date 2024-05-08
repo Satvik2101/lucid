@@ -64,4 +64,24 @@ describe("Colgroup", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set align attribute", () => {
+        const value = faker.lorem.word();
+        tag.align(value);
+        expect(tag.getAttr("align")).toBe(value);
+    });
+
+	it("should set bgcolor attribute", () => {
+        const value = faker.lorem.word();
+        tag.bgcolor(value);
+        expect(tag.getAttr("bgcolor")).toBe(value);
+    });
+
+	it("should set span attribute", () => {
+        const value = faker.lorem.word();
+        tag.span(value);
+        expect(tag.getAttr("span")).toBe(value);
+    });
+
+	
 });

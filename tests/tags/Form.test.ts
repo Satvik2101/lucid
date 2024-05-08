@@ -76,4 +76,60 @@ describe("Form", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set accept attribute", () => {
+        const value = faker.lorem.word();
+        tag.accept(value);
+        expect(tag.getAttr("accept")).toBe(value);
+    });
+
+	it("should set accept-charset attribute", () => {
+        const value = faker.lorem.word();
+        tag.accept_charset(value);
+        expect(tag.getAttr("accept-charset")).toBe(value);
+    });
+
+	it("should set action attribute", () => {
+        const value = faker.lorem.word();
+        tag.action(value);
+        expect(tag.getAttr("action")).toBe(value);
+    });
+
+	it("should set autocomplete attribute", () => {
+        const value = faker.lorem.word();
+        tag.autocomplete(value);
+        expect(tag.getAttr("autocomplete")).toBe(value);
+    });
+
+	it("should set enctype attribute", () => {
+        const value = faker.lorem.word();
+        tag.enctype(value);
+        expect(tag.getAttr("enctype")).toBe(value);
+    });
+
+	it("should set method attribute", () => {
+        const value = faker.lorem.word();
+        tag.method(value);
+        expect(tag.getAttr("method")).toBe(value);
+    });
+
+	it("should set name attribute", () => {
+        const value = faker.lorem.word();
+        tag.name(value);
+        expect(tag.getAttr("name")).toBe(value);
+    });
+
+	it("should set novalidate attribute", () => {
+        const value = faker.lorem.word();
+        tag.novalidate(value);
+        expect(tag.getAttr("novalidate")).toBe(value);
+    });
+
+	it("should set target attribute", () => {
+        const value = faker.lorem.word();
+        tag.target(value);
+        expect(tag.getAttr("target")).toBe(value);
+    });
+
+	
 });

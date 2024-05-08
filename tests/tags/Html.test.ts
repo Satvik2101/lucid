@@ -60,4 +60,12 @@ describe("Html", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set manifest attribute", () => {
+        const value = faker.lorem.word();
+        tag.manifest(value);
+        expect(tag.getAttr("manifest")).toBe(value);
+    });
+
+	
 });

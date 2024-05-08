@@ -62,4 +62,18 @@ describe("Base", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set href attribute", () => {
+        const value = faker.lorem.word();
+        tag.href(value);
+        expect(tag.getAttr("href")).toBe(value);
+    });
+
+	it("should set target attribute", () => {
+        const value = faker.lorem.word();
+        tag.target(value);
+        expect(tag.getAttr("target")).toBe(value);
+    });
+
+	
 });

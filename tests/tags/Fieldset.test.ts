@@ -64,4 +64,24 @@ describe("Fieldset", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set disabled attribute", () => {
+        const value = faker.lorem.word();
+        tag.disabled(value);
+        expect(tag.getAttr("disabled")).toBe(value);
+    });
+
+	it("should set form attribute", () => {
+        const value = faker.lorem.word();
+        tag.form(value);
+        expect(tag.getAttr("form")).toBe(value);
+    });
+
+	it("should set name attribute", () => {
+        const value = faker.lorem.word();
+        tag.name(value);
+        expect(tag.getAttr("name")).toBe(value);
+    });
+
+	
 });

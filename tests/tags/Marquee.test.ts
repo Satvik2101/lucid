@@ -62,4 +62,18 @@ describe("Marquee", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set bgcolor attribute", () => {
+        const value = faker.lorem.word();
+        tag.bgcolor(value);
+        expect(tag.getAttr("bgcolor")).toBe(value);
+    });
+
+	it("should set loop attribute", () => {
+        const value = faker.lorem.word();
+        tag.loop(value);
+        expect(tag.getAttr("loop")).toBe(value);
+    });
+
+	
 });

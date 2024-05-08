@@ -60,4 +60,12 @@ describe("Thead", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set align attribute", () => {
+        const value = faker.lorem.word();
+        tag.align(value);
+        expect(tag.getAttr("align")).toBe(value);
+    });
+
+	
 });

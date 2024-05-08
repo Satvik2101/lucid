@@ -66,4 +66,30 @@ describe("Option", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set disabled attribute", () => {
+        const value = faker.lorem.word();
+        tag.disabled(value);
+        expect(tag.getAttr("disabled")).toBe(value);
+    });
+
+	it("should set label attribute", () => {
+        const value = faker.lorem.word();
+        tag.label(value);
+        expect(tag.getAttr("label")).toBe(value);
+    });
+
+	it("should set selected attribute", () => {
+        const value = faker.lorem.word();
+        tag.selected(value);
+        expect(tag.getAttr("selected")).toBe(value);
+    });
+
+	it("should set value attribute", () => {
+        const value = faker.lorem.word();
+        tag.value(value);
+        expect(tag.getAttr("value")).toBe(value);
+    });
+
+	
 });

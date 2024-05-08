@@ -62,4 +62,18 @@ describe("Tbody", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set align attribute", () => {
+        const value = faker.lorem.word();
+        tag.align(value);
+        expect(tag.getAttr("align")).toBe(value);
+    });
+
+	it("should set bgcolor attribute", () => {
+        const value = faker.lorem.word();
+        tag.bgcolor(value);
+        expect(tag.getAttr("bgcolor")).toBe(value);
+    });
+
+	
 });

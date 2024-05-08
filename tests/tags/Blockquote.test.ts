@@ -60,4 +60,12 @@ describe("Blockquote", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set cite attribute", () => {
+        const value = faker.lorem.word();
+        tag.cite(value);
+        expect(tag.getAttr("cite")).toBe(value);
+    });
+
+	
 });

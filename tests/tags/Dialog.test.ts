@@ -60,4 +60,12 @@ describe("Dialog", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set open attribute", () => {
+        const value = faker.lorem.word();
+        tag.open(value);
+        expect(tag.getAttr("open")).toBe(value);
+    });
+
+	
 });

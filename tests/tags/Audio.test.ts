@@ -74,4 +74,54 @@ describe("Audio", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set autoplay attribute", () => {
+        const value = faker.lorem.word();
+        tag.autoplay(value);
+        expect(tag.getAttr("autoplay")).toBe(value);
+    });
+
+	it("should set buffered attribute", () => {
+        const value = faker.lorem.word();
+        tag.buffered(value);
+        expect(tag.getAttr("buffered")).toBe(value);
+    });
+
+	it("should set controls attribute", () => {
+        const value = faker.lorem.word();
+        tag.controls(value);
+        expect(tag.getAttr("controls")).toBe(value);
+    });
+
+	it("should set crossorigin attribute", () => {
+        const value = faker.lorem.word();
+        tag.crossorigin(value);
+        expect(tag.getAttr("crossorigin")).toBe(value);
+    });
+
+	it("should set loop attribute", () => {
+        const value = faker.lorem.word();
+        tag.loop(value);
+        expect(tag.getAttr("loop")).toBe(value);
+    });
+
+	it("should set muted attribute", () => {
+        const value = faker.lorem.word();
+        tag.muted(value);
+        expect(tag.getAttr("muted")).toBe(value);
+    });
+
+	it("should set preload attribute", () => {
+        const value = faker.lorem.word();
+        tag.preload(value);
+        expect(tag.getAttr("preload")).toBe(value);
+    });
+
+	it("should set src attribute", () => {
+        const value = faker.lorem.word();
+        tag.src(value);
+        expect(tag.getAttr("src")).toBe(value);
+    });
+
+	
 });

@@ -72,4 +72,48 @@ describe("Select", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set autocomplete attribute", () => {
+        const value = faker.lorem.word();
+        tag.autocomplete(value);
+        expect(tag.getAttr("autocomplete")).toBe(value);
+    });
+
+	it("should set disabled attribute", () => {
+        const value = faker.lorem.word();
+        tag.disabled(value);
+        expect(tag.getAttr("disabled")).toBe(value);
+    });
+
+	it("should set form attribute", () => {
+        const value = faker.lorem.word();
+        tag.form(value);
+        expect(tag.getAttr("form")).toBe(value);
+    });
+
+	it("should set multiple attribute", () => {
+        const value = faker.lorem.word();
+        tag.multiple(value);
+        expect(tag.getAttr("multiple")).toBe(value);
+    });
+
+	it("should set name attribute", () => {
+        const value = faker.lorem.word();
+        tag.name(value);
+        expect(tag.getAttr("name")).toBe(value);
+    });
+
+	it("should set required attribute", () => {
+        const value = faker.lorem.word();
+        tag.required(value);
+        expect(tag.getAttr("required")).toBe(value);
+    });
+
+	it("should set size attribute", () => {
+        const value = faker.lorem.word();
+        tag.size(value);
+        expect(tag.getAttr("size")).toBe(value);
+    });
+
+	
 });

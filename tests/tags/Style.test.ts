@@ -64,4 +64,24 @@ describe("Style", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set media attribute", () => {
+        const value = faker.lorem.word();
+        tag.media(value);
+        expect(tag.getAttr("media")).toBe(value);
+    });
+
+	it("should set scoped attribute", () => {
+        const value = faker.lorem.word();
+        tag.scoped(value);
+        expect(tag.getAttr("scoped")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	
 });

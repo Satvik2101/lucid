@@ -60,4 +60,12 @@ describe("Time", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set datetime attribute", () => {
+        const value = faker.lorem.word();
+        tag.datetime(value);
+        expect(tag.getAttr("datetime")).toBe(value);
+    });
+
+	
 });

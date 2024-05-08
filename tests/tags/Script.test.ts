@@ -74,4 +74,54 @@ describe("Script", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set async attribute", () => {
+        const value = faker.lorem.word();
+        tag.async(value);
+        expect(tag.getAttr("async")).toBe(value);
+    });
+
+	it("should set crossorigin attribute", () => {
+        const value = faker.lorem.word();
+        tag.crossorigin(value);
+        expect(tag.getAttr("crossorigin")).toBe(value);
+    });
+
+	it("should set defer attribute", () => {
+        const value = faker.lorem.word();
+        tag.defer(value);
+        expect(tag.getAttr("defer")).toBe(value);
+    });
+
+	it("should set integrity attribute", () => {
+        const value = faker.lorem.word();
+        tag.integrity(value);
+        expect(tag.getAttr("integrity")).toBe(value);
+    });
+
+	it("should set language attribute", () => {
+        const value = faker.lorem.word();
+        tag.language(value);
+        expect(tag.getAttr("language")).toBe(value);
+    });
+
+	it("should set referrerpolicy attribute", () => {
+        const value = faker.lorem.word();
+        tag.referrerpolicy(value);
+        expect(tag.getAttr("referrerpolicy")).toBe(value);
+    });
+
+	it("should set src attribute", () => {
+        const value = faker.lorem.word();
+        tag.src(value);
+        expect(tag.getAttr("src")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	
 });

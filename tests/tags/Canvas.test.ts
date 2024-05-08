@@ -62,4 +62,18 @@ describe("Canvas", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set height attribute", () => {
+        const value = faker.lorem.word();
+        tag.height(value);
+        expect(tag.getAttr("height")).toBe(value);
+    });
+
+	it("should set width attribute", () => {
+        const value = faker.lorem.word();
+        tag.width(value);
+        expect(tag.getAttr("width")).toBe(value);
+    });
+
+	
 });

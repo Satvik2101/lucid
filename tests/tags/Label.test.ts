@@ -62,4 +62,18 @@ describe("Label", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set for attribute", () => {
+        const value = faker.lorem.word();
+        tag.for(value);
+        expect(tag.getAttr("for")).toBe(value);
+    });
+
+	it("should set form attribute", () => {
+        const value = faker.lorem.word();
+        tag.form(value);
+        expect(tag.getAttr("form")).toBe(value);
+    });
+
+	
 });

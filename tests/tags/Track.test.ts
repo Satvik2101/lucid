@@ -68,4 +68,36 @@ describe("Track", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set default attribute", () => {
+        const value = faker.lorem.word();
+        tag.default(value);
+        expect(tag.getAttr("default")).toBe(value);
+    });
+
+	it("should set kind attribute", () => {
+        const value = faker.lorem.word();
+        tag.kind(value);
+        expect(tag.getAttr("kind")).toBe(value);
+    });
+
+	it("should set label attribute", () => {
+        const value = faker.lorem.word();
+        tag.label(value);
+        expect(tag.getAttr("label")).toBe(value);
+    });
+
+	it("should set src attribute", () => {
+        const value = faker.lorem.word();
+        tag.src(value);
+        expect(tag.getAttr("src")).toBe(value);
+    });
+
+	it("should set srclang attribute", () => {
+        const value = faker.lorem.word();
+        tag.srclang(value);
+        expect(tag.getAttr("srclang")).toBe(value);
+    });
+
+	
 });

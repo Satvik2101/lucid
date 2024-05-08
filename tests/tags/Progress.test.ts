@@ -64,4 +64,24 @@ describe("Progress", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set form attribute", () => {
+        const value = faker.lorem.word();
+        tag.form(value);
+        expect(tag.getAttr("form")).toBe(value);
+    });
+
+	it("should set max attribute", () => {
+        const value = faker.lorem.word();
+        tag.max(value);
+        expect(tag.getAttr("max")).toBe(value);
+    });
+
+	it("should set value attribute", () => {
+        const value = faker.lorem.word();
+        tag.value(value);
+        expect(tag.getAttr("value")).toBe(value);
+    });
+
+	
 });

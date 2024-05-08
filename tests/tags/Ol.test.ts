@@ -64,4 +64,24 @@ describe("Ol", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set reversed attribute", () => {
+        const value = faker.lorem.word();
+        tag.reversed(value);
+        expect(tag.getAttr("reversed")).toBe(value);
+    });
+
+	it("should set start attribute", () => {
+        const value = faker.lorem.word();
+        tag.start(value);
+        expect(tag.getAttr("start")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	
 });

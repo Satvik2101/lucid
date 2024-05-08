@@ -62,4 +62,18 @@ describe("Hr", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set align attribute", () => {
+        const value = faker.lorem.word();
+        tag.align(value);
+        expect(tag.getAttr("align")).toBe(value);
+    });
+
+	it("should set color attribute", () => {
+        const value = faker.lorem.word();
+        tag.color(value);
+        expect(tag.getAttr("color")).toBe(value);
+    });
+
+	
 });

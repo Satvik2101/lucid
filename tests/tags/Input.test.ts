@@ -122,4 +122,198 @@ describe("Input", () => {
 		expect(tag.getAttr("translate")).toBe(attr["translate"]);
 		
     });
+
+    it("should set accept attribute", () => {
+        const value = faker.lorem.word();
+        tag.accept(value);
+        expect(tag.getAttr("accept")).toBe(value);
+    });
+
+	it("should set alt attribute", () => {
+        const value = faker.lorem.word();
+        tag.alt(value);
+        expect(tag.getAttr("alt")).toBe(value);
+    });
+
+	it("should set autocomplete attribute", () => {
+        const value = faker.lorem.word();
+        tag.autocomplete(value);
+        expect(tag.getAttr("autocomplete")).toBe(value);
+    });
+
+	it("should set capture attribute", () => {
+        const value = faker.lorem.word();
+        tag.capture(value);
+        expect(tag.getAttr("capture")).toBe(value);
+    });
+
+	it("should set checked attribute", () => {
+        const value = faker.lorem.word();
+        tag.checked(value);
+        expect(tag.getAttr("checked")).toBe(value);
+    });
+
+	it("should set dirname attribute", () => {
+        const value = faker.lorem.word();
+        tag.dirname(value);
+        expect(tag.getAttr("dirname")).toBe(value);
+    });
+
+	it("should set disabled attribute", () => {
+        const value = faker.lorem.word();
+        tag.disabled(value);
+        expect(tag.getAttr("disabled")).toBe(value);
+    });
+
+	it("should set form attribute", () => {
+        const value = faker.lorem.word();
+        tag.form(value);
+        expect(tag.getAttr("form")).toBe(value);
+    });
+
+	it("should set formaction attribute", () => {
+        const value = faker.lorem.word();
+        tag.formaction(value);
+        expect(tag.getAttr("formaction")).toBe(value);
+    });
+
+	it("should set formenctype attribute", () => {
+        const value = faker.lorem.word();
+        tag.formenctype(value);
+        expect(tag.getAttr("formenctype")).toBe(value);
+    });
+
+	it("should set formmethod attribute", () => {
+        const value = faker.lorem.word();
+        tag.formmethod(value);
+        expect(tag.getAttr("formmethod")).toBe(value);
+    });
+
+	it("should set formnovalidate attribute", () => {
+        const value = faker.lorem.word();
+        tag.formnovalidate(value);
+        expect(tag.getAttr("formnovalidate")).toBe(value);
+    });
+
+	it("should set formtarget attribute", () => {
+        const value = faker.lorem.word();
+        tag.formtarget(value);
+        expect(tag.getAttr("formtarget")).toBe(value);
+    });
+
+	it("should set height attribute", () => {
+        const value = faker.lorem.word();
+        tag.height(value);
+        expect(tag.getAttr("height")).toBe(value);
+    });
+
+	it("should set list attribute", () => {
+        const value = faker.lorem.word();
+        tag.list(value);
+        expect(tag.getAttr("list")).toBe(value);
+    });
+
+	it("should set max attribute", () => {
+        const value = faker.lorem.word();
+        tag.max(value);
+        expect(tag.getAttr("max")).toBe(value);
+    });
+
+	it("should set maxlength attribute", () => {
+        const value = faker.lorem.word();
+        tag.maxlength(value);
+        expect(tag.getAttr("maxlength")).toBe(value);
+    });
+
+	it("should set minlength attribute", () => {
+        const value = faker.lorem.word();
+        tag.minlength(value);
+        expect(tag.getAttr("minlength")).toBe(value);
+    });
+
+	it("should set min attribute", () => {
+        const value = faker.lorem.word();
+        tag.min(value);
+        expect(tag.getAttr("min")).toBe(value);
+    });
+
+	it("should set multiple attribute", () => {
+        const value = faker.lorem.word();
+        tag.multiple(value);
+        expect(tag.getAttr("multiple")).toBe(value);
+    });
+
+	it("should set name attribute", () => {
+        const value = faker.lorem.word();
+        tag.name(value);
+        expect(tag.getAttr("name")).toBe(value);
+    });
+
+	it("should set pattern attribute", () => {
+        const value = faker.lorem.word();
+        tag.pattern(value);
+        expect(tag.getAttr("pattern")).toBe(value);
+    });
+
+	it("should set placeholder attribute", () => {
+        const value = faker.lorem.word();
+        tag.placeholder(value);
+        expect(tag.getAttr("placeholder")).toBe(value);
+    });
+
+	it("should set readonly attribute", () => {
+        const value = faker.lorem.word();
+        tag.readonly(value);
+        expect(tag.getAttr("readonly")).toBe(value);
+    });
+
+	it("should set required attribute", () => {
+        const value = faker.lorem.word();
+        tag.required(value);
+        expect(tag.getAttr("required")).toBe(value);
+    });
+
+	it("should set size attribute", () => {
+        const value = faker.lorem.word();
+        tag.size(value);
+        expect(tag.getAttr("size")).toBe(value);
+    });
+
+	it("should set src attribute", () => {
+        const value = faker.lorem.word();
+        tag.src(value);
+        expect(tag.getAttr("src")).toBe(value);
+    });
+
+	it("should set step attribute", () => {
+        const value = faker.lorem.word();
+        tag.step(value);
+        expect(tag.getAttr("step")).toBe(value);
+    });
+
+	it("should set type attribute", () => {
+        const value = faker.lorem.word();
+        tag.type(value);
+        expect(tag.getAttr("type")).toBe(value);
+    });
+
+	it("should set usemap attribute", () => {
+        const value = faker.lorem.word();
+        tag.usemap(value);
+        expect(tag.getAttr("usemap")).toBe(value);
+    });
+
+	it("should set value attribute", () => {
+        const value = faker.lorem.word();
+        tag.value(value);
+        expect(tag.getAttr("value")).toBe(value);
+    });
+
+	it("should set width attribute", () => {
+        const value = faker.lorem.word();
+        tag.width(value);
+        expect(tag.getAttr("width")).toBe(value);
+    });
+
+	
 });
