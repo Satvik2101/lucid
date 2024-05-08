@@ -15,7 +15,7 @@ class TagCodeGenerator {
         return this.testGenerator;
     }
 
-    getTestCode() {
+    generateTestCode() {
         return this.getTestGenerator().generateTest();
     }
     generateClassCode() {

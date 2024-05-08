@@ -33,12 +33,12 @@ describe("${this.className}", () => {
 
         let tests = "";
         for (let attr of this.localAttributes) {
-            tests += this.generateLocalAttributeTest(attr);
+            tests += this.getSingleLocalAttributeTest(attr);
         }
         return tests;
     }
 
-    generateLocalAttributeTest(attr) {
+    getSingleLocalAttributeTest(attr) {
 
         const functionName = this.replaceDashWithUnderscore(attr);
         return `it("should set ${attr} attribute", () => {
