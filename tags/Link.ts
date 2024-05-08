@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
 class Link extends VoidTag {
     constructor() {
-                super("link");
-            }
+        super("link");
+    }
     
     crossorigin(value?: string) {
         this.setAttr("crossorigin", value);
@@ -74,9 +74,9 @@ class Link extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Link {
-                var tag = new Link();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Link();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Link;

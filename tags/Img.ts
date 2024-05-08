@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
 class Img extends VoidTag {
     constructor() {
-                super("img");
-            }
+        super("img");
+    }
     
     align(value?: string) {
         this.setAttr("align", value);
@@ -104,9 +104,9 @@ class Img extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Img {
-                var tag = new Img();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Img();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Img;

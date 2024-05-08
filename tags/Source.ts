@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source
 class Source extends VoidTag {
     constructor() {
-                super("source");
-            }
+        super("source");
+    }
     
     media(value?: string) {
         this.setAttr("media", value);
@@ -54,9 +54,9 @@ class Source extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Source {
-                var tag = new Source();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Source();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Source;

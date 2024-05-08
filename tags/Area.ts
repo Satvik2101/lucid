@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area
 class Area extends VoidTag {
     constructor() {
-                super("area");
-            }
+        super("area");
+    }
     
     alt(value?: string) {
         this.setAttr("alt", value);
@@ -79,9 +79,9 @@ class Area extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Area {
-                var tag = new Area();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Area();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Area;

@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track
 class Track extends VoidTag {
     constructor() {
-                super("track");
-            }
+        super("track");
+    }
     
     default(value?: string) {
         this.setAttr("default", value);
@@ -54,9 +54,9 @@ class Track extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Track {
-                var tag = new Track();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Track();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Track;

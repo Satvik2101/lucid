@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col
 class Col extends VoidTag {
     constructor() {
-                super("col");
-            }
+        super("col");
+    }
     
     align(value?: string) {
         this.setAttr("align", value);
@@ -44,9 +44,9 @@ class Col extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Col {
-                var tag = new Col();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Col();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Col;

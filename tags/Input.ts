@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 class Input extends VoidTag {
     constructor() {
-                super("input");
-            }
+        super("input");
+    }
     
     accept(value?: string) {
         this.setAttr("accept", value);
@@ -189,9 +189,9 @@ class Input extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Input {
-                var tag = new Input();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Input();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Input;

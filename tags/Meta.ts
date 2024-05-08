@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 class Meta extends VoidTag {
     constructor() {
-                super("meta");
-            }
+        super("meta");
+    }
     
     charset(value?: string) {
         this.setAttr("charset", value);
@@ -54,9 +54,9 @@ class Meta extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Meta {
-                var tag = new Meta();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Meta();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Meta;

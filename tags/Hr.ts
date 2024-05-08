@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 class Hr extends VoidTag {
     constructor() {
-                super("hr");
-            }
+        super("hr");
+    }
     
     align(value?: string) {
         this.setAttr("align", value);
@@ -39,9 +39,9 @@ class Hr extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Hr {
-                var tag = new Hr();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Hr();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Hr;
