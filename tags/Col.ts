@@ -5,19 +5,19 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col
 class Col extends VoidTag {
     constructor() {
-                super("col");
-            }
+        super("col");
+    }
     
     align(value?: string) {
-        if (value) this.setAttr("align", value);
+        this.setAttr("align", value);
         return this;
     }
     bgcolor(value?: string) {
-        if (value) this.setAttr("bgcolor", value);
+        this.setAttr("bgcolor", value);
         return this;
     }
     span(value?: string) {
-        if (value) this.setAttr("span", value);
+        this.setAttr("span", value);
         return this;
     }
     static withAttributes(attri: {
@@ -44,9 +44,9 @@ class Col extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Col {
-                var tag = new Col();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Col();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Col;

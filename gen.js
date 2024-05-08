@@ -3,9 +3,9 @@ const TagRegistry = require("./generator/TagRegistry");
 const fs = require('fs');
 
 const registry = new TagRegistry();
-const tags = registry.getAllTags();
-
 const tagCodeGeneratorFactory = new TagCodeGeneratorFactory();
+
+const tags = registry.getAllTags();
 
 let classNames = [];
 
@@ -15,6 +15,8 @@ for (var i = 0; i < tags.length; i++) {
     const code = tagCodeGenerator.generateClassCode();
     const className = tagCodeGenerator.getClassName();
     fs.writeFileSync(`./tags/${className}.ts`, code);
+    const testCode = tagCodeGenerator.generateTestCode();
+    fs.writeFileSync(`./tests/tags/${className}.test.ts`, testCode);
     classNames.push(className);
 }
 

@@ -5,8 +5,8 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr
 class Wbr extends VoidTag {
     constructor() {
-                super("wbr");
-            }
+        super("wbr");
+    }
     
     static withAttributes(attri: {
 		"accesskey"?: string,
@@ -29,9 +29,9 @@ class Wbr extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Wbr {
-                var tag = new Wbr();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Wbr();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Wbr;

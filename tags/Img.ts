@@ -5,67 +5,67 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
 class Img extends VoidTag {
     constructor() {
-                super("img");
-            }
+        super("img");
+    }
     
     align(value?: string) {
-        if (value) this.setAttr("align", value);
+        this.setAttr("align", value);
         return this;
     }
     alt(value?: string) {
-        if (value) this.setAttr("alt", value);
+        this.setAttr("alt", value);
         return this;
     }
     border(value?: string) {
-        if (value) this.setAttr("border", value);
+        this.setAttr("border", value);
         return this;
     }
     crossorigin(value?: string) {
-        if (value) this.setAttr("crossorigin", value);
+        this.setAttr("crossorigin", value);
         return this;
     }
     decoding(value?: string) {
-        if (value) this.setAttr("decoding", value);
+        this.setAttr("decoding", value);
         return this;
     }
     height(value?: string) {
-        if (value) this.setAttr("height", value);
+        this.setAttr("height", value);
         return this;
     }
     intrinsicsize(value?: string) {
-        if (value) this.setAttr("intrinsicsize", value);
+        this.setAttr("intrinsicsize", value);
         return this;
     }
     ismap(value?: string) {
-        if (value) this.setAttr("ismap", value);
+        this.setAttr("ismap", value);
         return this;
     }
     loading(value?: string) {
-        if (value) this.setAttr("loading", value);
+        this.setAttr("loading", value);
         return this;
     }
     referrerpolicy(value?: string) {
-        if (value) this.setAttr("referrerpolicy", value);
+        this.setAttr("referrerpolicy", value);
         return this;
     }
     sizes(value?: string) {
-        if (value) this.setAttr("sizes", value);
+        this.setAttr("sizes", value);
         return this;
     }
     src(value?: string) {
-        if (value) this.setAttr("src", value);
+        this.setAttr("src", value);
         return this;
     }
     srcset(value?: string) {
-        if (value) this.setAttr("srcset", value);
+        this.setAttr("srcset", value);
         return this;
     }
     usemap(value?: string) {
-        if (value) this.setAttr("usemap", value);
+        this.setAttr("usemap", value);
         return this;
     }
     width(value?: string) {
-        if (value) this.setAttr("width", value);
+        this.setAttr("width", value);
         return this;
     }
     static withAttributes(attri: {
@@ -104,9 +104,9 @@ class Img extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Img {
-                var tag = new Img();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Img();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Img;

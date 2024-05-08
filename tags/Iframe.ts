@@ -9,47 +9,47 @@ class Iframe extends Tag {
     }
     
     align(value?: string) {
-        if (value) this.setAttr("align", value);
+        this.setAttr("align", value);
         return this;
     }
     allow(value?: string) {
-        if (value) this.setAttr("allow", value);
+        this.setAttr("allow", value);
         return this;
     }
     csp(value?: string) {
-        if (value) this.setAttr("csp", value);
+        this.setAttr("csp", value);
         return this;
     }
     height(value?: string) {
-        if (value) this.setAttr("height", value);
+        this.setAttr("height", value);
         return this;
     }
     loading(value?: string) {
-        if (value) this.setAttr("loading", value);
+        this.setAttr("loading", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     referrerpolicy(value?: string) {
-        if (value) this.setAttr("referrerpolicy", value);
+        this.setAttr("referrerpolicy", value);
         return this;
     }
     sandbox(value?: string) {
-        if (value) this.setAttr("sandbox", value);
+        this.setAttr("sandbox", value);
         return this;
     }
     src(value?: string) {
-        if (value) this.setAttr("src", value);
+        this.setAttr("src", value);
         return this;
     }
     srcdoc(value?: string) {
-        if (value) this.setAttr("srcdoc", value);
+        this.setAttr("srcdoc", value);
         return this;
     }
     width(value?: string) {
-        if (value) this.setAttr("width", value);
+        this.setAttr("width", value);
         return this;
     }
     static withAttributes(attri: {

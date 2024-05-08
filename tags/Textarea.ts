@@ -9,63 +9,63 @@ class Textarea extends Tag {
     }
     
     autocomplete(value?: string) {
-        if (value) this.setAttr("autocomplete", value);
+        this.setAttr("autocomplete", value);
         return this;
     }
     cols(value?: string) {
-        if (value) this.setAttr("cols", value);
+        this.setAttr("cols", value);
         return this;
     }
     dirname(value?: string) {
-        if (value) this.setAttr("dirname", value);
+        this.setAttr("dirname", value);
         return this;
     }
     disabled(value?: string) {
-        if (value) this.setAttr("disabled", value);
+        this.setAttr("disabled", value);
         return this;
     }
     enterkeyhint(value?: string) {
-        if (value) this.setAttr("enterkeyhint", value);
+        this.setAttr("enterkeyhint", value);
         return this;
     }
     form(value?: string) {
-        if (value) this.setAttr("form", value);
+        this.setAttr("form", value);
         return this;
     }
     inputmode(value?: string) {
-        if (value) this.setAttr("inputmode", value);
+        this.setAttr("inputmode", value);
         return this;
     }
     maxlength(value?: string) {
-        if (value) this.setAttr("maxlength", value);
+        this.setAttr("maxlength", value);
         return this;
     }
     minlength(value?: string) {
-        if (value) this.setAttr("minlength", value);
+        this.setAttr("minlength", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     placeholder(value?: string) {
-        if (value) this.setAttr("placeholder", value);
+        this.setAttr("placeholder", value);
         return this;
     }
     readonly(value?: string) {
-        if (value) this.setAttr("readonly", value);
+        this.setAttr("readonly", value);
         return this;
     }
     required(value?: string) {
-        if (value) this.setAttr("required", value);
+        this.setAttr("required", value);
         return this;
     }
     rows(value?: string) {
-        if (value) this.setAttr("rows", value);
+        this.setAttr("rows", value);
         return this;
     }
     wrap(value?: string) {
-        if (value) this.setAttr("wrap", value);
+        this.setAttr("wrap", value);
         return this;
     }
     static withAttributes(attri: {

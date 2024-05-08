@@ -5,27 +5,27 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 class Meta extends VoidTag {
     constructor() {
-                super("meta");
-            }
+        super("meta");
+    }
     
     charset(value?: string) {
-        if (value) this.setAttr("charset", value);
+        this.setAttr("charset", value);
         return this;
     }
     content(value?: string) {
-        if (value) this.setAttr("content", value);
+        this.setAttr("content", value);
         return this;
     }
     http_equiv(value?: string) {
-        if (value) this.setAttr("http-equiv", value);
+        this.setAttr("http-equiv", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     property(value?: string) {
-        if (value) this.setAttr("property", value);
+        this.setAttr("property", value);
         return this;
     }
     static withAttributes(attri: {
@@ -54,9 +54,9 @@ class Meta extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Meta {
-                var tag = new Meta();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Meta();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Meta;

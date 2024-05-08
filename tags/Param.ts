@@ -5,15 +5,15 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param
 class Param extends VoidTag {
     constructor() {
-                super("param");
-            }
+        super("param");
+    }
     
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     value(value?: string) {
-        if (value) this.setAttr("value", value);
+        this.setAttr("value", value);
         return this;
     }
     static withAttributes(attri: {
@@ -39,9 +39,9 @@ class Param extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Param {
-                var tag = new Param();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Param();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Param;

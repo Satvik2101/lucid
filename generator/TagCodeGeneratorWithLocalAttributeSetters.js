@@ -1,5 +1,5 @@
 const TagCodeGenerator = require("./TagCodeGenerator");
-
+const TagTestGeneratorWithLocalAttributeTests = require("./test-generators/TagTestGeneratorWithLocalAttributeTests");
 class TagCodeGeneratorWithLocalAttributeSetters extends TagCodeGenerator {
 
     constructor(tagName, localAttributes, globalAttributes) {
@@ -11,11 +11,18 @@ class TagCodeGeneratorWithLocalAttributeSetters extends TagCodeGenerator {
         const functionName = this.replaceDashWithUnderscore(attribute);
         const attributeSetterFunctionString = `
     ${functionName}(value?: string) {
-        if (value) this.setAttr("${attribute}", value);
+        this.setAttr("${attribute}", value);
         return this;
     }`;
         return attributeSetterFunctionString;
 
+    }
+
+    getTestGenerator() {
+        if (this.testGenerator == null) {
+            this.testGenerator = new TagTestGeneratorWithLocalAttributeTests(this.tagName, this.getClassName(), this.attributes, this.localAttributes);
+        }
+        return this.testGenerator;
     }
 
     generateLocalAttributeSetters() {

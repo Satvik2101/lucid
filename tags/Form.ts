@@ -9,39 +9,39 @@ class Form extends Tag {
     }
     
     accept(value?: string) {
-        if (value) this.setAttr("accept", value);
+        this.setAttr("accept", value);
         return this;
     }
     accept_charset(value?: string) {
-        if (value) this.setAttr("accept-charset", value);
+        this.setAttr("accept-charset", value);
         return this;
     }
     action(value?: string) {
-        if (value) this.setAttr("action", value);
+        this.setAttr("action", value);
         return this;
     }
     autocomplete(value?: string) {
-        if (value) this.setAttr("autocomplete", value);
+        this.setAttr("autocomplete", value);
         return this;
     }
     enctype(value?: string) {
-        if (value) this.setAttr("enctype", value);
+        this.setAttr("enctype", value);
         return this;
     }
     method(value?: string) {
-        if (value) this.setAttr("method", value);
+        this.setAttr("method", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     novalidate(value?: string) {
-        if (value) this.setAttr("novalidate", value);
+        this.setAttr("novalidate", value);
         return this;
     }
     target(value?: string) {
-        if (value) this.setAttr("target", value);
+        this.setAttr("target", value);
         return this;
     }
     static withAttributes(attri: {

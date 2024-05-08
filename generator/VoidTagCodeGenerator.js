@@ -9,8 +9,8 @@ class VoidTagCodeGenerator extends TagCodeGeneratorWithLocalAttributeSetters {
 
     generateTagConstructor() {
         return `constructor() {
-                super("${this.tagName}");
-            }`
+        super("${this.tagName}");
+    }`
     }
 
     generateFactoryConstructor() {
@@ -18,10 +18,10 @@ class VoidTagCodeGenerator extends TagCodeGeneratorWithLocalAttributeSetters {
 
         const attributesParameterType = this.generateAttributesParameterType();
         var start = `static withAttributes(attri: ${attributesParameterType}): ${className} {
-                var tag = new ${className}();
-                tag.attrs(attri);
-                return tag;
-            }`
+        var tag = new ${className}();
+        tag.attrs(attri);
+        return tag;
+    }`
 
         return start;
     }

@@ -1,32 +1,35 @@
-const TagRegistry = require("./TagRegistry");
+const TagTestGenerator = require("./test-generators/TagTestGenerator");
 
 class TagCodeGenerator {
 
     constructor(tagName, attributes) {
         this.tagName = tagName;
         this.attributes = attributes; //all attributes, global and local
-        // this.registry = new TagRegistry();
         this.parentTagClass = "Tag";
     }
 
-
-    getMdnUrl() {
-        return `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${this.tagName}`
-
+    getTestGenerator() {
+        if (this.testGenerator == null) {
+            this.testGenerator = new TagTestGenerator(this.tagName, this.getClassName(), this.attributes);
+        }
+        return this.testGenerator;
     }
 
-    getChildrenTypeImportStatement() {
-        return `import childrenType from "../childrenType";`;
+    generateTestCode() {
+        return this.getTestGenerator().generateTest();
+    }
+    generateClassCode() {
+        const className = this.getClassName();
+        return `${this.getImportStatements()}\n\n
+//${this.getMdnUrl()}
+class ${className} extends ${this.parentTagClass} {
+    ${this.generateTagConstructor()}
+    ${this.generateFactoryConstructor()}
+}
 
+${this.getExportStatement()}`
     }
 
-    getParentTagImportStatement() {
-        return `import ${this.parentTagClass} from "../utils/${this.parentTagClass}";`;
-    }
-
-    getImportStatements() {
-        return this.getParentTagImportStatement("Tag") + "\n" + this.getChildrenTypeImportStatement();
-    }
     getClassName() {
 
         //capitalize first letter
@@ -41,10 +44,41 @@ class TagCodeGenerator {
         return className;
     }
 
+    getImportStatements() {
+        return this.getParentTagImportStatement("Tag") + "\n" + this.getChildrenTypeImportStatement();
+    }
+
+    getParentTagImportStatement() {
+        return `import ${this.parentTagClass} from "../utils/${this.parentTagClass}";`;
+    }
+
+    getChildrenTypeImportStatement() {
+        return `import childrenType from "../childrenType";`;
+
+    }
+
+    getMdnUrl() {
+        return `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${this.tagName}`
+
+    }
+
     generateTagConstructor() {
         return `constructor(children?: childrenType) {
         super("${this.tagName}", children);
     }`
+    }
+
+    generateFactoryConstructor() {
+        const className = this.getClassName(this.tagName);
+
+        const attributesParameterType = this.generateAttributesParameterType(this.attributes);
+        var start = `static withAttributes(attri: ${attributesParameterType}, children?: childrenType): ${className} {
+            var tag = new ${className}(children);
+            tag.attrs(attri);
+            return tag;
+        }`
+
+        return start;
     }
 
     generateAttributesParameterType() {
@@ -57,20 +91,7 @@ class TagCodeGenerator {
         return attributesParameterType;
     }
 
-    generateFactoryConstructor() {
-        const className = this.getClassName(this.tagName);
 
-        const attributesParameterType = this.generateAttributesParameterType(this.attributes);
-        var start = `static withAttributes(attri: ${attributesParameterType}, children?: childrenType): ${className} {
-            var tag = new ${className}(children);
-            tag.attrs(attri);
-            return tag;
-        }`
-        //TODO: just found a bug above, shoudl be isVoid? "()": "(children)".
-        //Will fix it after this refactoring, because I want it to be a separate commit.
-
-        return start;
-    }
     getExportStatement() {
         return `export default ${this.getClassName()};`;
     }
@@ -79,17 +100,7 @@ class TagCodeGenerator {
         return str.replace(/-/g, "_");
     }
 
-    generateClassCode() {
-        const className = this.getClassName();
-        return `${this.getImportStatements()}\n\n
-//${this.getMdnUrl()}
-class ${className} extends ${this.parentTagClass} {
-    ${this.generateTagConstructor()}
-    ${this.generateFactoryConstructor()}
-}
 
-${this.getExportStatement()}`
-    }
 }
 
 module.exports = TagCodeGenerator;

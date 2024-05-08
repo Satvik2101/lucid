@@ -6,10 +6,6 @@ class Tag {
     };
     children: childrenType
 
-
-
-
-
     constructor(tagName: string, children?: childrenType, attributes?: { [key: string]: any }) {
         this.tagName = tagName;
         this.attributes = attributes ?? {};
@@ -34,6 +30,7 @@ class Tag {
 
     setAttr(key: string, value?: any) {
         this.attributes[key] = value;
+        if (value == undefined || null) this.attributes[key] = "";
         return this;
 
     }
@@ -65,19 +62,19 @@ class Tag {
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
     // The values for these are NOT validated.
     class(value?: string) {
-        if (value) this.setAttr("class", value);
+        this.setAttr("class", value);
         return this;
 
     }
 
     id(value?: string) {
-        if (value) this.setAttr("id", value);
+        this.setAttr("id", value);
         return this;
 
     }
 
     style(value?: string) {
-        if (value) this.setAttr("style", value);
+        this.setAttr("style", value);
         return this;
 
     }
@@ -88,114 +85,114 @@ class Tag {
     }
 
     accesskey(value?: string) {
-        if (value) this.setAttr("accesskey", value);
+        this.setAttr("accesskey", value);
         return this;
     }
 
     autocapitalize(value?: string) {
-        if (value) this.setAttr("autocapitalize", value);
+        this.setAttr("autocapitalize", value);
         return this;
     }
 
     autofocus(value?: string) {
-        if (value) this.setAttr("autofocus", value);
+        this.setAttr("autofocus", value);
         return this;
     }
 
     contenteditable(value?: string) {
-        if (value) this.setAttr("contenteditable", value);
+        this.setAttr("contenteditable", value);
         return this;
     }
 
     dir(value?: string) {
-        if (value) this.setAttr("dir", value);
+        this.setAttr("dir", value);
         return this;
     }
 
     draggable(value?: string) {
-        if (value) this.setAttr("draggable", value);
+        this.setAttr("draggable", value);
         return this;
     }
 
     enterkeyhint(value?: string) {
-        if (value) this.setAttr("enterkeyhint", value);
+        this.setAttr("enterkeyhint", value);
         return this;
     }
 
     exportparts(value?: string) {
-        if (value) this.setAttr("exportparts", value);
+        this.setAttr("exportparts", value);
         return this;
     }
 
     hidden(value?: string) {
-        if (value) this.setAttr("hidden", value);
+        this.setAttr("hidden", value);
         return this;
     }
 
     inert(value?: string) {
-        if (value) this.setAttr("inert", value);
+        this.setAttr("inert", value);
         return this;
     }
 
     inputmode(value?: string) {
-        if (value) this.setAttr("inputmode", value);
+        this.setAttr("inputmode", value);
         return this;
     }
 
     is(value?: string) {
-        if (value) this.setAttr("is", value);
+        this.setAttr("is", value);
         return this;
     }
 
     //WHATWG HTML Microdata feature attributes have been skipped.
 
     lang(value?: string) {
-        if (value) this.setAttr("lang", value);
+        this.setAttr("lang", value);
         return this;
     }
 
     nonce(value?: string) {
-        if (value) this.setAttr("nonce", value);
+        this.setAttr("nonce", value);
         return this;
     }
 
     part(value?: string) {
-        if (value) this.setAttr("part", value);
+        this.setAttr("part", value);
         return this;
     }
 
     popover(value?: string) {
-        if (value) this.setAttr("popover", value);
+        this.setAttr("popover", value);
         return this;
     }
 
     role(value?: string) {
-        if (value) this.setAttr("role", value);
+        this.setAttr("role", value);
         return this;
     }
 
     slot(value?: string) {
-        if (value) this.setAttr("slot", value);
+        this.setAttr("slot", value);
         return this;
     }
 
     spellcheck(value?: string) {
-        if (value) this.setAttr("spellcheck", value);
+        this.setAttr("spellcheck", value);
         return this;
     }
 
     tabindex(value?: string) {
-        if (value) this.setAttr("tabindex", value);
+        this.setAttr("tabindex", value);
         return this;
     }
 
     title(value?: string) {
-        if (value) this.setAttr("title", value);
+        this.setAttr("title", value);
         return this;
     }
 
     translate(value?: string) {
-        if (value) this.setAttr("translate", value);
+        this.setAttr("translate", value);
         return this;
     }
 
@@ -205,14 +202,16 @@ class Tag {
     attributeString() {
         var attributeString = "";
         for (var attribute in this.attributes) {
-            const value = this.attributes[attribute];
-            if (value == undefined || null) continue;
+            let value = this.attributes[attribute];
+            if (value == undefined || null) value = "";
             attributeString += `${attribute}="${value}" `;
         }
-        return attributeString;
+        //remove last space and return
+        return attributeString.trim();
     }
     getStart(): string {
-        return `<${this.tagName} ${this.attributeString()}>`
+        if (this.attributeString() == "") return `<${this.tagName}>`;
+        return `<${this.tagName} ${this.attributeString()}>`;
 
     }
 
@@ -220,7 +219,7 @@ class Tag {
         if (this.children == undefined) return "";
         if (typeof this.children == "string") return this.children;
         if (this.children instanceof Tag) return this.children.toString();
-        return this.children.map((child) => child.toString()).join("\n");
+        return this.children.map((child) => child.toString()).join("");
     }
 
     getEnd(): string {
@@ -233,15 +232,4 @@ class Tag {
     }
 }
 
-
-
-// class StylesheetTag extends LinkTag {
-//     constructor(href: string) {
-
-//         super("stylesheet", href)
-//     }
-// }
-
-
 export default Tag;
-// export {Tag} ;

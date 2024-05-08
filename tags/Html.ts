@@ -9,7 +9,7 @@ class Html extends Tag {
     }
     
     manifest(value?: string) {
-        if (value) this.setAttr("manifest", value);
+        this.setAttr("manifest", value);
         return this;
     }
     static withAttributes(attri: {

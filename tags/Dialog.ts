@@ -9,7 +9,7 @@ class Dialog extends Tag {
     }
     
     open(value?: string) {
-        if (value) this.setAttr("open", value);
+        this.setAttr("open", value);
         return this;
     }
     static withAttributes(attri: {

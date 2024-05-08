@@ -5,15 +5,15 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 class Base extends VoidTag {
     constructor() {
-                super("base");
-            }
+        super("base");
+    }
     
     href(value?: string) {
-        if (value) this.setAttr("href", value);
+        this.setAttr("href", value);
         return this;
     }
     target(value?: string) {
-        if (value) this.setAttr("target", value);
+        this.setAttr("target", value);
         return this;
     }
     static withAttributes(attri: {
@@ -39,9 +39,9 @@ class Base extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Base {
-                var tag = new Base();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Base();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Base;

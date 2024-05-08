@@ -9,11 +9,11 @@ class Body extends Tag {
     }
     
     background(value?: string) {
-        if (value) this.setAttr("background", value);
+        this.setAttr("background", value);
         return this;
     }
     bgcolor(value?: string) {
-        if (value) this.setAttr("bgcolor", value);
+        this.setAttr("bgcolor", value);
         return this;
     }
     static withAttributes(attri: {

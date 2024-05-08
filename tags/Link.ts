@@ -5,43 +5,43 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
 class Link extends VoidTag {
     constructor() {
-                super("link");
-            }
+        super("link");
+    }
     
     crossorigin(value?: string) {
-        if (value) this.setAttr("crossorigin", value);
+        this.setAttr("crossorigin", value);
         return this;
     }
     href(value?: string) {
-        if (value) this.setAttr("href", value);
+        this.setAttr("href", value);
         return this;
     }
     hreflang(value?: string) {
-        if (value) this.setAttr("hreflang", value);
+        this.setAttr("hreflang", value);
         return this;
     }
     integrity(value?: string) {
-        if (value) this.setAttr("integrity", value);
+        this.setAttr("integrity", value);
         return this;
     }
     media(value?: string) {
-        if (value) this.setAttr("media", value);
+        this.setAttr("media", value);
         return this;
     }
     referrerpolicy(value?: string) {
-        if (value) this.setAttr("referrerpolicy", value);
+        this.setAttr("referrerpolicy", value);
         return this;
     }
     rel(value?: string) {
-        if (value) this.setAttr("rel", value);
+        this.setAttr("rel", value);
         return this;
     }
     sizes(value?: string) {
-        if (value) this.setAttr("sizes", value);
+        this.setAttr("sizes", value);
         return this;
     }
     type(value?: string) {
-        if (value) this.setAttr("type", value);
+        this.setAttr("type", value);
         return this;
     }
     static withAttributes(attri: {
@@ -74,9 +74,9 @@ class Link extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Link {
-                var tag = new Link();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Link();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Link;

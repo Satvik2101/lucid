@@ -9,23 +9,23 @@ class Table extends Tag {
     }
     
     align(value?: string) {
-        if (value) this.setAttr("align", value);
+        this.setAttr("align", value);
         return this;
     }
     background(value?: string) {
-        if (value) this.setAttr("background", value);
+        this.setAttr("background", value);
         return this;
     }
     bgcolor(value?: string) {
-        if (value) this.setAttr("bgcolor", value);
+        this.setAttr("bgcolor", value);
         return this;
     }
     border(value?: string) {
-        if (value) this.setAttr("border", value);
+        this.setAttr("border", value);
         return this;
     }
     summary(value?: string) {
-        if (value) this.setAttr("summary", value);
+        this.setAttr("summary", value);
         return this;
     }
     static withAttributes(attri: {

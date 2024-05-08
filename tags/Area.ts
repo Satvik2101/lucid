@@ -5,47 +5,47 @@ import childrenType from "../childrenType";
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area
 class Area extends VoidTag {
     constructor() {
-                super("area");
-            }
+        super("area");
+    }
     
     alt(value?: string) {
-        if (value) this.setAttr("alt", value);
+        this.setAttr("alt", value);
         return this;
     }
     coords(value?: string) {
-        if (value) this.setAttr("coords", value);
+        this.setAttr("coords", value);
         return this;
     }
     download(value?: string) {
-        if (value) this.setAttr("download", value);
+        this.setAttr("download", value);
         return this;
     }
     href(value?: string) {
-        if (value) this.setAttr("href", value);
+        this.setAttr("href", value);
         return this;
     }
     media(value?: string) {
-        if (value) this.setAttr("media", value);
+        this.setAttr("media", value);
         return this;
     }
     ping(value?: string) {
-        if (value) this.setAttr("ping", value);
+        this.setAttr("ping", value);
         return this;
     }
     referrerpolicy(value?: string) {
-        if (value) this.setAttr("referrerpolicy", value);
+        this.setAttr("referrerpolicy", value);
         return this;
     }
     rel(value?: string) {
-        if (value) this.setAttr("rel", value);
+        this.setAttr("rel", value);
         return this;
     }
     shape(value?: string) {
-        if (value) this.setAttr("shape", value);
+        this.setAttr("shape", value);
         return this;
     }
     target(value?: string) {
-        if (value) this.setAttr("target", value);
+        this.setAttr("target", value);
         return this;
     }
     static withAttributes(attri: {
@@ -79,9 +79,9 @@ class Area extends VoidTag {
 		"translate"?: string,
 		[key: string]: any
 	}): Area {
-                var tag = new Area();
-                tag.attrs(attri);
-                return tag;
-            }
+        var tag = new Area();
+        tag.attrs(attri);
+        return tag;
+    }
 }
 export default Area;

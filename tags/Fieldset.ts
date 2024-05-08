@@ -9,15 +9,15 @@ class Fieldset extends Tag {
     }
     
     disabled(value?: string) {
-        if (value) this.setAttr("disabled", value);
+        this.setAttr("disabled", value);
         return this;
     }
     form(value?: string) {
-        if (value) this.setAttr("form", value);
+        this.setAttr("form", value);
         return this;
     }
     name(value?: string) {
-        if (value) this.setAttr("name", value);
+        this.setAttr("name", value);
         return this;
     }
     static withAttributes(attri: {

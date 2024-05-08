@@ -9,7 +9,7 @@ class Time extends Tag {
     }
     
     datetime(value?: string) {
-        if (value) this.setAttr("datetime", value);
+        this.setAttr("datetime", value);
         return this;
     }
     static withAttributes(attri: {
