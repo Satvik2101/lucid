@@ -1,3 +1,5 @@
+const TagTestGenerator = require("./test-generators/TagTestGenerator");
+
 class TagCodeGenerator {
 
     constructor(tagName, attributes) {
@@ -6,6 +8,16 @@ class TagCodeGenerator {
         this.parentTagClass = "Tag";
     }
 
+    getTestGenerator() {
+        if (this.testGenerator == null) {
+            this.testGenerator = new TagTestGenerator(this.tagName, this.getClassName(), this.attributes);
+        }
+        return this.testGenerator;
+    }
+
+    getTestCode() {
+        return this.getTestGenerator().generateTest();
+    }
     generateClassCode() {
         const className = this.getClassName();
         return `${this.getImportStatements()}\n\n
