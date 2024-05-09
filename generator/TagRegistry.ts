@@ -46,6 +46,29 @@ class TagRegistry {
     isVoid(tag: string) {
         return this.voidTags.includes(tag);
     }
+
+
+    static getClassName(tagName: string) {
+
+        //capitalize first letter
+        var className = tagName[0].toUpperCase() + tagName.slice(1);
+        //replace - with _
+        className = this.replaceDashWithUnderscore(className);
+
+        //ugly hack to avoid reserved words
+        if (className == "Object") {
+            className = "ObjectTag";
+        }
+        return className;
+    }
+
+    static getFunctionNameForAttribute(attribute: string) {
+        return this.replaceDashWithUnderscore(attribute);
+    }
+
+    static replaceDashWithUnderscore(str: string) {
+        return str.replace(/-/g, "_");
+    }
 }
 
 export default TagRegistry;

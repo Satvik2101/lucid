@@ -13,7 +13,7 @@ for (var i = 0; i < tags.length; i++) {
     const tag = tags[i];
     const tagCodeGenerator = tagCodeGeneratorFactory.getTagCodeGenetator(tag);
     const code = tagCodeGenerator.generateClassCode();
-    const className = tagCodeGenerator.getClassName();
+    const className = tagCodeGenerator.className;
     fs.writeFileSync(`./tags/${className}.ts`, code);
     const testCode = tagCodeGenerator.generateTestCode();
     fs.writeFileSync(`./tests/tags/${className}.test.ts`, testCode);

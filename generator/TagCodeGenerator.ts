@@ -1,20 +1,23 @@
+import TagRegistry from "./TagRegistry";
 import TagTestGenerator from "./test-generators/TagTestGenerator";
 
 class TagCodeGenerator {
 
     tagName: string;
     attributes: string[];
+    className: string;
     parentTagClass: string;
     testGenerator?: TagTestGenerator;
     constructor(tagName: string, attributes: string[]) {
         this.tagName = tagName;
         this.attributes = attributes; //all attributes, global and local
         this.parentTagClass = "Tag";
+        this.className = TagRegistry.getClassName(tagName);
     }
 
     getTestGenerator() {
         if (this.testGenerator == null) {
-            this.testGenerator = new TagTestGenerator(this.tagName, this.getClassName(), this.attributes);
+            this.testGenerator = new TagTestGenerator(this.tagName, this.className, this.attributes);
         }
         return this.testGenerator;
     }
@@ -23,7 +26,7 @@ class TagCodeGenerator {
         return this.getTestGenerator().generateTest();
     }
     generateClassCode() {
-        const className = this.getClassName();
+        const className = this.className;
         return `${this.getImportStatements()}\n\n
 //${this.getMdnUrl()}
 class ${className} extends ${this.parentTagClass} {
@@ -34,19 +37,6 @@ class ${className} extends ${this.parentTagClass} {
 ${this.getExportStatement()}`
     }
 
-    getClassName() {
-
-        //capitalize first letter
-        var className = this.tagName[0].toUpperCase() + this.tagName.slice(1);
-        //replace - with _
-        className = this.replaceDashWithUnderscore(className);
-
-        //ugly hack to avoid reserved words
-        if (className == "Object") {
-            className = "ObjectTag";
-        }
-        return className;
-    }
 
     getImportStatements() {
         return this.getParentTagImportStatement() + "\n" + this.getChildrenTypeImportStatement();
@@ -73,7 +63,7 @@ ${this.getExportStatement()}`
     }
 
     generateFactoryConstructor() {
-        const className = this.getClassName();
+        const className = this.className;
 
         const attributesParameterType = this.generateAttributesParameterType();
         var start = `static withAttributes(attri: ${attributesParameterType}, children?: childrenType): ${className} {
@@ -97,12 +87,10 @@ ${this.getExportStatement()}`
 
 
     getExportStatement() {
-        return `export default ${this.getClassName()};`;
+        return `export default ${this.className};`;
     }
 
-    replaceDashWithUnderscore(str: string) {
-        return str.replace(/-/g, "_");
-    }
+
 
 
 }

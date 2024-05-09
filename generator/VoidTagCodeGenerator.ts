@@ -14,7 +14,7 @@ class VoidTagCodeGenerator extends TagCodeGeneratorWithLocalAttributeSetters {
     }
 
     generateFactoryConstructor() {
-        const className = this.getClassName();
+        const className = this.className;
 
         const attributesParameterType = this.generateAttributesParameterType();
         var start = `static withAttributes(attri: ${attributesParameterType}): ${className} {

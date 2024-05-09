@@ -1,4 +1,5 @@
 import TagCodeGenerator from "./TagCodeGenerator";
+import TagRegistry from "./TagRegistry";
 import TagTestGeneratorWithLocalAttributeTests from "./test-generators/TagTestGeneratorWithLocalAttributeTests";
 class TagCodeGeneratorWithLocalAttributeSetters extends TagCodeGenerator {
 
@@ -10,7 +11,7 @@ class TagCodeGeneratorWithLocalAttributeSetters extends TagCodeGenerator {
     }
 
     generateSetterForAttribute(attribute: string) {
-        const functionName = this.replaceDashWithUnderscore(attribute);
+        const functionName = TagRegistry.getFunctionNameForAttribute(attribute);
         const attributeSetterFunctionString = `
     ${functionName}(value?: string) {
         this.setAttr("${attribute}", value);
@@ -22,7 +23,7 @@ class TagCodeGeneratorWithLocalAttributeSetters extends TagCodeGenerator {
 
     getTestGenerator() {
         if (this.testGenerator == null) {
-            this.testGenerator = new TagTestGeneratorWithLocalAttributeTests(this.tagName, this.getClassName(), this.attributes, this.localAttributes);
+            this.testGenerator = new TagTestGeneratorWithLocalAttributeTests(this.tagName, this.className, this.attributes, this.localAttributes);
         }
         return this.testGenerator;
     }
@@ -38,7 +39,7 @@ class TagCodeGeneratorWithLocalAttributeSetters extends TagCodeGenerator {
 
     //Override
     generateClassCode() {
-        const className = this.getClassName();
+        const className = this.className;
         return `${this.getImportStatements()}
 
 
