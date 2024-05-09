@@ -1,8 +1,12 @@
-const TagTestGenerator = require("./test-generators/TagTestGenerator");
+import TagTestGenerator from "./test-generators/TagTestGenerator";
 
 class TagCodeGenerator {
 
-    constructor(tagName, attributes) {
+    tagName: string;
+    attributes: string[];
+    parentTagClass: string;
+    testGenerator?: TagTestGenerator;
+    constructor(tagName: string, attributes: string[]) {
         this.tagName = tagName;
         this.attributes = attributes; //all attributes, global and local
         this.parentTagClass = "Tag";
@@ -69,9 +73,9 @@ ${this.getExportStatement()}`
     }
 
     generateFactoryConstructor() {
-        const className = this.getClassName(this.tagName);
+        const className = this.getClassName();
 
-        const attributesParameterType = this.generateAttributesParameterType(this.attributes);
+        const attributesParameterType = this.generateAttributesParameterType();
         var start = `static withAttributes(attri: ${attributesParameterType}, children?: childrenType): ${className} {
             var tag = new ${className}(children);
             tag.attrs(attri);
@@ -96,11 +100,11 @@ ${this.getExportStatement()}`
         return `export default ${this.getClassName()};`;
     }
 
-    replaceDashWithUnderscore(str) {
+    replaceDashWithUnderscore(str: string) {
         return str.replace(/-/g, "_");
     }
 
 
 }
 
-module.exports = TagCodeGenerator;
+export default TagCodeGenerator;

@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 class TagRegistry {
     //this class is a singleton
@@ -19,18 +19,21 @@ class TagRegistry {
         "track",
         "wbr"
     ]
+
+    static instance?: TagRegistry;
+    registry: { [key: string]: string[] } = {};
     constructor() {
         if (!TagRegistry.instance) {
             this.registry = {};
             TagRegistry.instance = this;
             var rawJsonContents = fs.readFileSync("./html-tags-attributes.json");
 
-            this.registry = JSON.parse(rawJsonContents);
+            this.registry = JSON.parse(rawJsonContents.toString());
         }
         return TagRegistry.instance;
     }
 
-    getTagAttributes(tag) {
+    getTagAttributes(tag: string) {
         return this.registry[tag];
     }
     getGlobalAttributes() {
@@ -40,9 +43,9 @@ class TagRegistry {
         return Object.keys(this.registry).filter(tag => tag != "*");
     }
 
-    isVoid(tag) {
+    isVoid(tag: string) {
         return this.voidTags.includes(tag);
     }
 }
 
-module.exports = TagRegistry;
+export default TagRegistry;

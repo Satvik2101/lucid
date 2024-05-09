@@ -1,7 +1,10 @@
-const TagTestGenerator = require("./TagTestGenerator")
+import TagTestGenerator from "./TagTestGenerator";
 
 class TagTestGeneratorWithLocalAttributeTests extends TagTestGenerator {
-    constructor(tagName, className, allAttributes, localAttributes) {
+
+    localAttributes: string[];
+
+    constructor(tagName: string, className: string, allAttributes: string[], localAttributes: string[]) {
         super(tagName, className, allAttributes);
         this.localAttributes = localAttributes;
     }
@@ -38,7 +41,7 @@ describe("${this.className}", () => {
         return tests;
     }
 
-    getSingleLocalAttributeTest(attr) {
+    getSingleLocalAttributeTest(attr: string) {
 
         const functionName = this.replaceDashWithUnderscore(attr);
         return `it("should set ${attr} attribute", () => {
@@ -48,10 +51,10 @@ describe("${this.className}", () => {
     });\n\n\t`
     }
 
-    replaceDashWithUnderscore(str) {
+    replaceDashWithUnderscore(str: string) {
         return str.replace(/-/g, "_");
     }
 
 }
 
-module.exports = TagTestGeneratorWithLocalAttributeTests;
+export default TagTestGeneratorWithLocalAttributeTests;

@@ -1,8 +1,8 @@
-const TagCodeGeneratorWithLocalAttributeSetters = require("./TagCodeGeneratorWithLocalAttributeSetters");
+import TagCodeGeneratorWithLocalAttributeSetters from "./TagCodeGeneratorWithLocalAttributeSetters";
 
 class VoidTagCodeGenerator extends TagCodeGeneratorWithLocalAttributeSetters {
 
-    constructor(tagName, localAttributes, globalAttributes) {
+    constructor(tagName: string, localAttributes: string[], globalAttributes: string[]) {
         super(tagName, localAttributes, globalAttributes);
         this.parentTagClass = "VoidTag";
     }
@@ -25,8 +25,6 @@ class VoidTagCodeGenerator extends TagCodeGeneratorWithLocalAttributeSetters {
 
         return start;
     }
-
-
 }
 
-module.exports = VoidTagCodeGenerator;
+export default VoidTagCodeGenerator;

@@ -1,14 +1,14 @@
-const TagCodeGenerator = require("./TagCodeGenerator");
-const TagCodeGeneratorWithLocalAttributeSetters = require("./TagCodeGeneratorWithLocalAttributeSetters");
-const TagRegistry = require("./TagRegistry");
-const VoidTagCodeGenerator = require("./VoidTagCodeGenerator");
-
+import TagCodeGenerator from "./TagCodeGenerator";
+import TagCodeGeneratorWithLocalAttributeSetters from "./TagCodeGeneratorWithLocalAttributeSetters";
+import TagRegistry from "./TagRegistry";
+import VoidTagCodeGenerator from "./VoidTagCodeGenerator";
 class TagCodeGeneratorFactory {
+    registry: TagRegistry;
     constructor() {
         this.registry = new TagRegistry();
     }
 
-    getTagCodeGenetator(tag) {
+    getTagCodeGenetator(tag: string) {
         const tagLocalAttriburtes = this.registry.getTagAttributes(tag);
         const globalAttributes = this.registry.getGlobalAttributes();
         const isVoid = this.registry.isVoid(tag);
@@ -22,4 +22,4 @@ class TagCodeGeneratorFactory {
     }
 }
 
-module.exports = TagCodeGeneratorFactory;
+export default TagCodeGeneratorFactory;

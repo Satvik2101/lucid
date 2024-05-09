@@ -1,13 +1,13 @@
-const TagCodeGeneratorFactory = require("./generator/TagCodeGeneratorFactory");
-const TagRegistry = require("./generator/TagRegistry");
-const fs = require('fs');
+import TagCodeGeneratorFactory from "./generator/TagCodeGeneratorFactory";
+import TagRegistry from "./generator/TagRegistry";
+import fs from 'fs';
 
 const registry = new TagRegistry();
 const tagCodeGeneratorFactory = new TagCodeGeneratorFactory();
 
 const tags = registry.getAllTags();
 
-let classNames = [];
+let classNames: string[] = [];
 
 for (var i = 0; i < tags.length; i++) {
     const tag = tags[i];

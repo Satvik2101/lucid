@@ -1,5 +1,8 @@
 class TagTestGenerator {
-    constructor(tagName, className, attributes) {
+    tagName: string;
+    className: string;
+    attributes: string[];
+    constructor(tagName: string, className: string, attributes: string[]) {
         this.tagName = tagName;
         this.className = className;
         this.attributes = attributes;
@@ -73,4 +76,4 @@ describe("${this.className}", () => {
     }
 }
 
-module.exports = TagTestGenerator;
+export default TagTestGenerator;
