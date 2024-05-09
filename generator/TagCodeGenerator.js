@@ -45,7 +45,7 @@ ${this.getExportStatement()}`
     }
 
     getImportStatements() {
-        return this.getParentTagImportStatement("Tag") + "\n" + this.getChildrenTypeImportStatement();
+        return this.getParentTagImportStatement() + "\n" + this.getChildrenTypeImportStatement();
     }
 
     getParentTagImportStatement() {
