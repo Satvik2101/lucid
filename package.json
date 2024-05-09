@@ -6,10 +6,10 @@
         "ts-jest": "^29.1.2"
     },
     "scripts": {
-        "test": "jest --testPathIgnorePatterns=/build/*",
+        "test": "jest",
         "generate": "ts-node gen.ts",
         "gen-test": "npm run generate && npm run test-min",
-        "test-min": "jest --testPathIgnorePatterns=/build/* /tags/A.test.ts /tags/Abbr.test.ts /tags/Meta.test.ts /utils/*"
+        "test-min": "jest /tags/A.test.ts /tags/Abbr.test.ts /tags/Meta.test.ts /utils/*"
     },
     "version": "0.0.1"
 }
